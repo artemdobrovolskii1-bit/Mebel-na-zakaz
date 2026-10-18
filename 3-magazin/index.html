@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Створка — интернет-магазин мебели на заказ</title>
+<meta name="description" content="Каталог из 50 проектов кухонь, шкафов-купе, гардеробных и детских с ценами. Калькулятор кухни и шкафа, «Моя смета», бесплатный замер.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<!-- Яндекс Метрика: вставьте сюда код счётчика клиента -->
+<style>
+:root{--bg:#F4F0E8;--bg2:#EAE3D6;--card:#FFFFFF;--ink:#23211E;--mute:#6B655B;--acc:#1F5C73;--acc-ink:#FFFFFF;--line:#DDD5C6;--wa:#177A45;--tg:#1B73A8;--sale:#B3321F;--ok:#177A45;--shade:rgba(35,33,30,.55)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Onest,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3,h4{font-family:Unbounded,Onest,system-ui,sans-serif;font-weight:500;line-height:1.2;margin:0}
+h1{font-size:clamp(1.55rem,6vw,3rem);font-weight:700}
+h2{font-size:clamp(1.3rem,4.6vw,2.05rem);margin-bottom:10px}
+h3{font-size:1rem}
+p{margin:0}
+ul,ol{margin:0}
+.wr{max-width:1160px;margin:0 auto;padding:0 20px}
+.sec{padding:46px 0}
+.sec.alt{background:var(--bg2)}
+.lead{color:var(--mute);max-width:62ch;margin-bottom:26px}
+.tag{display:inline-block;color:var(--acc);font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:12px;border:2px solid var(--acc);background:var(--acc);color:var(--acc-ink);font:600 1rem/1.2 Onest,system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:filter .2s,transform .2s}
+.btn:hover{filter:brightness(1.12)}
+.btn.line{background:transparent;color:var(--acc)}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:var(--acc-ink)}
+.btn.tg{background:var(--tg);border-color:var(--tg);color:var(--acc-ink)}
+.btn.sm{min-height:40px;padding:8px 14px;font-size:.92rem}
+.btn svg{width:18px;height:18px;flex:none}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btns .btn{flex:1 1 200px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+header.nav{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wr{display:flex;align-items:center;justify-content:space-between;gap:10px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.1rem Unbounded,sans-serif;white-space:nowrap}
+.logo i{width:34px;height:34px;border-radius:9px;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font-style:normal;font-size:1rem}
+.tel{font-weight:600;text-decoration:none;white-space:nowrap}
+.nav nav{display:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px}
+.pic,.im,.th{overflow:hidden}
+.ph{display:block;width:100%;height:100%;object-fit:cover;background:var(--bg2)}
+div.ph svg{width:100%;height:100%;display:block}
+.open{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;color:var(--mute)}
+.open b{width:9px;height:9px;border-radius:50%;background:var(--ok);flex:none}
+.open.closed b{background:var(--sale)}
+.ct{display:grid;gap:16px}
+.ct .b{padding:24px}
+.ct dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:16px 0 20px}
+.ct dt{color:var(--mute)}
+.ct dd{margin:0;font-weight:500}
+.ct iframe{width:100%;min-height:300px;height:100%;border:0;border-radius:16px;background:var(--bg2)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--mute);line-height:1.45}
+.agree input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--acc)}
+footer.foot{background:var(--ink);color:var(--bg2);padding:30px 0 96px;font-size:.9rem}
+footer.foot .wr{display:flex;flex-direction:column;gap:6px}
+.float{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px;z-index:30}
+.float a{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:var(--acc-ink);box-shadow:0 8px 20px rgba(0,0,0,.22)}
+.float svg{width:24px;height:24px}
+.float .c1{background:var(--acc)}.float .c2{background:var(--wa)}.float .c3{background:var(--tg)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
+@media(min-width:768px){.sec{padding:72px 0}.btns .btn{flex:0 1 auto}.ct{grid-template-columns:1fr 1fr}.ct .b{padding:32px}.nav .wr{height:70px}}
+@media(min-width:1200px){.sec{padding:88px 0}.nav nav{display:flex}}
+@media(max-width:380px){.logo{font-size:1rem}.logo i{width:30px;height:30px}.tel{font-size:.9rem}}
+
+.promo{background:var(--acc);color:var(--acc-ink);font-size:.88rem}
+.promo .wr{padding-top:8px;padding-bottom:8px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.nav nav a{text-decoration:none;font-weight:500;padding:6px 10px;border-radius:8px}
+.nav nav a:hover{background:var(--bg2)}
+.nav .tel{display:none}
+.cartbtn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 14px;border-radius:12px;border:2px solid var(--acc);background:var(--card);color:var(--acc);font:600 .95rem Onest,sans-serif;cursor:pointer}
+.cartbtn .n{min-width:24px;height:24px;border-radius:12px;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font-size:.8rem;padding:0 6px}
+.hero{padding:22px 0 34px}
+.hero .wr{display:grid;gap:24px}
+.hero p.sub{color:var(--mute);font-size:1.05rem;margin:14px 0 22px;max-width:52ch}
+.hero .pic{border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:var(--bg2)}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.feat div{padding:14px 16px}
+.feat b{display:block;font-weight:600}
+.feat span{color:var(--mute);font-size:.88rem}
+.sec-h{margin-bottom:22px}
+.shop{display:grid;gap:20px;align-items:start}
+.filters{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.filters h4{font:600 .95rem Onest,sans-serif;margin:0 0 10px}
+.fg{padding:14px 0;border-bottom:1px solid var(--line)}
+.fg:first-of-type{padding-top:0}
+.fg:last-of-type{border:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{cursor:pointer;position:relative}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-flex;align-items:center;min-height:38px;padding:6px 12px;border-radius:10px;border:1.5px solid var(--line);font-size:.9rem;font-weight:500;background:var(--card)}
+.chips input:checked+span{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+.chips input:focus-visible+span{outline:3px solid var(--acc);outline-offset:2px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;border:1px solid var(--line)}
+input[type=range]{width:100%;accent-color:var(--acc)}
+.rng{display:flex;justify-content:space-between;font-size:.82rem;color:var(--mute)}
+.chk{display:flex;align-items:center;gap:10px;font-size:.93rem;cursor:pointer;min-height:36px}
+.chk input{width:18px;height:18px;accent-color:var(--acc)}
+.reset{background:none;border:0;color:var(--acc);font:600 .95rem Onest,sans-serif;padding:8px 0;cursor:pointer;text-decoration:underline}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.bar .cnt{color:var(--mute)}
+.bar select{min-height:44px;padding:8px 12px;border-radius:10px;border:1.5px solid var(--line);font:400 .95rem Onest,sans-serif;background:var(--card);color:var(--ink)}
+.mob-f{display:inline-flex}
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.pc .im{position:relative;aspect-ratio:4/3;background:var(--bg2)}
+.bdg{position:absolute;top:10px;left:10px;display:flex;gap:6px;flex-wrap:wrap}
+.bdg span{font-size:.75rem;font-weight:600;padding:4px 9px;border-radius:7px;background:var(--ink);color:var(--card)}
+.bdg .n{background:var(--acc);color:var(--acc-ink)}
+.bdg .s{background:var(--sale);color:var(--card)}
+.pc .bd{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pc h3{font-size:1rem}
+.pc .kind{color:var(--mute);font-size:.88rem}
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;font-size:.84rem;color:var(--mute)}
+.spec b{color:var(--ink);font-weight:500}
+.pr{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.pr b{font:700 1.1rem Unbounded,sans-serif;display:block;line-height:1.2}
+.pr s{color:var(--mute);font-size:.85rem}
+.pr small{display:block;color:var(--mute);font-size:.78rem}
+.add{min-height:42px;padding:8px 12px;border-radius:10px;border:2px solid var(--acc);background:transparent;color:var(--acc);font:600 .9rem Onest,sans-serif;cursor:pointer;white-space:nowrap}
+.add.on{background:var(--acc);color:var(--acc-ink)}
+.empty{grid-column:1/-1;text-align:center;padding:48px 20px;background:var(--card);border-radius:16px;border:1px dashed var(--line);color:var(--mute)}
+.more{display:flex;margin:22px auto 0}
+.ov{position:fixed;inset:0;background:var(--shade);opacity:0;pointer-events:none;transition:opacity .25s;z-index:50}
+.show-f .ov,.open-cart .ov{opacity:1;pointer-events:auto}
+.filters{position:fixed;left:0;right:0;bottom:0;max-height:84vh;overflow:auto;z-index:52;border-radius:20px 20px 0 0;transform:translateY(105%);transition:transform .3s}
+.show-f .filters{transform:none}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--bg);z-index:60;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column;visibility:hidden}
+.open-cart .drawer{transform:none;visibility:visible}
+.drawer .hd{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.drawer .hd h3{font-size:1.15rem}
+.x{width:42px;height:42px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-size:1.1rem;cursor:pointer}
+.drawer .items{flex:1;overflow:auto;padding:6px 20px}
+.it{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}
+.it .th{width:72px;height:54px;border-radius:10px;overflow:hidden;background:var(--bg2)}
+.it b{display:block;font-size:.93rem;font-weight:600}
+.it small{color:var(--mute);display:block}
+.it label{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:.85rem;color:var(--mute)}
+.it input[type=number]{width:84px;min-height:38px;padding:4px 8px;border-radius:8px;border:1.5px solid var(--line);font:400 .95rem Onest,sans-serif;background:var(--card);color:var(--ink)}
+.it .sum{text-align:right;font-weight:600;font-size:.93rem}
+.it .del{margin-top:6px;background:none;border:0;color:var(--mute);cursor:pointer;font:400 .85rem Onest,sans-serif;text-decoration:underline;min-height:32px}
+.drawer .ft{padding:16px 20px;border-top:1px solid var(--line);display:grid;gap:10px;background:var(--card)}
+.drawer .tot{display:flex;justify-content:space-between;align-items:baseline;font-weight:600}
+.drawer .tot b{font:700 1.2rem Unbounded,sans-serif}
+.drawer input[type=text]{min-height:46px;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);font:400 1rem Onest,sans-serif;width:100%;background:var(--bg);color:var(--ink)}
+.drawer .note{font-size:.82rem;color:var(--mute)}
+.drawer .none{padding:40px 10px;text-align:center;color:var(--mute)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,140px);background:var(--ink);color:var(--card);padding:12px 18px;border-radius:12px;font-weight:500;z-index:70;transition:transform .3s;max-width:92vw}
+.toast.show{transform:translate(-50%,0)}
+.calc{display:grid;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.calc .l{padding:22px}
+.calc .r{background:var(--ink);color:var(--bg);padding:22px;display:flex;flex-direction:column;gap:12px}
+.tabs{display:flex;gap:8px;margin-bottom:10px}
+.tabs button{flex:1;min-height:46px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);font:600 .95rem Onest,sans-serif;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+.calc .t{display:block;font-weight:600;margin:18px 0 8px;font-size:.95rem}
+.calc .t output{color:var(--acc)}
+.calc .r .sum{font:700 clamp(1.4rem,5vw,2rem) Unbounded,sans-serif;line-height:1.2}
+.calc .r small,.calc .r p{color:var(--line);font-size:.88rem}
+.calc .r ul{list-style:none;padding:0;display:grid;gap:6px;font-size:.9rem}
+.calc .r li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--shade);padding-bottom:5px}
+.calc .r .btn.line{color:var(--bg);border-color:var(--bg)}
+.num{width:90px;min-height:42px;padding:6px 10px;border-radius:10px;border:1.5px solid var(--line);font:400 1rem Onest,sans-serif;background:var(--bg);color:var(--ink)}
+.fillrow{display:flex;flex-wrap:wrap;gap:12px 18px}
+.fillrow label{display:grid;gap:4px;font-size:.88rem}
+.warn{font-size:.85rem;color:var(--sale);margin-top:8px;min-height:1.2em}
+.codes{display:grid;gap:12px}
+.codes div{padding:18px}
+.codes b{display:block;font:700 1.1rem Unbounded,sans-serif;color:var(--acc);margin-bottom:4px}
+.codes span{color:var(--mute);font-size:.93rem}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gal button{padding:0;border:0;border-radius:12px;overflow:hidden;aspect-ratio:1;background:var(--bg2);cursor:zoom-in;position:relative}
+.gal button span{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;background:linear-gradient(transparent,var(--shade));color:var(--card);font-size:.78rem;text-align:left}
+dialog.lb{border:0;border-radius:16px;padding:0;max-width:min(1000px,94vw);width:100%;background:var(--card);color:var(--ink)}
+dialog.lb::backdrop{background:var(--shade)}
+dialog.lb .pic{aspect-ratio:4/3;background:var(--bg2)}
+dialog.lb .cp{padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.rev{display:grid;gap:14px}
+.rev article{padding:20px}
+.rev .st{color:var(--sale);letter-spacing:2px;font-size:1.05rem}
+.rev p{margin:10px 0 12px}
+.rev footer{font-size:.86rem;color:var(--mute)}
+.rev footer b{display:block;color:var(--ink);font-weight:600}
+.rev .fact{display:block;margin-top:6px;color:var(--acc);font-weight:500}
+.sample{display:inline-block;margin-bottom:16px;padding:4px 10px;border-radius:8px;background:var(--bg2);color:var(--mute);font-size:.82rem}
+@media(min-width:768px){
+.hero{padding:40px 0 50px}
+.hero .wr{grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.feat{grid-template-columns:repeat(4,1fr)}
+.grid{grid-template-columns:repeat(2,1fr)}
+.nav .tel{display:block}
+.calc{grid-template-columns:1.15fr .85fr}
+.calc .l,.calc .r{padding:32px}
+.codes{grid-template-columns:repeat(3,1fr)}
+.gal{grid-template-columns:repeat(3,1fr)}
+.rev{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:900px){
+.shop{grid-template-columns:270px 1fr}
+.filters{position:sticky;top:84px;transform:none;max-height:calc(100vh - 100px);border-radius:16px;z-index:1;transition:none}
+.mob-f{display:none}
+.show-f .ov{opacity:0;pointer-events:none}
+}
+@media(min-width:1200px){
+.grid{grid-template-columns:repeat(3,1fr)}
+.gal{grid-template-columns:repeat(5,1fr)}
+.rev{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:560px){.cartbtn .tx{display:none}}
+.open-cart .tarify-back,.show-f .tarify-back{display:none!important}
+</style>
+</head>
+<body><a href="../index.html" class="tarify-back" aria-label="Вернуться ко всем тарифам" style="position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:2147483000;display:inline-flex;align-items:center;gap:6px;padding:11px 16px;border-radius:999px;background:rgba(20,20,20,.82);color:#fff;font:600 14px/1 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;text-decoration:none;box-shadow:0 8px 22px -6px rgba(0,0,0,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)">← Все тарифы</a><script data-fp>(function(){try{var k="fp:"+location.pathname.split("/")[1],q=/[?&]from=portfolio(&|$)/.test(location.search);if(q)sessionStorage.setItem(k,"1");if(q||sessionStorage.getItem(k)){var b=document.querySelector(".tarify-back");if(b)b.style.display="none"}}catch(e){}})();</script>
+<div class="promo"><div class="wr"><span>Промокод <b>СТВОРКА10</b>: −10% на шкаф при заказе вместе с кухней (образец)</span><span>пн–сб 9:00–19:00</span></div></div>
+<header class="nav"><div class="wr">
+  <a class="logo" href="#top" aria-label="Створка — на главную"><i>С</i>Створка</a>
+  <nav aria-label="Разделы"><a href="#katalog">Каталог</a><a href="#calc">Калькулятор</a><a href="#raboty">Работы</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a></nav>
+  <a class="tel" href="tel:+77777777777">+7-777-777-77-77</a>
+  <button class="cartbtn" id="cartOpen" type="button" aria-label="Открыть Мою смету"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 5h6M9 12h6M9 16h4"/></svg><span class="tx">Моя смета</span><span class="n" id="cn">0</span></button>
+</div></header>
+
+<main>
+<section class="hero" id="top"><div class="wr">
+  <div>
+    <span class="tag">50 проектов · цены «от»</span>
+    <h1>Мебель по вашим размерам. Сроки и цена — в договоре</h1>
+    <p class="sub">Выберите проекты в каталоге, добавьте в «Мою смету» или посчитайте кухню и шкаф-купе в калькуляторе. Итог ±7% — сразу на экране, точную сумму назовём после бесплатного замера.</p>
+    <div class="btns">
+      <a class="btn" href="#katalog">Выбрать в каталоге</a>
+      <a class="btn line" href="#calc">Посчитать кухню</a>
+    </div>
+  </div>
+  <div class="pic"><img class="ph" src="https://images.unsplash.com/photo-1617228069096-4638a7ffc906?w=900&q=72&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1617228069096-4638a7ffc906?w=450&q=72&auto=format&fit=crop 450w, https://images.unsplash.com/photo-1617228069096-4638a7ffc906?w=900&q=72&auto=format&fit=crop 900w, https://images.unsplash.com/photo-1617228069096-4638a7ffc906?w=1440&q=72&auto=format&fit=crop 1440w" sizes="(max-width:767px) 100vw, 50vw" width="900" height="675" alt="Бежевая кухня без ручек с островом и большим окном" fetchpriority="high" decoding="async" data-k="k" data-c="Бежевый"></div>
+</div>
+<div class="wr"><div class="feat">
+  <div class="card"><b>Перезвоним за 15 минут</b><span>в рабочее время</span></div>
+  <div class="card"><b>Цена и срок в договоре</b><span>не меняются</span></div>
+  <div class="card"><b>Фотоотчёт из цеха</b><span>на каждом этапе</span></div>
+  <div class="card"><b>Замер бесплатно</b><span>и проект при заказе</span></div>
+</div></div></section>
+
+<section class="sec" id="katalog" style="padding-top:20px"><div class="wr">
+  <div class="sec-h"><span class="tag">Каталог</span><h2>50 проектов с ценой «от»</h2>
+  <p class="lead" style="margin:0">Цена за погонный метр или за шкаф целиком — подписано на каждой карточке. Любой проект подгоняем под ваши размеры.</p></div>
+  <div class="shop">
+    <aside class="filters" id="filters" aria-label="Фильтры каталога">
+      <div class="fg"><h4>Тип мебели</h4><div class="chips" id="fT"></div></div>
+      <div class="fg"><h4>Форма кухни</h4><div class="chips" id="fF"></div></div>
+      <div class="fg"><h4>Материал фасада</h4><div class="chips" id="fM"></div></div>
+      <div class="fg"><h4>Цвет</h4><div class="chips" id="fC"></div></div>
+      <div class="fg"><h4>Цена «от» до: <span id="pV"></span></h4><input type="range" id="fP" min="20000" max="110000" step="1000" value="110000" aria-label="Максимальная цена"><div class="rng"><span>20 тыс.</span><span>110 тыс.</span></div></div>
+      <div class="fg"><h4>Срок изготовления</h4><div class="chips" id="fD"></div></div>
+      <div class="fg"><h4>Метка</h4><div id="fB"></div></div>
+      <button class="reset" id="reset" type="button">Сбросить фильтры</button>
+      <button class="btn mob-f" id="closeF" style="width:100%;margin-top:10px" type="button">Показать проекты</button>
+    </aside>
+    <div>
+      <div class="bar"><span class="cnt" id="cnt" aria-live="polite"></span>
+        <div style="display:flex;gap:8px;align-items:center"><button class="btn line sm mob-f" id="openF" type="button">Фильтры</button>
+        <select id="sort" aria-label="Сортировка"><option value="pop">Сначала популярные</option><option value="pa">Сначала дешевле</option><option value="pd">Сначала дороже</option><option value="da">Сначала быстрые</option></select></div></div>
+      <div class="grid" id="grid"></div>
+      <button class="btn line more" id="more" type="button">Показать ещё</button>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec alt" id="calc"><div class="wr">
+  <span class="tag">Калькулятор</span>
+  <h2>Сколько будет стоить</h2>
+  <p class="lead">Ориентир с вилкой ±7%. Ставки — образец, на сайте клиента подставим ваш прайс. Итог — после бесплатного замера и в договоре.</p>
+  <div class="calc">
+    <div class="l">
+      <div class="tabs" role="tablist" aria-label="Что считаем">
+        <button type="button" role="tab" id="tabK" aria-selected="true" aria-controls="pK">Кухня</button>
+        <button type="button" role="tab" id="tabW" aria-selected="false" aria-controls="pW">Шкаф-купе</button>
+      </div>
+      <div id="pK" role="tabpanel" aria-labelledby="tabK">
+        <label class="t" for="kL">Длина нижнего ряда: <output id="kLv">3,0</output> п.м.</label>
+        <input type="range" id="kL" min="1.6" max="8" step="0.1" value="3">
+        <span class="t">Форма</span>
+        <div class="chips" data-g="kF">
+          <label><input type="radio" name="kF" value="1" checked><span>Прямая</span></label>
+          <label><input type="radio" name="kF" value="1.06"><span>Угловая</span></label>
+          <label><input type="radio" name="kF" value="1.1"><span>П-образная</span></label>
+          <label><input type="radio" name="kF" value="1.15"><span>С островом</span></label></div>
+        <span class="t">Фасад</span>
+        <div class="chips" data-g="kR">
+          <label><input type="radio" name="kR" value="34000" data-d="14" data-n="ЛДСП"><span>ЛДСП</span></label>
+          <label><input type="radio" name="kR" value="48000" data-d="21" data-n="МДФ плёнка" checked><span>МДФ плёнка</span></label>
+          <label><input type="radio" name="kR" value="68000" data-d="30" data-n="МДФ эмаль матовая"><span>МДФ эмаль матовая</span></label>
+          <label><input type="radio" name="kR" value="72000" data-d="30" data-n="акрил глянец"><span>Акрил глянец</span></label>
+          <label><input type="radio" name="kR" value="98000" data-d="40" data-n="шпон"><span>Шпон</span></label></div>
+        <span class="t">Столешница</span>
+        <div class="chips" data-g="kT">
+          <label><input type="radio" name="kT" value="4500" data-n="ЛДСП"><span>ЛДСП</span></label>
+          <label><input type="radio" name="kT" value="7500" data-n="HPL" checked><span>HPL</span></label>
+          <label><input type="radio" name="kT" value="19000" data-n="кварцевый агломерат"><span>Кварцевый агломерат</span></label>
+          <label><input type="radio" name="kT" value="24000" data-n="акриловый камень"><span>Акриловый камень</span></label></div>
+        <span class="t">Фурнитура</span>
+        <div class="chips" data-g="kH">
+          <label><input type="radio" name="kH" value="0" data-n="базовая" checked><span>Базовая</span></label>
+          <label><input type="radio" name="kH" value="2500" data-n="Blum"><span>Blum (+2 500 ₽/п.м.)</span></label></div>
+        <span class="t">Дополнительно</span>
+        <label class="chk"><input type="checkbox" class="kE" data-pm="1800" data-n="подсветка рабочей зоны"> Подсветка рабочей зоны (1 800 ₽/п.м.)</label>
+        <label class="chk"><input type="checkbox" class="kE" data-fix="3500" data-n="вырез под мойку"> Встроенная мойка, вырез (3 500 ₽)</label>
+        <label class="chk"><input type="checkbox" class="kE" data-fix="6500" data-n="карго / сушка"> Карго или сушка (6 500 ₽)</label>
+        <label class="chk"><input type="checkbox" class="kE" data-fix="7200" data-n="мусорная система"> Мусорная система (7 200 ₽)</label>
+        <span class="t">Доставка</span>
+        <div class="chips" data-g="kD">
+          <label><input type="radio" name="kD" value="city" checked><span>По городу (2 500 ₽)</span></label>
+          <label><input type="radio" name="kD" value="out"><span>За город (60 ₽/км)</span></label></div>
+        <label class="t" for="kKm" id="kKmL" style="display:none">Расстояние от города, км
+          <input class="num" type="number" id="kKm" min="1" max="200" value="20"></label>
+      </div>
+      <div id="pW" role="tabpanel" aria-labelledby="tabW" hidden>
+        <label class="t" for="wW">Ширина: <output id="wWv">1,8</output> м</label>
+        <input type="range" id="wW" min="1.2" max="4" step="0.1" value="1.8">
+        <label class="t" for="wH">Высота: <output id="wHv">2,4</output> м</label>
+        <input type="range" id="wH" min="2" max="2.7" step="0.1" value="2.4">
+        <span class="t">Количество дверей</span>
+        <div class="chips" data-g="wN">
+          <label><input type="radio" name="wN" value="2" checked><span>2</span></label>
+          <label><input type="radio" name="wN" value="3"><span>3</span></label>
+          <label><input type="radio" name="wN" value="4"><span>4</span></label></div>
+        <div class="warn" id="wWarn" role="status"></div>
+        <span class="t">Декор дверей</span>
+        <div class="chips" data-g="wR">
+          <label><input type="radio" name="wR" value="2400" data-d="14" data-n="ЛДСП"><span>ЛДСП</span></label>
+          <label><input type="radio" name="wR" value="3900" data-d="14" data-n="зеркало" checked><span>Зеркало</span></label>
+          <label><input type="radio" name="wR" value="4700" data-d="21" data-n="лакобель"><span>Лакобель</span></label>
+          <label><input type="radio" name="wR" value="5300" data-d="21" data-n="фотопечать"><span>Фотопечать</span></label></div>
+        <span class="t">Наполнение</span>
+        <div class="fillrow">
+          <label for="wRod">Штанги, шт.<input class="num" type="number" id="wRod" min="0" max="8" value="1"></label>
+          <label for="wSh">Полки, шт.<input class="num" type="number" id="wSh" min="0" max="20" value="3"></label>
+          <label for="wDr">Ящики, шт.<input class="num" type="number" id="wDr" min="0" max="10" value="0"></label>
+        </div>
+        <label class="chk" style="margin-top:10px"><input type="checkbox" id="wPan"> Пантограф для одежды (6 500 ₽)</label>
+        <label class="chk"><input type="checkbox" id="wLed"> Подсветка (1 800 ₽/п.м.)</label>
+      </div>
+    </div>
+    <div class="r" aria-live="polite">
+      <p id="cTitle">Ориентировочная стоимость</p>
+      <div class="sum" id="cSum">—</div>
+      <small id="cTerm"></small>
+      <ul id="cList"></ul>
+      <p>Это расчёт-ориентир с вилкой ±7%. Замер бесплатный, точную цену и срок запишем в договор.</p>
+      <div class="btns"><a class="btn wa" id="cWa" href="https://wa.me/77777777777" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Отправить расчёт в WhatsApp</a>
+      <button class="btn line" id="cTg" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Скопировать для Telegram</button></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" id="akcii"><div class="wr">
+  <span class="tag">Акции и промокоды</span>
+  <h2>Скажите промокод менеджеру</h2>
+  <p class="lead">Промокод называете при записи на замер или пишете в комментарии к смете. Условия — образец.</p>
+  <div class="codes">
+    <div class="card"><b>СТВОРКА10</b><span>−10% на шкаф-купе при заказе вместе с кухней.</span></div>
+    <div class="card"><b>ПЕРВЫЙ</b><span>Подсветка рабочей зоны в подарок при заказе первой кухни от 3 п.м.</span></div>
+    <div class="card"><b>ЗАМЕР</b><span>Бесплатная доставка по городу при подписании договора в день замера.</span></div>
+  </div>
+</div></section>
+
+<section class="sec alt" id="raboty"><div class="wr">
+  <span class="tag">Работы</span>
+  <h2>Галерея: 30 примеров</h2>
+  <p class="lead">Нажмите на фото, чтобы увеличить. Подписи образцовые.</p>
+  <div class="gal" id="gal"></div>
+</div></section>
+
+<section class="sec" id="otzyvy"><div class="wr">
+  <span class="tag">Отзывы</span>
+  <h2>Что говорят клиенты</h2>
+  <span class="sample">Образец отзывов — на сайте клиента здесь будут реальные</span>
+  <div class="rev">
+    <article class="card"><div class="st" role="img" aria-label="Оценка 5 из 5">★★★★★</div><p>Кухня 3,4 м, эмаль графит. Назвали срок 28 дней, привезли на 27-й. Цена в договоре совпала с итогом, никаких доплат.</p><footer><b>Екатерина В.</b>Монтаж 12 мая<span class="fact">3,4 м · 28 дней · 214 000 ₽</span></footer></article>
+    <article class="card"><div class="st" role="img" aria-label="Оценка 5 из 5">★★★★★</div><p>Шкаф-купе в нишу, нестандартная высота. Замерщик приехал в тот же вечер, нарисовал проект, внёс две правки по моей просьбе.</p><footer><b>Игорь П.</b>Монтаж 3 июня<span class="fact">2,2 × 2,6 м · 14 дней · 41 000 ₽</span></footer></article>
+    <article class="card"><div class="st" role="img" aria-label="Оценка 5 из 5">★★★★★</div><p>Гардеробная под скат крыши в загородном доме. Присылали фото из цеха на каждом этапе, это очень успокаивает.</p><footer><b>Марина С.</b>пос. Сосновка, монтаж 21 августа<span class="fact">3,0 м · 18 дней · 79 000 ₽</span></footer></article>
+    <article class="card"><div class="st" role="img" aria-label="Оценка 4 из 5">★★★★☆</div><p>Детская для двоих. Срок сдвинулся на два дня, но позвонили в тот же день и объяснили причину. За это отдельное спасибо.</p><footer><b>Андрей К.</b>Монтаж 9 сентября<span class="fact">3,6 м · 27 дней · 118 000 ₽</span></footer></article>
+  </div>
+</div></section>
+
+<section class="sec alt" id="kontakty"><div class="wr">
+  <div class="ct">
+    <div class="card b">
+      <span class="tag">Контакты</span>
+      <h2>Приезжайте в мастерскую</h2>
+      <span class="open" id="open"><b></b><span>Мастерская открыта</span></span>
+      <dl>
+        <dt>Адрес</dt><dd>Ваш город, ваш адрес</dd>
+        <dt>Телефон</dt><dd><a href="tel:+77777777777">+7-777-777-77-77</a></dd>
+        <dt>Часы</dt><dd>пн–сб 9:00–19:00</dd>
+        <dt>Выезжаем</dt><dd>По городу и до 30 км от него</dd>
+      </dl>
+      <div class="btns">
+        <a class="btn wa" href="https://wa.me/77777777777?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%80." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>WhatsApp</a>
+        <a class="btn tg" href="https://t.me/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Telegram</a>
+        <a class="btn line" href="tel:+77777777777"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Позвонить</a>
+      </div>
+    </div>
+    <iframe title="Карта (образец)" src="https://yandex.ru/map-widget/v1/?ll=61.402554%2C55.159897&z=11" loading="lazy"></iframe>
+  </div>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wr"><span>© Створка · мебель на заказ</span><span>Все данные на сайте — образец</span></div></footer>
+
+<div class="ov" id="ov"></div>
+<aside class="drawer" id="drawer" aria-label="Моя смета">
+  <div class="hd"><h3>Моя смета</h3><button class="x" id="cartClose" type="button" aria-label="Закрыть">✕</button></div>
+  <div class="items" id="items"></div>
+  <div class="ft" id="cartFt"></div>
+</aside>
+<dialog class="lb" id="lb" aria-label="Фото"><div class="pic" id="lbPic"></div><div class="cp"><span id="lbCap"></span><button class="btn line sm" id="lbX" type="button">Закрыть</button></div></dialog>
+<div class="toast" id="toast" role="status"></div>
+<div class="float"><a class="c2" href="https://wa.me/77777777777" aria-label="Написать в WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a><a class="c3" href="https://t.me/" aria-label="Написать в Telegram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></a><a class="c1" href="tel:+77777777777" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a></div>
+<script>
+(function(){
+
+var CLR={'Белый':'#F2EFE9','Серый':'#9AA0A3','Графит':'#4A4D50','Бежевый':'#CDB89B','Дерево':'#B58A5E','Синий':'#2F5D7C','Чёрный':'#2B2B2B'};
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
+function u(id,w){return 'https://images.unsplash.com/photo-'+id+'?w='+w+'&q=72&auto=format&fit=crop'}
+/* Иллюстрация мебели: показывается, если фото не загрузилось */
+function art(k,c){
+  c=c||'#8AA0A8';
+  var s='<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#EAE3D6"/><rect y="244" width="400" height="56" fill="#D8CBB5"/>',i;
+  if(k=='s'||k=='g'||k=='p'){
+    s+='<rect x="60" y="28" width="280" height="216" rx="4" fill="'+c+'"/>';
+    for(i=1;i<3;i++)s+='<rect x="'+(60+i*93)+'" y="28" width="2" height="216" fill="#000" opacity=".22"/>';
+    s+='<rect x="70" y="40" width="74" height="192" fill="#fff" opacity=".28"/><rect x="152" y="40" width="1" height="192" fill="#fff" opacity=".4"/>';
+    s+='<rect x="150" y="120" width="5" height="40" rx="2" fill="#23211E" opacity=".6"/><rect x="243" y="120" width="5" height="40" rx="2" fill="#23211E" opacity=".6"/>';
+  }else if(k=='d'){
+    s+='<rect x="30" y="150" width="190" height="70" rx="8" fill="'+c+'"/><rect x="30" y="130" width="190" height="30" rx="10" fill="#fff" opacity=".6"/><rect x="236" y="40" width="130" height="204" fill="'+c+'"/>';
+    for(i=0;i<4;i++)s+='<rect x="244" y="'+(50+i*47)+'" width="114" height="38" fill="#fff" opacity=".35"/>';
+    s+='<circle cx="120" cy="90" r="26" fill="#F2C94C" opacity=".8"/>';
+  }else{
+    for(i=0;i<4;i++)s+='<rect x="'+(40+i*80)+'" y="40" width="76" height="70" rx="3" fill="'+c+'" opacity=".85"/>';
+    s+='<rect x="40" y="170" width="320" height="14" fill="#23211E" opacity=".35"/>';
+    for(i=0;i<4;i++)s+='<rect x="'+(40+i*80)+'" y="186" width="76" height="58" rx="3" fill="'+c+'"/><rect x="'+(66+i*80)+'" y="192" width="24" height="4" rx="2" fill="#fff" opacity=".7"/>';
+  }
+  return s+'</svg>';
+}
+function img(id,alt,w,k,c,eager){
+  var a=Math.round(w/2),b=Math.min(2400,Math.round(w*1.6));
+  return '<img class="ph" src="'+u(id,w)+'" srcset="'+u(id,a)+' '+a+'w, '+u(id,w)+' '+w+'w, '+u(id,b)+' '+b+'w" sizes="(max-width:767px) 100vw, 33vw" width="'+w+'" height="'+Math.round(w*.75)+'" alt="'+esc(alt)+'" '+(eager?'fetchpriority="high"':'loading="lazy"')+' decoding="async" data-k="'+(k||'')+'" data-c="'+(c||'')+'">';
+}
+function fail(im){var d=document.createElement('div');d.className='ph';d.setAttribute('role','img');d.setAttribute('aria-label',im.alt||'Иллюстрация');d.innerHTML=art(im.dataset.k,CLR[im.dataset.c]);im.replaceWith(d)}
+document.addEventListener('error',function(e){var t=e.target;if(t&&t.tagName=='IMG'&&t.classList.contains('ph'))fail(t)},true);
+document.querySelectorAll('img.ph').forEach(function(im){if(im.complete&&im.naturalWidth===0)fail(im)});
+
+var ITEMS=[{"n":"Графит","t":"k","f":"угловая","sz":"3,2 м","m":"МДФ эмаль","c":"Графит","p":62000,"u":"пм","d":28,"b":"hit","o":0,"ph":"1600489000022-c2086d79f9d4","q":3.2,"id":1},{"n":"Айсберг","t":"k","f":"остров","sz":"4,2 м","m":"МДФ эмаль","c":"Белый","p":84000,"u":"пм","d":30,"b":"hit","o":0,"ph":"1556912172-45b7abe8b7e1","q":4.2,"id":2},{"n":"Латте","t":"k","f":"прямая","sz":"3,0 м","m":"МДФ плёнка","c":"Бежевый","p":52000,"u":"пм","d":21,"b":"new","o":0,"ph":"1565538810643-b5bdb714032a","q":3.0,"id":3},{"n":"Уголь","t":"k","f":"прямая","sz":"3,4 м","m":"МДФ плёнка","c":"Графит","p":49000,"u":"пм","d":21,"b":"sale","o":55000,"ph":"1556909172-54557c7e4fb7","q":3.4,"id":4},{"n":"Север","t":"k","f":"остров","sz":"4,4 м","m":"МДФ эмаль","c":"Белый","p":79000,"u":"пм","d":30,"b":"","o":0,"ph":"1556912167-f556f1f39fdf","q":4.4,"id":5},{"n":"Минимум","t":"k","f":"остров","sz":"3,8 м","m":"МДФ плёнка","c":"Белый","p":58000,"u":"пм","d":21,"b":"","o":0,"ph":"1484154218962-a197022b5858","q":3.8,"id":6},{"n":"Дубрава","t":"k","f":"остров","sz":"4,6 м","m":"шпон","c":"Дерево","p":96000,"u":"пм","d":40,"b":"new","o":0,"ph":"1622372738946-62e02505feb3","q":4.6,"id":7},{"n":"Туман","t":"k","f":"остров","sz":"4,0 м","m":"МДФ эмаль","c":"Серый","p":74000,"u":"пм","d":28,"b":"","o":0,"ph":"1602028915047-37269d1a73f7","q":4.0,"id":8},{"n":"Монолит","t":"k","f":"угловая","sz":"3,6 м","m":"МДФ эмаль","c":"Чёрный","p":71000,"u":"пм","d":28,"b":"hit","o":0,"ph":"1600684388091-627109f3cd60","q":3.6,"id":9},{"n":"Нептун","t":"k","f":"П-образная","sz":"4,8 м","m":"МДФ эмаль","c":"Синий","p":82000,"u":"пм","d":30,"b":"","o":0,"ph":"1588854337236-6889d631faa8","q":4.8,"id":10},{"n":"Рама","t":"k","f":"остров","sz":"4,4 м","m":"МДФ плёнка","c":"Серый","p":57000,"u":"пм","d":21,"b":"","o":0,"ph":"1665507279638-5b48073c637b","q":4.4,"id":11},{"n":"Гармония","t":"k","f":"остров","sz":"4,0 м","m":"МДФ эмаль","c":"Бежевый","p":78000,"u":"пм","d":30,"b":"new","o":0,"ph":"1701421047855-d7bafd8d6f69","q":4.0,"id":12},{"n":"Сланец","t":"k","f":"прямая","sz":"3,6 м","m":"МДФ эмаль","c":"Серый","p":66000,"u":"пм","d":28,"b":"","o":0,"ph":"1722605090433-41d1183a792d","q":3.6,"id":13},{"n":"Белая линия","t":"k","f":"прямая","sz":"3,0 м","m":"ЛДСП","c":"Белый","p":38000,"u":"пм","d":14,"b":"sale","o":44000,"ph":"1556911220-bff31c812dba","q":3.0,"id":14},{"n":"Песок","t":"k","f":"остров","sz":"4,2 м","m":"МДФ эмаль","c":"Бежевый","p":80000,"u":"пм","d":30,"b":"hit","o":0,"ph":"1617228069096-4638a7ffc906","q":4.2,"id":15},{"n":"Сруб","t":"k","f":"П-образная","sz":"5,0 м","m":"шпон","c":"Дерево","p":104000,"u":"пм","d":40,"b":"","o":0,"ph":"1556912998-c57cc6b63cd7","q":5.0,"id":16},{"n":"Графит мини","t":"k","f":"угловая","sz":"2,6 м","m":"ЛДСП","c":"Графит","p":41000,"u":"пм","d":14,"b":"","o":0,"ph":"1600489000022-c2086d79f9d4","q":2.6,"id":17},{"n":"Хлопок","t":"k","f":"угловая","sz":"3,0 м","m":"МДФ плёнка","c":"Бежевый","p":50000,"u":"пм","d":21,"b":"","o":0,"ph":"1565538810643-b5bdb714032a","q":3.0,"id":18},{"n":"Полка","t":"k","f":"прямая","sz":"2,4 м","m":"ЛДСП","c":"Дерево","p":34000,"u":"пм","d":14,"b":"","o":0,"ph":"1556909190-eccf4a8bf97a","q":2.4,"id":19},{"n":"Лён","t":"k","f":"прямая","sz":"3,2 м","m":"МДФ плёнка","c":"Белый","p":48000,"u":"пм","d":21,"b":"sale","o":54000,"ph":"1556912172-45b7abe8b7e1","q":3.2,"id":20},{"n":"Лайт 180","t":"s","f":"купе","sz":"1,8 × 2,0 м","m":"ЛДСП","c":"Белый","p":38000,"u":"шкаф","d":14,"b":"hit","o":0,"ph":"1721901944646-8b7da57bea7e","q":1,"id":21},{"n":"Лайт 240","t":"s","f":"купе","sz":"2,4 × 2,4 м","m":"ЛДСП","c":"Белый","p":49000,"u":"шкаф","d":14,"b":"","o":0,"ph":"1721901944646-8b7da57bea7e","q":1,"id":22},{"n":"Зеркало 280","t":"s","f":"купе","sz":"2,8 × 2,4 м","m":"ЛДСП","c":"Белый","p":61000,"u":"шкаф","d":14,"b":"new","o":0,"ph":"1721901944646-8b7da57bea7e","q":1,"id":23},{"n":"Лакобель 260","t":"s","f":"купе","sz":"2,6 × 2,4 м","m":"ЛДСП","c":"Белый","p":68000,"u":"шкаф","d":21,"b":"","o":0,"ph":"1721901944646-8b7da57bea7e","q":1,"id":24},{"n":"Фотопечать 220","t":"s","f":"купе","sz":"2,2 × 2,4 м","m":"ЛДСП","c":"Белый","p":57000,"u":"шкаф","d":21,"b":"sale","o":63000,"ph":"1721901944646-8b7da57bea7e","q":1,"id":25},{"n":"Ниша 220","t":"s","f":"встроенный","sz":"2,2 × 2,6 м","m":"ЛДСП","c":"Белый","p":32000,"u":"шкаф","d":14,"b":"","o":0,"ph":"1643949914877-b20f30792c1e","q":1,"id":26},{"n":"Скандик","t":"s","f":"встроенный","sz":"3,0 × 2,6 м","m":"МДФ плёнка","c":"Белый","p":64000,"u":"шкаф","d":21,"b":"","o":0,"ph":"1643949914877-b20f30792c1e","q":1,"id":27},{"n":"Дуб с зеркалом","t":"s","f":"распашной","sz":"2,4 × 2,4 м","m":"МДФ плёнка","c":"Дерево","p":58000,"u":"шкаф","d":21,"b":"hit","o":0,"ph":"1722349674028-a148f4364e43","q":1,"id":28},{"n":"Пенал Эко","t":"s","f":"распашной","sz":"0,9 × 2,4 м","m":"ЛДСП","c":"Дерево","p":22000,"u":"шкаф","d":14,"b":"","o":0,"ph":"1595428774223-ef52624120d2","q":1,"id":29},{"n":"Классик 2","t":"s","f":"распашной","sz":"1,2 × 2,3 м","m":"МДФ плёнка","c":"Дерево","p":34000,"u":"шкаф","d":21,"b":"","o":0,"ph":"1558997519-83ea9252edf8","q":1,"id":30},{"n":"Орех","t":"s","f":"распашной","sz":"1,6 × 2,4 м","m":"шпон","c":"Дерево","p":72000,"u":"шкаф","d":40,"b":"new","o":0,"ph":"1693892985308-44965a6060d1","q":1,"id":31},{"n":"Арматура","t":"s","f":"распашной","sz":"2,0 × 2,4 м","m":"МДФ эмаль","c":"Белый","p":69000,"u":"шкаф","d":28,"b":"new","o":0,"ph":"1789381565624-cf9c65b7c2ba","q":1,"id":32},{"n":"Зеркальная","t":"g","f":"линейная","sz":"2,4 м","m":"ЛДСП","c":"Бежевый","p":22000,"u":"пм","d":18,"b":"hit","o":0,"ph":"1672137233327-37b0c1049e77","q":2.4,"id":33},{"n":"Угловая светлая","t":"g","f":"угловая","sz":"3,0 м","m":"ЛДСП","c":"Дерево","p":24000,"u":"пм","d":18,"b":"","o":0,"ph":"1649361811423-a55616f7ab11","q":3.0,"id":34},{"n":"Тёмная с подсветкой","t":"g","f":"линейная","sz":"2,8 м","m":"МДФ плёнка","c":"Графит","p":34000,"u":"пм","d":21,"b":"new","o":0,"ph":"1708397016786-8916880649b8","q":2.8,"id":35},{"n":"Белая с ящиками","t":"g","f":"линейная","sz":"2,0 м","m":"ЛДСП","c":"Белый","p":21000,"u":"пм","d":14,"b":"","o":0,"ph":"1721044168675-b577e899413d","q":2.0,"id":36},{"n":"Гардеробная-комната","t":"g","f":"П-образная","sz":"4,2 м","m":"МДФ плёнка","c":"Белый","p":29000,"u":"пм","d":28,"b":"hit","o":0,"ph":"1640357154220-9775b0f31dec","q":4.2,"id":37},{"n":"Мини","t":"g","f":"линейная","sz":"1,5 м","m":"ЛДСП","c":"Бежевый","p":20000,"u":"пм","d":14,"b":"sale","o":23000,"ph":"1672137233327-37b0c1049e77","q":1.5,"id":38},{"n":"Открытая","t":"g","f":"линейная","sz":"2,2 м","m":"ЛДСП","c":"Дерево","p":23000,"u":"пм","d":18,"b":"","o":0,"ph":"1649361811423-a55616f7ab11","q":2.2,"id":39},{"n":"Свет","t":"g","f":"угловая","sz":"2,6 м","m":"МДФ плёнка","c":"Графит","p":31000,"u":"пм","d":21,"b":"","o":0,"ph":"1708397016786-8916880649b8","q":2.6,"id":40},{"n":"Дошколёнок","t":"d","f":"комплект","sz":"3,0 м","m":"ЛДСП","c":"Дерево","p":32000,"u":"пм","d":21,"b":"","o":0,"ph":"1721395288477-b546804ce392","q":3.0,"id":41},{"n":"Стеллаж","t":"d","f":"комплект","sz":"2,4 м","m":"ЛДСП","c":"Бежевый","p":30000,"u":"пм","d":21,"b":"","o":0,"ph":"1687946803051-51da173a9f55","q":2.4,"id":42},{"n":"Яркая","t":"d","f":"комплект","sz":"3,2 м","m":"МДФ эмаль","c":"Белый","p":37000,"u":"пм","d":28,"b":"new","o":0,"ph":"1505692795793-20f543407193","q":3.2,"id":43},{"n":"Школьник","t":"d","f":"комплект","sz":"3,6 м","m":"ЛДСП","c":"Дерево","p":34000,"u":"пм","d":25,"b":"hit","o":0,"ph":"1721395288477-b546804ce392","q":3.6,"id":44},{"n":"Подросток","t":"d","f":"комплект","sz":"3,4 м","m":"МДФ плёнка","c":"Серый","p":38000,"u":"пм","d":25,"b":"","o":0,"ph":"1687946803051-51da173a9f55","q":3.4,"id":45},{"n":"Малыш","t":"d","f":"комплект","sz":"2,6 м","m":"МДФ эмаль","c":"Белый","p":36000,"u":"пм","d":28,"b":"sale","o":40000,"ph":"1505692795793-20f543407193","q":2.6,"id":46},{"n":"Кроватка с тумбой","t":"d","f":"комплект","sz":"2,0 м","m":"ЛДСП","c":"Бежевый","p":31000,"u":"пм","d":21,"b":"","o":0,"ph":"1522771739844-6a9f6d5f14af","q":2.0,"id":47},{"n":"Растём","t":"d","f":"комплект","sz":"3,0 м","m":"ЛДСП","c":"Белый","p":33000,"u":"пм","d":21,"b":"","o":0,"ph":"1556020685-ae41abfc9365","q":3.0,"id":48},{"n":"Нордик","t":"p","f":"прихожая","sz":"1,6 м","m":"ЛДСП","c":"Белый","p":26000,"u":"пм","d":14,"b":"","o":0,"ph":"1683181181300-44c0c991a2cf","q":1.6,"id":49},{"n":"ТВ-зона","t":"p","f":"ТВ-зона","sz":"2,4 м","m":"МДФ плёнка","c":"Дерево","p":24000,"u":"пм","d":21,"b":"","o":0,"ph":"1585128792020-803d29415281","q":2.4,"id":50}];
+var P={"1": "1600489000022-c2086d79f9d4", "2": "1556912172-45b7abe8b7e1", "3": "1565538810643-b5bdb714032a", "4": "1556909172-54557c7e4fb7", "5": "1556912167-f556f1f39fdf", "6": "1484154218962-a197022b5858", "7": "1622372738946-62e02505feb3", "8": "1602028915047-37269d1a73f7", "9": "1600684388091-627109f3cd60", "10": "1588854337236-6889d631faa8", "11": "1665507279638-5b48073c637b", "12": "1701421047855-d7bafd8d6f69", "13": "1722605090433-41d1183a792d", "14": "1556911220-bff31c812dba", "15": "1617228069096-4638a7ffc906", "16": "1556909190-eccf4a8bf97a", "17": "1556912998-c57cc6b63cd7", "18": "1672137233327-37b0c1049e77", "19": "1649361811423-a55616f7ab11", "20": "1708397016786-8916880649b8", "21": "1721044168675-b577e899413d", "22": "1640357154220-9775b0f31dec", "23": "1683181181300-44c0c991a2cf", "24": "1643949914877-b20f30792c1e", "25": "1721901944646-8b7da57bea7e", "26": "1722349674028-a148f4364e43", "27": "1595428774223-ef52624120d2", "28": "1558997519-83ea9252edf8", "29": "1721395288477-b546804ce392", "30": "1687946803051-51da173a9f55", "31": "1505692795793-20f543407193", "32": "1631396326646-c06a935ff3a6", "33": "1659930087003-2d64e33181f7", "34": "1561297331-a9c00b9c2c44", "35": "1544164560-adac3045edb2", "36": "1595844730298-b960ff98fee0", "37": "1503387762-592deb58ef4e", "38": "1789381565624-cf9c65b7c2ba", "39": "1693892985308-44965a6060d1", "40": "1585128792020-803d29415281", "41": "1556020685-ae41abfc9365", "42": "1522771739844-6a9f6d5f14af"};
+var FORMS=['прямая','угловая','П-образная','остров'];
+var MATS=['ЛДСП','МДФ плёнка','МДФ эмаль','шпон'];
+var COLS=['Белый','Серый','Графит','Бежевый','Дерево','Синий','Чёрный'];
+var TYPES=[['all','Все'],['k','Кухни'],['s','Шкафы'],['g','Гардеробные'],['d','Детские'],['p','Прихожие и ТВ']];
+var DAYS=[[0,'Любой'],[15,'до 15 дн.'],[30,'до 30 дн.'],[45,'до 45 дн.']];
+var BADGES=[['hit','Хит'],['new','Новинка'],['sale','Скидка']];
+var UNIT={'пм':'за п.м.','шкаф':'за шкаф','компл':'за комплект'};
+var UQ={'пм':'п.м.','шкаф':'шт.','компл':'шт.'};
+var $=function(id){return document.getElementById(id)};
+function rub(n){return Math.round(n).toLocaleString('ru-RU')+' ₽'}
+function fmt(n){return String(n).replace('.',',')}
+function label(x){var m={k:'Кухня',s:x.f=='купе'?'Шкаф-купе':'Шкаф',g:'Гардеробная',d:'Детская',p:x.f=='ТВ-зона'?'ТВ-зона':'Прихожая'};return m[x.t]+' «'+x.n+'»'}
+function waLink(text){return 'https://wa.me/77777777777?text='+encodeURIComponent(text)}
+var toastT;function toast(t){var e=$('toast');e.textContent=t;e.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){e.classList.remove('show')},2200)}
+function copy(t){if(navigator.clipboard)navigator.clipboard.writeText(t).catch(function(){})}
+var SW={'Белый':'#F2EFE9','Серый':'#9AA0A3','Графит':'#4A4D50','Бежевый':'#CDB89B','Дерево':'#B58A5E','Синий':'#2F5D7C','Чёрный':'#2B2B2B'};
+
+/* ---------- фильтры ---------- */
+var S={t:'all',f:[],m:[],c:[],p:110000,d:0,b:[],sort:'pop',shown:12};
+function chips(id,name,list,type,sw){
+  $(id).innerHTML=list.map(function(v,i){var val=Array.isArray(v)?v[0]:v,tx=Array.isArray(v)?v[1]:v;
+    var dot=sw?'<i class="sw" style="background:'+SW[val]+'"></i>':'';
+    return '<label><input type="'+type+'" name="'+name+'" value="'+val+'"'+((type=='radio'&&i==0)?' checked':'')+'><span>'+dot+tx+'</span></label>'}).join('');
+}
+chips('fT','t',TYPES,'radio');chips('fF','f',FORMS,'checkbox');chips('fM','m',MATS,'checkbox');chips('fC','c',COLS,'checkbox',true);chips('fD','d',DAYS,'radio');
+$('fB').innerHTML=BADGES.map(function(b){return '<label class="chk"><input type="checkbox" name="b" value="'+b[0]+'"> '+b[1]+'</label>'}).join('');
+function checked(name){return Array.prototype.map.call(document.querySelectorAll('#filters input[name="'+name+'"]:checked'),function(i){return i.value})}
+function readF(){S.t=checked('t')[0]||'all';S.f=checked('f');S.m=checked('m');S.c=checked('c');S.d=+(checked('d')[0]||0);S.b=checked('b');S.p=+$('fP').value;S.shown=12;$('pV').textContent=S.p>=110000?'любой':rub(S.p)}
+function filtered(){
+  var r=ITEMS.filter(function(x){
+    return (S.t=='all'||x.t==S.t)&&(!S.f.length||(x.t=='k'&&S.f.indexOf(x.f)>-1))&&(!S.m.length||S.m.indexOf(x.m)>-1)&&(!S.c.length||S.c.indexOf(x.c)>-1)&&x.p<=S.p&&(!S.d||x.d<=S.d)&&(!S.b.length||S.b.indexOf(x.b)>-1)});
+  var rank={hit:0,'new':1,sale:2,'':3};
+  r.sort(function(a,b){
+    if(S.sort=='pa')return a.p-b.p;if(S.sort=='pd')return b.p-a.p;if(S.sort=='da')return a.d-b.d||a.p-b.p;
+    return rank[a.b]-rank[b.b]||a.id-b.id});
+  return r;
+}
+function plural(n){var a=n%10,b=n%100;return b>10&&b<15?'проектов':a==1?'проект':a>1&&a<5?'проекта':'проектов'}
+var CART={};
+function card(x){
+  var bd=x.b=='hit'?'<span>Хит</span>':x.b=='new'?'<span class="n">Новинка</span>':x.b=='sale'?'<span class="s">−'+Math.round((1-x.p/x.o)*100)+'%</span>':'';
+  var on=CART[x.id]!=null;
+  return '<article class="pc"><div class="im">'+img(x.ph,label(x)+': '+x.f+', '+x.m,640,x.t,x.c)+(bd?'<div class="bdg">'+bd+'</div>':'')+'</div><div class="bd"><h3>'+esc(label(x))+'</h3><div class="kind">'+x.f+' · пример '+x.sz+'</div><div class="spec"><span>Фасад: <b>'+x.m+'</b></span><span>Цвет: <b>'+x.c+'</b></span><span>Срок: <b>'+x.d+' дн.</b></span></div><div class="pr"><div>'+(x.o?'<s>'+rub(x.o)+'</s>':'')+'<b>от '+rub(x.p)+'</b><small>'+UNIT[x.u]+'</small></div><button class="add'+(on?' on':'')+'" type="button" data-add="'+x.id+'" aria-pressed="'+on+'">'+(on?'В смете ✓':'В смету')+'</button></div></div></article>';
+}
+function render(){
+  var r=filtered();
+  $('cnt').textContent='Найдено: '+r.length+' '+plural(r.length);
+  $('grid').innerHTML=r.length?r.slice(0,S.shown).map(card).join(''):'<div class="empty">Ничего не нашлось. Ослабьте фильтры или <button class="reset" type="button" data-reset="1">сбросьте их</button>.</div>';
+  $('more').style.display=r.length>S.shown?'flex':'none';
+}
+$('filters').addEventListener('change',function(){readF();render()});
+$('fP').addEventListener('input',function(){readF();render()});
+$('sort').addEventListener('change',function(){S.sort=this.value;S.shown=12;render()});
+$('more').addEventListener('click',function(){S.shown+=12;render()});
+function resetF(){document.querySelectorAll('#filters input').forEach(function(i){if(i.type=='range')i.value=i.max;else if(i.type=='radio')i.checked=(i.value=='all'||i.value=='0');else i.checked=false});readF();render()}
+$('reset').addEventListener('click',resetF);
+document.addEventListener('click',function(e){if(e.target.closest('[data-reset]'))resetF()});
+$('openF').addEventListener('click',function(){document.body.classList.add('show-f')});
+$('closeF').addEventListener('click',function(){document.body.classList.remove('show-f')});
+
+/* ---------- Моя смета ---------- */
+try{CART=JSON.parse(localStorage.getItem('stv-smeta')||'{}')||{}}catch(e){CART={}}
+function byId(id){return ITEMS.filter(function(x){return x.id==id})[0]}
+Object.keys(CART).forEach(function(k){if(!byId(k))delete CART[k]});
+function save(){try{localStorage.setItem('stv-smeta',JSON.stringify(CART))}catch(e){}}
+function lineSum(x){return Math.round(x.p*CART[x.id])}
+function total(){return Object.keys(CART).reduce(function(s,k){return s+lineSum(byId(k))},0)}
+function cartText(name){
+  var n=0,l=Object.keys(CART).map(function(k){var x=byId(k);n++;return n+'. '+label(x)+' — '+fmt(CART[k])+' '+UQ[x.u]+' × от '+rub(x.p)+' = от '+rub(lineSum(x))});
+  return 'Здравствуйте! Моя смета (Створка):\n'+l.join('\n')+'\nИтого от '+rub(total())+' (предварительно, точный расчёт после замера).'+(name?'\nИмя: '+name:'');
+}
+function drawCart(){
+  var ids=Object.keys(CART);
+  $('cn').textContent=ids.length;
+  document.querySelectorAll('[data-add]').forEach(function(b){var on=CART[b.dataset.add]!=null;b.classList.toggle('on',on);b.textContent=on?'В смете ✓':'В смету';b.setAttribute('aria-pressed',on)});
+  if(!ids.length){$('items').innerHTML='<div class="none">Смета пуста. Нажмите «В смету» на карточках каталога.</div>';$('cartFt').innerHTML='';return}
+  $('items').innerHTML=ids.map(function(k){var x=byId(k),pm=x.u=='пм';
+    return '<div class="it"><div class="th">'+img(x.ph,label(x),160,x.t,x.c)+'</div><div><b>'+esc(label(x))+'</b><small>от '+rub(x.p)+' '+UNIT[x.u]+'</small><label>Кол-во, '+UQ[x.u]+'<input type="number" data-q="'+x.id+'" value="'+CART[k]+'" min="'+(pm?'0.5':'1')+'" max="'+(pm?'15':'9')+'" step="'+(pm?'0.1':'1')+'"></label></div><div class="sum"><span id="ls'+x.id+'">'+rub(lineSum(x))+'</span><br><button class="del" type="button" data-del="'+x.id+'">Убрать</button></div></div>'}).join('');
+  $('cartFt').innerHTML='<div class="tot"><span>Итого от</span><b id="tot">'+rub(total())+'</b></div><div class="note">Это предварительная сумма «от». Точную цену назовём после бесплатного замера, она войдёт в договор.</div><input type="text" id="cName" placeholder="Ваше имя (по желанию)" autocomplete="name"><label class="agree"><input type="checkbox" id="cAgree"><span>Согласен на обработку персональных данных (политика конфиденциальности — образец).</span></label><div class="btns"><button class="btn wa" id="cSend" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Отправить смету в WhatsApp</button><button class="btn tg" id="cSendTg" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Скопировать для Telegram</button></div><button class="reset" id="cClear" type="button">Очистить смету</button>';
+}
+function openCart(){document.body.classList.add('open-cart');drawCart();$('cartClose').focus()}
+function closeCart(){document.body.classList.remove('open-cart')}
+$('cartOpen').addEventListener('click',openCart);
+$('cartClose').addEventListener('click',closeCart);
+$('ov').addEventListener('click',function(){closeCart();document.body.classList.remove('show-f')});
+document.addEventListener('keydown',function(e){if(e.key=='Escape'){closeCart();document.body.classList.remove('show-f')}});
+document.addEventListener('click',function(e){
+  var a=e.target.closest('[data-add]'),d=e.target.closest('[data-del]');
+  if(a){var id=a.dataset.add,x=byId(id);if(CART[id]!=null){delete CART[id];toast('Убрано из сметы')}else{CART[id]=x.u=='пм'?x.q:1;toast('Добавлено в смету: '+label(x))}save();drawCart()}
+  if(d){delete CART[d.dataset.del];save();drawCart()}
+  if(e.target.id=='cClear'){CART={};save();drawCart()}
+  if(e.target.closest('#cSend')||e.target.closest('#cSendTg')){
+    var tg=!!e.target.closest('#cSendTg');
+    if(!$('cAgree').checked){toast('Нужно согласие на обработку данных');$('cAgree').focus();return}
+    var t=cartText($('cName').value.trim());
+    if(tg){copy(t);toast('Смета скопирована, вставьте её в Telegram');window.open('https://t.me/','_blank','noopener')}else window.open(waLink(t),'_blank','noopener')}
+});
+document.addEventListener('input',function(e){var q=e.target.dataset&&e.target.dataset.q;if(!q)return;
+  var x=byId(q),v=parseFloat(e.target.value);if(!(v>0))return;v=Math.min(+e.target.max,Math.max(+e.target.min,v));CART[q]=Math.round(v*10)/10;save();
+  $('ls'+q).textContent=rub(lineSum(x));$('tot').textContent=rub(total())});
+
+/* ---------- калькулятор ---------- */
+function val(name){var r=document.querySelector('input[name="'+name+'"]:checked');return r}
+function listHtml(rows){return rows.map(function(r){return '<li><span>'+r[0]+'</span><span>'+r[1]+'</span></li>'}).join('')}
+var CUR=null;
+function show(title,total,days,rows,txt){
+  var lo=Math.round(total*.93/100)*100,hi=Math.round(total*1.07/100)*100;
+  $('cTitle').textContent=title;$('cSum').textContent=rub(lo)+' – '+rub(hi);
+  $('cTerm').textContent='Срок изготовления: около '+days+' дн. Точная цена — после замера.';
+  $('cList').innerHTML=listHtml(rows);
+  txt+='\nОриентир: '+rub(lo)+' – '+rub(hi)+', срок около '+days+' дней. Хочу бесплатный замер.';
+  CUR=txt;$('cWa').href=waLink(txt);
+}
+function calcK(){
+  var L=+$('kL').value,K=+val('kF').value,fr=val('kR'),R=+fr.value,T=+val('kT').value,H=+val('kH').value;
+  $('kLv').textContent=fmt(L.toFixed(1));
+  var gar=L*R*K+L*T+L*H,ex=[],extra=0;
+  document.querySelectorAll('.kE:checked').forEach(function(c){var s=c.dataset.pm?L*c.dataset.pm:+c.dataset.fix;extra+=s;ex.push(c.dataset.n)});
+  gar+=extra;
+  var mont=Math.max(gar*.08,12000),del=val('kD').value=='city'?2500:60*Math.max(0,+$('kKm').value||0),tot=gar+mont+del;
+  var fname={1:'прямая',1.06:'угловая',1.1:'П-образная',1.15:'с островом'}[K];
+  show('Кухня: ориентировочная стоимость',tot,fr.dataset.d,[['Гарнитур, '+fmt(L.toFixed(1))+' п.м., '+fname,rub(gar)],['Монтаж (8%, не менее 12 000 ₽)',rub(mont)],['Доставка',rub(del)]],
+    'Здравствуйте! Расчёт кухни на сайте: '+fname+', '+fmt(L.toFixed(1))+' п.м., фасад '+fr.dataset.n+', столешница '+val('kT').dataset.n+', фурнитура '+val('kH').dataset.n+(ex.length?', допы: '+ex.join(', '):'')+'.');
+  $('kKmL').style.display=val('kD').value=='out'?'block':'none';
+}
+function calcW(){
+  var W=+$('wW').value,Hh=+$('wH').value,n=+val('wN').value,dr=val('wR'),Rd=+dr.value;
+  $('wWv').textContent=fmt(W.toFixed(1));$('wHv').textContent=fmt(Hh.toFixed(1));
+  var rod=Math.max(0,+$('wRod').value||0),sh=Math.max(0,+$('wSh').value||0),dw=Math.max(0,+$('wDr').value||0);
+  var area=W*Hh,body=area*7200,doors=area*Rd,fill=rod*900+sh*1100+dw*2900+($('wPan').checked?6500:0)+($('wLed').checked?W*1800:0);
+  var sub=body+doors+fill,mont=sub*.05,tot=sub+mont;
+  $('wWarn').textContent=W/n>1.2?'При такой ширине двери получатся широкими: лучше '+(n+1<=4?(n+1)+' двери':'добавить секцию')+'.':'';
+  show('Шкаф-купе: ориентировочная стоимость',tot,dr.dataset.d,[['Корпус, '+fmt(W.toFixed(1))+' × '+fmt(Hh.toFixed(1))+' м',rub(body)],['Двери ('+n+', '+dr.dataset.n+')',rub(doors)],['Наполнение',rub(fill)],['Монтаж (5%)',rub(mont)]],
+    'Здравствуйте! Расчёт шкафа-купе на сайте: '+fmt(W.toFixed(1))+' × '+fmt(Hh.toFixed(1))+' м, дверей '+n+', декор '+dr.dataset.n+', штанг '+rod+', полок '+sh+', ящиков '+dw+($('wPan').checked?', пантограф':'')+($('wLed').checked?', подсветка':'')+'.');
+}
+var mode='k';
+function calc(){mode=='k'?calcK():calcW()}
+function tab(m){mode=m;$('pK').hidden=m!='k';$('pW').hidden=m!='w';$('tabK').setAttribute('aria-selected',m=='k');$('tabW').setAttribute('aria-selected',m=='w');calc()}
+$('tabK').addEventListener('click',function(){tab('k')});$('tabW').addEventListener('click',function(){tab('w')});
+document.querySelector('.calc .l').addEventListener('input',calc);document.querySelector('.calc .l').addEventListener('change',calc);
+$('cTg').addEventListener('click',function(){copy(CUR);toast('Расчёт скопирован, вставьте его в Telegram');window.open('https://t.me/','_blank','noopener')});
+
+/* ---------- галерея 30 ---------- */
+var GAL=[[1,'k','Графит','Угловая кухня, графит'],[2,'k','Белый','Остров с деревянной панелью'],[3,'k','Бежевый','Латунные ручки'],[4,'k','Графит','Тёмные тумбы, полки'],[5,'k','Белый','Остров и подвесные лампы'],[6,'k','Белый','Минимализм'],[7,'k','Дерево','Остров с рейками'],[8,'k','Серый','Серо-белая кухня'],[9,'k','Чёрный','Чёрный матовый фасад'],[10,'k','Синий','Глянец: синий и графит'],[11,'k','Серый','Рамочные фасады'],[12,'k','Бежевый','Тёмный остров с рейками'],[13,'k','Серый','Длинные ручки'],[14,'k','Белый','Мраморная столешница'],[15,'k','Бежевый','Кухня без ручек'],[17,'k','Дерево','Кухня-остров, дерево'],[18,'g','Бежевый','Гардеробная с зеркалом'],[19,'g','Дерево','Угловая гардеробная'],[20,'g','Графит','Тёмная гардеробная'],[21,'g','Белый','Белая, с ящиками'],[22,'g','Белый','Гардеробная-комната'],[23,'p','Белый','Прихожая с нишей'],[24,'s','Белый','Встроенный шкаф'],[25,'s','Белый','Шкаф-купе'],[26,'s','Дерево','Распашной с зеркалом'],[27,'s','Дерево','Пенал'],[28,'s','Дерево','Двустворчатый шкаф'],[29,'d','Дерево','Детская: кровать и стол'],[30,'d','Бежевый','Детская со стеллажом'],[31,'d','Белый','Яркая детская']];
+$('gal').innerHTML=GAL.map(function(g,i){return '<button type="button" data-g="'+i+'" aria-label="Открыть фото: '+g[3]+'">'+img(P[g[0]],g[3],480,g[1],g[2])+'<span>'+g[3]+'</span></button>'}).join('');
+var lb=$('lb');
+$('gal').addEventListener('click',function(e){var b=e.target.closest('[data-g]');if(!b||!lb.showModal)return;var g=GAL[+b.dataset.g];$('lbPic').innerHTML=img(P[g[0]],g[3],1200,g[1],g[2],true);$('lbCap').textContent=g[3];lb.showModal()});
+$('lbX').addEventListener('click',function(){lb.close()});
+lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+
+/* открыто сейчас: пн–сб 9:00–19:00 по местному времени посетителя */
+var op=$('open'),d=new Date(),h=d.getHours(),wd=d.getDay();
+if(wd===0||h<9||h>=19){op.classList.add('closed');op.lastChild.textContent='Сейчас закрыто — ответим в 9:00'}
+
+readF();render();drawCart();calc();
+})();
+</script>
+<style data-hscroll>.hs-wrap{position:relative;min-width:0;max-width:100%}.hs-btn{position:absolute;top:50%;z-index:30;width:42px;height:42px;margin-top:-21px;border-radius:50%;border:1px solid rgba(255,255,255,.45);background:rgba(20,20,24,.62);color:#fff;font:600 18px/1 system-ui,sans-serif;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 4px 14px rgba(0,0,0,.25);transition:opacity .25s,transform .2s;padding:0}.hs-btn:hover{transform:scale(1.08)}.hs-btn.l{left:6px}.hs-btn.r{right:6px}.hs-btn.off{opacity:0;pointer-events:none}.hs-wrap.sm .hs-btn{width:30px;height:30px;margin-top:-15px;font-size:14px}</style>
+<script data-hscroll>(function(){function sc(el){var cs=getComputedStyle(el);return /(auto|scroll)/.test(cs.overflowX)&&el.scrollWidth>el.clientWidth+8&&el.clientHeight>40}
+function upd(el){var w=el.parentNode,l=w.querySelector(':scope>.hs-btn.l'),r=w.querySelector(':scope>.hs-btn.r'),can=el.scrollWidth>el.clientWidth+8;l.classList.toggle('off',!can||el.scrollLeft<4);r.classList.toggle('off',!can||el.scrollLeft+el.clientWidth>=el.scrollWidth-4)}
+function step(el){var c=el.firstElementChild,g=parseFloat(getComputedStyle(el).columnGap)||16,s=c?c.getBoundingClientRect().width+g:0;if(!s||s>el.clientWidth*.9)s=el.clientWidth*.8;return s}
+function add(el){if(el.dataset.hs)return;el.dataset.hs=1;var w=document.createElement('div');w.className='hs-wrap'+(el.clientHeight<100?' sm':'');var cs=getComputedStyle(el);['gridColumn','gridRow','marginTop','marginBottom','marginLeft','marginRight','flex','alignSelf','width','maxWidth'].forEach(function(p){if(p.indexOf('margin')==0){w.style[p]=cs[p];el.style[p]='0'}else if(el.style[p]||p.indexOf('grid')==0||p=='alignSelf'||p=='flex'){w.style[p]=cs[p]}});el.parentNode.insertBefore(w,el);w.appendChild(el);
+[['l','<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>','Прокрутить назад',-1],['r','<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>','Прокрутить вперёд',1]].forEach(function(a){var b=document.createElement('button');b.type='button';b.className='hs-btn '+a[0]+' off';b.innerHTML=a[1];b.setAttribute('aria-label',a[2]);b.onclick=function(){el.scrollBy({left:a[3]*step(el),behavior:'smooth'})};w.appendChild(b)});
+el.addEventListener('scroll',function(){upd(el)},{passive:true});upd(el)}
+function scan(){document.querySelectorAll('body *:not(.hs-btn):not(.hs-wrap)').forEach(function(el){if(el.dataset.hs){upd(el);return}if(!el.closest('[data-no-hs]')&&sc(el))add(el)})}
+var t;function later(){clearTimeout(t);t=setTimeout(scan,250)}
+if(document.readyState!='loading')later();else document.addEventListener('DOMContentLoaded',later);
+addEventListener('load',later);addEventListener('resize',later);document.addEventListener('click',function(e){if(!e.target.closest('.hs-btn'))later()},true)})();</script>
+</body>
+</html>

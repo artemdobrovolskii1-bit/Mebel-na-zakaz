@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Створка — мебель на заказ</title>
+<meta name="description" content="Кухни, шкафы-купе, гардеробные и детская на заказ. Бесплатный замер, цена и срок фиксируются в договоре. Перезваниваем за 15 минут.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<!-- Яндекс Метрика: вставьте сюда код счётчика клиента -->
+<style>
+:root{--bg:#F4F0E8;--bg2:#EAE3D6;--card:#FFFFFF;--ink:#23211E;--mute:#6B655B;--acc:#1F5C73;--acc-ink:#FFFFFF;--line:#DDD5C6;--wa:#177A45;--tg:#1B73A8;--sale:#B3321F;--ok:#177A45;--shade:rgba(35,33,30,.55)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Onest,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3,h4{font-family:Unbounded,Onest,system-ui,sans-serif;font-weight:500;line-height:1.2;margin:0}
+h1{font-size:clamp(1.55rem,6vw,3rem);font-weight:700}
+h2{font-size:clamp(1.3rem,4.6vw,2.05rem);margin-bottom:10px}
+h3{font-size:1rem}
+p{margin:0}
+ul,ol{margin:0}
+.wr{max-width:1160px;margin:0 auto;padding:0 20px}
+.sec{padding:46px 0}
+.sec.alt{background:var(--bg2)}
+.lead{color:var(--mute);max-width:62ch;margin-bottom:26px}
+.tag{display:inline-block;color:var(--acc);font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:12px;border:2px solid var(--acc);background:var(--acc);color:var(--acc-ink);font:600 1rem/1.2 Onest,system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:filter .2s,transform .2s}
+.btn:hover{filter:brightness(1.12)}
+.btn.line{background:transparent;color:var(--acc)}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:var(--acc-ink)}
+.btn.tg{background:var(--tg);border-color:var(--tg);color:var(--acc-ink)}
+.btn.sm{min-height:40px;padding:8px 14px;font-size:.92rem}
+.btn svg{width:18px;height:18px;flex:none}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btns .btn{flex:1 1 200px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+header.nav{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wr{display:flex;align-items:center;justify-content:space-between;gap:10px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.1rem Unbounded,sans-serif;white-space:nowrap}
+.logo i{width:34px;height:34px;border-radius:9px;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font-style:normal;font-size:1rem}
+.tel{font-weight:600;text-decoration:none;white-space:nowrap}
+.nav nav{display:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px}
+.pic,.im,.th{overflow:hidden}
+.ph{display:block;width:100%;height:100%;object-fit:cover;background:var(--bg2)}
+div.ph svg{width:100%;height:100%;display:block}
+.open{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;color:var(--mute)}
+.open b{width:9px;height:9px;border-radius:50%;background:var(--ok);flex:none}
+.open.closed b{background:var(--sale)}
+.ct{display:grid;gap:16px}
+.ct .b{padding:24px}
+.ct dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:16px 0 20px}
+.ct dt{color:var(--mute)}
+.ct dd{margin:0;font-weight:500}
+.ct iframe{width:100%;min-height:300px;height:100%;border:0;border-radius:16px;background:var(--bg2)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--mute);line-height:1.45}
+.agree input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--acc)}
+footer.foot{background:var(--ink);color:var(--bg2);padding:30px 0 96px;font-size:.9rem}
+footer.foot .wr{display:flex;flex-direction:column;gap:6px}
+.float{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px;z-index:30}
+.float a{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:var(--acc-ink);box-shadow:0 8px 20px rgba(0,0,0,.22)}
+.float svg{width:24px;height:24px}
+.float .c1{background:var(--acc)}.float .c2{background:var(--wa)}.float .c3{background:var(--tg)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
+@media(min-width:768px){.sec{padding:72px 0}.btns .btn{flex:0 1 auto}.ct{grid-template-columns:1fr 1fr}.ct .b{padding:32px}.nav .wr{height:70px}}
+@media(min-width:1200px){.sec{padding:88px 0}.nav nav{display:flex}}
+@media(max-width:380px){.logo{font-size:1rem}.logo i{width:30px;height:30px}.tel{font-size:.9rem}}
+
+.hero{padding:22px 0 38px}
+.hero .wr{display:grid;gap:24px}
+.hero p.sub{color:var(--mute);font-size:1.05rem;margin:14px 0 22px;max-width:48ch}
+.hero .pic{border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:var(--bg2)}
+.facts{display:grid;gap:12px;margin-top:22px}
+.facts div{padding:16px 18px}
+.facts b{display:block;font:700 1.35rem Unbounded,sans-serif;color:var(--acc);line-height:1.2}
+.facts span{color:var(--mute);font-size:.92rem}
+.svc{display:grid;gap:14px;list-style:none;padding:0}
+.svc li{padding:20px;display:flex;flex-direction:column;gap:8px}
+.svc .ic{width:44px;height:44px;border-radius:12px;background:var(--bg2);display:grid;place-items:center;color:var(--acc)}
+.svc .ic svg{width:26px;height:26px}
+.svc p{color:var(--mute);font-size:.95rem}
+.svc .pr{margin-top:auto;padding-top:10px;border-top:1px dashed var(--line);font-weight:600}
+.svc .pr b{font:700 1.15rem Unbounded,sans-serif;color:var(--ink)}
+.svc .pr small{display:block;color:var(--mute);font-weight:400;font-size:.8rem}
+.note{margin-top:16px;color:var(--mute);font-size:.9rem}
+.gal{display:grid;grid-template-columns:1fr;gap:12px}
+.gal figure{margin:0;border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--line)}
+.gal .im{aspect-ratio:4/3}
+.gal figcaption{padding:10px 14px;color:var(--mute);font-size:.9rem}
+.gal figcaption b{display:block;color:var(--ink);font-weight:600}
+.steps{list-style:none;padding:0;display:grid;gap:12px;counter-reset:s}
+.steps li{padding:18px 18px 18px 64px;position:relative;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:16px;top:16px;width:36px;height:36px;border-radius:10px;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font:700 1rem Unbounded,sans-serif}
+.steps b{display:block;font-weight:600}
+.steps span{color:var(--mute);font-size:.93rem}
+.terms{display:grid;gap:12px;list-style:none;padding:0}
+.terms li{padding:20px}
+.terms b{display:block;margin-bottom:4px}
+.terms span{color:var(--mute);font-size:.95rem}
+@media(min-width:768px){
+.hero{padding:40px 0 56px}
+.hero .wr{grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.facts{grid-template-columns:repeat(3,1fr)}
+.svc{grid-template-columns:1fr 1fr}
+.gal{grid-template-columns:repeat(2,1fr)}
+.steps{grid-template-columns:repeat(2,1fr)}
+.terms{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1200px){
+.svc{grid-template-columns:repeat(4,1fr)}
+.gal{grid-template-columns:repeat(3,1fr)}
+.steps{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body><a href="../index.html" class="tarify-back" aria-label="Вернуться ко всем тарифам" style="position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:2147483000;display:inline-flex;align-items:center;gap:6px;padding:11px 16px;border-radius:999px;background:rgba(20,20,20,.82);color:#fff;font:600 14px/1 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;text-decoration:none;box-shadow:0 8px 22px -6px rgba(0,0,0,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)">← Все тарифы</a><script data-fp>(function(){try{var k="fp:"+location.pathname.split("/")[1],q=/[?&]from=portfolio(&|$)/.test(location.search);if(q)sessionStorage.setItem(k,"1");if(q||sessionStorage.getItem(k)){var b=document.querySelector(".tarify-back");if(b)b.style.display="none"}}catch(e){}})();</script>
+<header class="nav"><div class="wr">
+  <a class="logo" href="#top" aria-label="Створка — на главную"><i>С</i>Створка</a>
+  <a class="tel" href="tel:+77777777777">+7-777-777-77-77</a>
+</div></header>
+
+<main>
+<section class="hero" id="top"><div class="wr">
+  <div>
+    <span class="tag">Мебель на заказ · свой цех</span>
+    <h1>Мебель по вашим размерам. Сроки и цена — в договоре</h1>
+    <p class="sub">Кухни, шкафы-купе, гардеробные и детская. Приедем на замер бесплатно, нарисуем проект и назовём итоговую цену до начала работ. Если срок сдвигается — звоним сами.</p>
+    <div class="btns">
+      <a class="btn wa" href="https://wa.me/77777777777?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D1%81%D1%81%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BA%D1%83%D1%85%D0%BD%D1%8E.%20%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%D1%8B%20%D0%B8%20%D0%BF%D0%BE%D0%B6%D0%B5%D0%BB%D0%B0%D0%BD%D0%B8%D1%8F%3A%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Рассчитать кухню в WhatsApp</a>
+      <a class="btn line" href="tel:+77777777777"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Позвонить</a>
+    </div>
+    <div class="facts">
+      <div class="card"><b>15 минут</b><span>перезваниваем после заявки</span></div>
+      <div class="card"><b>от 14 дней</b><span>срок изготовления, пишем в договор</span></div>
+      <div class="card"><b>0 ₽</b><span>замер и проект при заказе</span></div>
+    </div>
+  </div>
+  <div class="pic"><img class="ph" src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=900&q=72&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=450&q=72&auto=format&fit=crop 450w, https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=900&q=72&auto=format&fit=crop 900w, https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=1440&q=72&auto=format&fit=crop 1440w" sizes="(max-width:767px) 100vw, 50vw" width="900" height="675" alt="Угловая кухня с графитовым низом и белым верхом, изготовленная на заказ" fetchpriority="high" decoding="async" data-k="k" data-c="Графит"></div>
+</div></section>
+
+<section class="sec alt" id="uslugi"><div class="wr">
+  <span class="tag">Что делаем</span>
+  <h2>Четыре направления — цены «от»</h2>
+  <p class="lead">Цена за погонный метр (п.м.) или за изделие. Итог считаем после бесплатного замера и пишем в договор — потом он не меняется.</p>
+  <ul class="svc">
+    <li class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18M3 10V6a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v4M3 10v9h18v-9M9 14h6"/></svg></span><h3>Кухни</h3><p>Прямые, угловые, П-образные и с островом. ЛДСП, МДФ в плёнке или эмали, шпон.</p><div class="pr"><b>от 34 000 ₽</b> за п.м.<small>срок от 14 дней</small></div></li>
+    <li class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18M8 10v4M16 10v4"/></svg></span><h3>Шкафы-купе</h3><p>Встроенные и корпусные, зеркало, лакобель, фотопечать. Делаем под высоту потолка.</p><div class="pr"><b>от 25 000 ₽</b> за п.м.<small>срок от 14 дней</small></div></li>
+    <li class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v18M20 3v18M4 7h16M4 13h16M8 7v6M13 13v8"/></svg></span><h3>Гардеробные</h3><p>Штанги, полки, ящики, подсветка. Продумываем под ваш гардероб, а не по шаблону.</p><div class="pr"><b>от 20 000 ₽</b> за п.м.<small>срок от 14 дней</small></div></li>
+    <li class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18V8M21 18v-6M3 14h18M3 18h18M7 14V9h6v5"/></svg></span><h3>Детская</h3><p>Кровать, стол, стеллаж, шкаф. Безопасные материалы, закруглённые углы, растёт вместе с ребёнком.</p><div class="pr"><b>от 30 000 ₽</b> за п.м.<small>срок от 21 дня</small></div></li>
+  </ul>
+  <p class="note">Все цены — образец. Точная сумма зависит от размеров, материалов и фурнитуры; её называем после замера.</p>
+</div></section>
+
+<section class="sec" id="raboty"><div class="wr">
+  <span class="tag">Наши работы</span>
+  <h2>Что мы уже сделали</h2>
+  <p class="lead">Кухни и шкафы с размерами и сроками — чтобы вы сразу видели масштаб и цену вопроса.</p>
+  <div class="gal">
+    <figure><div class="im"><img class="ph" src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=640&q=72&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=320&q=72&auto=format&fit=crop 320w, https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=640&q=72&auto=format&fit=crop 640w, https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=1024&q=72&auto=format&fit=crop 1024w" sizes="(max-width:767px) 100vw, 50vw" width="640" height="480" alt="Белая кухня с островом и деревянной панелью" loading="lazy" decoding="async" data-k="k" data-c="Белый"></div><figcaption><b>Кухня «Айсберг», остров, 4,2 м</b>МДФ-эмаль, 30 дней</figcaption></figure>
+    <figure><div class="im"><img class="ph" src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=640&q=72&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=320&q=72&auto=format&fit=crop 320w, https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=640&q=72&auto=format&fit=crop 640w, https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1024&q=72&auto=format&fit=crop 1024w" sizes="(max-width:767px) 100vw, 50vw" width="640" height="480" alt="Кухня с серо-бежевыми фасадами и латунными ручками" loading="lazy" decoding="async" data-k="k" data-c="Бежевый"></div><figcaption><b>Кухня «Латте», прямая, 3,0 м</b>МДФ в плёнке, 21 день</figcaption></figure>
+    <figure><div class="im"><img class="ph" src="https://images.unsplash.com/photo-1672137233327-37b0c1049e77?w=640&q=72&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1672137233327-37b0c1049e77?w=320&q=72&auto=format&fit=crop 320w, https://images.unsplash.com/photo-1672137233327-37b0c1049e77?w=640&q=72&auto=format&fit=crop 640w, https://images.unsplash.com/photo-1672137233327-37b0c1049e77?w=1024&q=72&auto=format&fit=crop 1024w" sizes="(max-width:767px) 100vw, 50vw" width="640" height="480" alt="Встроенная гардеробная с зеркалом и подсветкой полок" loading="lazy" decoding="async" data-k="g" data-c="Бежевый"></div><figcaption><b>Гардеробная с зеркалом, 2,4 м</b>подсветка полок, 18 дней</figcaption></figure>
+    <figure><div class="im"><img class="ph" src="https://images.unsplash.com/photo-1721901944646-8b7da57bea7e?w=640&q=72&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1721901944646-8b7da57bea7e?w=320&q=72&auto=format&fit=crop 320w, https://images.unsplash.com/photo-1721901944646-8b7da57bea7e?w=640&q=72&auto=format&fit=crop 640w, https://images.unsplash.com/photo-1721901944646-8b7da57bea7e?w=1024&q=72&auto=format&fit=crop 1024w" sizes="(max-width:767px) 100vw, 50vw" width="640" height="480" alt="Белые раздвижные двери шкафа-купе в комнате" loading="lazy" decoding="async" data-k="s" data-c="Белый"></div><figcaption><b>Шкаф-купе, 2,4 × 2,4 м</b>ЛДСП и зеркало, 14 дней</figcaption></figure>
+    <figure><div class="im"><img class="ph" src="https://images.unsplash.com/photo-1721395288477-b546804ce392?w=640&q=72&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1721395288477-b546804ce392?w=320&q=72&auto=format&fit=crop 320w, https://images.unsplash.com/photo-1721395288477-b546804ce392?w=640&q=72&auto=format&fit=crop 640w, https://images.unsplash.com/photo-1721395288477-b546804ce392?w=1024&q=72&auto=format&fit=crop 1024w" sizes="(max-width:767px) 100vw, 50vw" width="640" height="480" alt="Детская комната с кроватью, рабочим столом и штангой для одежды" loading="lazy" decoding="async" data-k="d" data-c="Дерево"></div><figcaption><b>Детская для школьника, 3,6 м</b>кровать, стол, шкаф, 25 дней</figcaption></figure>
+    <figure><div class="im"><img class="ph" src="https://images.unsplash.com/photo-1631396326646-c06a935ff3a6?w=640&q=72&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1631396326646-c06a935ff3a6?w=320&q=72&auto=format&fit=crop 320w, https://images.unsplash.com/photo-1631396326646-c06a935ff3a6?w=640&q=72&auto=format&fit=crop 640w, https://images.unsplash.com/photo-1631396326646-c06a935ff3a6?w=1024&q=72&auto=format&fit=crop 1024w" sizes="(max-width:767px) 100vw, 50vw" width="640" height="480" alt="Мастер собирает изделие в мастерской" loading="lazy" decoding="async" data-k="k" data-c="Дерево"></div><figcaption><b>Собственная мастерская</b>фотоотчёт из цеха присылаем в мессенджер</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="sec alt" id="etapy"><div class="wr">
+  <span class="tag">Как работаем</span>
+  <h2>Четыре шага до готовой мебели</h2>
+  <ol class="steps">
+    <li class="card"><b>Замер</b><span>Приезжаем в удобное время, бесплатно. 30–60 минут.</span></li>
+    <li class="card"><b>Проект и договор</b><span>Рисуем проект, называем цену и срок. Подписываем договор с этими цифрами.</span></li>
+    <li class="card"><b>Производство</b><span>Делаем в своём цехе от 14 дней. Присылаем фото на каждом этапе.</span></li>
+    <li class="card"><b>Монтаж</b><span>Привозим, собираем, подключаем, убираем за собой. Подписываем акт.</span></li>
+  </ol>
+</div></section>
+
+<section class="sec" id="usloviya"><div class="wr">
+  <span class="tag">Честные условия</span>
+  <h2>Что мы обещаем письменно</h2>
+  <ul class="terms">
+    <li class="card"><b>Цена не меняется</b><span>Итог после замера записан в договоре. Доплачиваете только за то, что сами решили добавить.</span></li>
+    <li class="card"><b>Срок — в договоре</b><span>Если срок сдвигается, мы звоним в тот же день и объясняем причину. Молча не двигаем.</span></li>
+    <li class="card"><b>Гарантия 3 года</b><span>На корпус и сборку, на фурнитуру — по условиям производителя. Образец, условия уточняйте.</span></li>
+  </ul>
+</div></section>
+
+<section class="sec alt" id="kontakty"><div class="wr">
+  <div class="ct">
+    <div class="card b">
+      <span class="tag">Контакты</span>
+      <h2>Позвоните — приедем на замер бесплатно</h2>
+      <span class="open" id="open"><b></b><span>Мастерская открыта</span></span>
+      <dl>
+        <dt>Адрес</dt><dd>Ваш город, ваш адрес</dd>
+        <dt>Телефон</dt><dd><a href="tel:+77777777777">+7-777-777-77-77</a></dd>
+        <dt>Часы</dt><dd>пн–сб 9:00–19:00</dd>
+        <dt>Выезжаем</dt><dd>По городу и до 30 км от него</dd>
+      </dl>
+      <div class="btns">
+        <a class="btn wa" href="https://wa.me/77777777777?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%80." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>WhatsApp</a>
+        <a class="btn tg" href="https://t.me/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Telegram</a>
+        <a class="btn line" href="tel:+77777777777"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Позвонить</a>
+      </div>
+    </div>
+    <iframe title="Карта (образец)" src="https://yandex.ru/map-widget/v1/?ll=61.402554%2C55.159897&z=11" loading="lazy"></iframe>
+  </div>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wr"><span>© Створка · мебель на заказ</span><span>Все данные на сайте — образец</span></div></footer>
+<div class="float"><a class="c2" href="https://wa.me/77777777777" aria-label="Написать в WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a><a class="c3" href="https://t.me/" aria-label="Написать в Telegram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></a><a class="c1" href="tel:+77777777777" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a></div>
+<script>
+(function(){
+
+var CLR={'Белый':'#F2EFE9','Серый':'#9AA0A3','Графит':'#4A4D50','Бежевый':'#CDB89B','Дерево':'#B58A5E','Синий':'#2F5D7C','Чёрный':'#2B2B2B'};
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
+function u(id,w){return 'https://images.unsplash.com/photo-'+id+'?w='+w+'&q=72&auto=format&fit=crop'}
+/* Иллюстрация мебели: показывается, если фото не загрузилось */
+function art(k,c){
+  c=c||'#8AA0A8';
+  var s='<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#EAE3D6"/><rect y="244" width="400" height="56" fill="#D8CBB5"/>',i;
+  if(k=='s'||k=='g'||k=='p'){
+    s+='<rect x="60" y="28" width="280" height="216" rx="4" fill="'+c+'"/>';
+    for(i=1;i<3;i++)s+='<rect x="'+(60+i*93)+'" y="28" width="2" height="216" fill="#000" opacity=".22"/>';
+    s+='<rect x="70" y="40" width="74" height="192" fill="#fff" opacity=".28"/><rect x="152" y="40" width="1" height="192" fill="#fff" opacity=".4"/>';
+    s+='<rect x="150" y="120" width="5" height="40" rx="2" fill="#23211E" opacity=".6"/><rect x="243" y="120" width="5" height="40" rx="2" fill="#23211E" opacity=".6"/>';
+  }else if(k=='d'){
+    s+='<rect x="30" y="150" width="190" height="70" rx="8" fill="'+c+'"/><rect x="30" y="130" width="190" height="30" rx="10" fill="#fff" opacity=".6"/><rect x="236" y="40" width="130" height="204" fill="'+c+'"/>';
+    for(i=0;i<4;i++)s+='<rect x="244" y="'+(50+i*47)+'" width="114" height="38" fill="#fff" opacity=".35"/>';
+    s+='<circle cx="120" cy="90" r="26" fill="#F2C94C" opacity=".8"/>';
+  }else{
+    for(i=0;i<4;i++)s+='<rect x="'+(40+i*80)+'" y="40" width="76" height="70" rx="3" fill="'+c+'" opacity=".85"/>';
+    s+='<rect x="40" y="170" width="320" height="14" fill="#23211E" opacity=".35"/>';
+    for(i=0;i<4;i++)s+='<rect x="'+(40+i*80)+'" y="186" width="76" height="58" rx="3" fill="'+c+'"/><rect x="'+(66+i*80)+'" y="192" width="24" height="4" rx="2" fill="#fff" opacity=".7"/>';
+  }
+  return s+'</svg>';
+}
+function img(id,alt,w,k,c,eager){
+  var a=Math.round(w/2),b=Math.min(2400,Math.round(w*1.6));
+  return '<img class="ph" src="'+u(id,w)+'" srcset="'+u(id,a)+' '+a+'w, '+u(id,w)+' '+w+'w, '+u(id,b)+' '+b+'w" sizes="(max-width:767px) 100vw, 33vw" width="'+w+'" height="'+Math.round(w*.75)+'" alt="'+esc(alt)+'" '+(eager?'fetchpriority="high"':'loading="lazy"')+' decoding="async" data-k="'+(k||'')+'" data-c="'+(c||'')+'">';
+}
+function fail(im){var d=document.createElement('div');d.className='ph';d.setAttribute('role','img');d.setAttribute('aria-label',im.alt||'Иллюстрация');d.innerHTML=art(im.dataset.k,CLR[im.dataset.c]);im.replaceWith(d)}
+document.addEventListener('error',function(e){var t=e.target;if(t&&t.tagName=='IMG'&&t.classList.contains('ph'))fail(t)},true);
+document.querySelectorAll('img.ph').forEach(function(im){if(im.complete&&im.naturalWidth===0)fail(im)});
+
+/* «Открыто сейчас»: пн–сб 9:00–19:00 по местному времени посетителя */
+var el=document.getElementById('open');
+if(el){var d=new Date(),h=d.getHours(),w=d.getDay();
+  if(w===0||h<9||h>=19){el.classList.add('closed');el.lastChild.textContent='Сейчас закрыто — ответим в 9:00'}}
+})();
+</script>
+<style data-hscroll>.hs-wrap{position:relative;min-width:0;max-width:100%}.hs-btn{position:absolute;top:50%;z-index:30;width:42px;height:42px;margin-top:-21px;border-radius:50%;border:1px solid rgba(255,255,255,.45);background:rgba(20,20,24,.62);color:#fff;font:600 18px/1 system-ui,sans-serif;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 4px 14px rgba(0,0,0,.25);transition:opacity .25s,transform .2s;padding:0}.hs-btn:hover{transform:scale(1.08)}.hs-btn.l{left:6px}.hs-btn.r{right:6px}.hs-btn.off{opacity:0;pointer-events:none}.hs-wrap.sm .hs-btn{width:30px;height:30px;margin-top:-15px;font-size:14px}</style>
+<script data-hscroll>(function(){function sc(el){var cs=getComputedStyle(el);return /(auto|scroll)/.test(cs.overflowX)&&el.scrollWidth>el.clientWidth+8&&el.clientHeight>40}
+function upd(el){var w=el.parentNode,l=w.querySelector(':scope>.hs-btn.l'),r=w.querySelector(':scope>.hs-btn.r'),can=el.scrollWidth>el.clientWidth+8;l.classList.toggle('off',!can||el.scrollLeft<4);r.classList.toggle('off',!can||el.scrollLeft+el.clientWidth>=el.scrollWidth-4)}
+function step(el){var c=el.firstElementChild,g=parseFloat(getComputedStyle(el).columnGap)||16,s=c?c.getBoundingClientRect().width+g:0;if(!s||s>el.clientWidth*.9)s=el.clientWidth*.8;return s}
+function add(el){if(el.dataset.hs)return;el.dataset.hs=1;var w=document.createElement('div');w.className='hs-wrap'+(el.clientHeight<100?' sm':'');var cs=getComputedStyle(el);['gridColumn','gridRow','marginTop','marginBottom','marginLeft','marginRight','flex','alignSelf','width','maxWidth'].forEach(function(p){if(p.indexOf('margin')==0){w.style[p]=cs[p];el.style[p]='0'}else if(el.style[p]||p.indexOf('grid')==0||p=='alignSelf'||p=='flex'){w.style[p]=cs[p]}});el.parentNode.insertBefore(w,el);w.appendChild(el);
+[['l','<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>','Прокрутить назад',-1],['r','<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>','Прокрутить вперёд',1]].forEach(function(a){var b=document.createElement('button');b.type='button';b.className='hs-btn '+a[0]+' off';b.innerHTML=a[1];b.setAttribute('aria-label',a[2]);b.onclick=function(){el.scrollBy({left:a[3]*step(el),behavior:'smooth'})};w.appendChild(b)});
+el.addEventListener('scroll',function(){upd(el)},{passive:true});upd(el)}
+function scan(){document.querySelectorAll('body *:not(.hs-btn):not(.hs-wrap)').forEach(function(el){if(el.dataset.hs){upd(el);return}if(!el.closest('[data-no-hs]')&&sc(el))add(el)})}
+var t;function later(){clearTimeout(t);t=setTimeout(scan,250)}
+if(document.readyState!='loading')later();else document.addEventListener('DOMContentLoaded',later);
+addEventListener('load',later);addEventListener('resize',later);document.addEventListener('click',function(e){if(!e.target.closest('.hs-btn'))later()},true)})();</script>
+</body>
+</html>

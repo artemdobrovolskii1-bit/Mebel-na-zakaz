@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Створка — мебель на заказ, кухня в 3D</title>
+<meta name="description" content="Мебель на заказ: соберите кухню в 3D и увидите цену до звонка, следите за заказом в личном кабинете, запишитесь на замер. Демо-сайт, данные — образец.">
+<meta property="og:title" content="Створка — соберите кухню в 3D, сроки и цена в договоре">
+<meta property="og:description" content="3D-конфигуратор кухни со сметой в PDF, замер по слотам, личный кабинет с этапами заказа.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<!-- Яндекс Метрика: вставьте сюда код счётчика клиента -->
+<style>
+:root{--bg:#F4F0E8;--bg2:#EAE3D6;--card:#FFFFFF;--ink:#23211E;--mute:#6B655B;--acc:#1F5C73;--acc-ink:#FFFFFF;--line:#DDD5C6;--acc-d:#164759;--deep:#12333F;--ok:#2F7D4F;--warn:#B4561F;--r:20px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Onest,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+body.lock{overflow:hidden}
+[hidden]{display:none!important}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+h1,h2,h3{font-family:Unbounded,Onest,sans-serif;font-weight:500;line-height:1.12;margin:0;letter-spacing:-.01em}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.cfg :focus-visible,.ctc :focus-visible{outline-color:#8FC3D4}
+.wr{max-width:1240px;margin:0 auto;padding:0 20px}
+.sec{padding:64px 0}
+.sec.t0{padding-top:0}
+.cap{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--acc)}
+.cap:before{content:"";width:22px;height:2px;background:currentColor}
+.sh{display:grid;gap:14px;margin-bottom:34px}
+.sh h2{font-size:clamp(1.55rem,5.4vw,2.7rem)}
+.sh p{margin:0;color:var(--mute);max-width:60ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;min-height:48px;border-radius:999px;border:0;background:var(--ink);color:var(--bg);font-weight:600;text-decoration:none;transition:background .2s,transform .2s;text-align:center}
+.btn:hover{transform:translateY(-1px)}
+.btn.acc{background:var(--acc);color:var(--acc-ink)}.btn.acc:hover{background:var(--acc-d)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.btn.sm{padding:10px 18px;min-height:40px;font-size:.92rem}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.pill{display:inline-block;padding:5px 12px;border-radius:999px;background:var(--bg2);font-size:.8rem;font-weight:500}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* шапка */
+.hd{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(244,240,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd .wr{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Unbounded,sans-serif;font-weight:700;font-size:1.15rem}
+.logo svg{width:30px;height:30px;flex:none}
+.hd nav{display:none}
+.hd .r{display:flex;align-items:center;gap:10px}
+.hd .tel{display:none;font-weight:600;text-decoration:none}
+.hd .r .btn{display:none}
+.burger{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;display:grid;place-items:center;padding:0}
+.burger span,.burger span:before,.burger span:after{display:block;width:18px;height:2px;background:var(--ink);content:"";position:relative;transition:.2s}
+.burger span:before{position:absolute;top:-6px}.burger span:after{position:absolute;top:6px}
+.menu-open .burger span{background:transparent}.menu-open .burger span:before{top:0;transform:rotate(45deg)}.menu-open .burger span:after{top:0;transform:rotate(-45deg)}
+.mnav{position:fixed;top:64px;left:0;right:0;bottom:0;z-index:39;background:var(--bg);padding:20px;display:none;overflow:auto}
+.menu-open .mnav{display:block}
+.mnav a{display:block;padding:15px 0;border-bottom:1px solid var(--line);font-family:Unbounded,sans-serif;font-size:1.05rem;text-decoration:none}
+.mnav .btn{margin-top:20px;width:100%;font-family:Onest,sans-serif;font-size:1rem}
+/* герой */
+.hero{padding:92px 0 40px;position:relative;overflow:hidden}
+.hero .wr{display:grid;gap:30px}
+.hero h1{font-size:clamp(1.85rem,8vw,4rem);line-height:1.05;margin:16px 0 18px}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero .lead{font-size:1.08rem;color:var(--mute);max-width:46ch;margin:0 0 24px}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+.open{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;color:var(--mute);margin-top:18px}
+.open i{width:9px;height:9px;border-radius:50%;background:var(--mute);flex:none}
+.open.on i{background:var(--ok);box-shadow:0 0 0 4px rgba(47,125,79,.2)}
+.hmedia{position:relative}
+.hmedia .big{border-radius:var(--r);overflow:hidden;aspect-ratio:4/4.2;background:var(--bg2)}
+.hmedia img{width:100%;height:100%;object-fit:cover}
+.hmedia .sm{position:absolute;left:-6px;bottom:-22px;width:42%;aspect-ratio:1;border-radius:var(--r);overflow:hidden;border:5px solid var(--bg);background:var(--bg2)}
+.hmedia .sm img{width:100%;height:100%;object-fit:cover}
+.hmedia .tag{position:absolute;right:12px;top:12px;background:var(--card);border-radius:14px;padding:10px 14px;box-shadow:0 10px 30px -12px rgba(35,33,30,.4);font-size:.82rem;line-height:1.3}
+.hmedia .tag b{display:block;font-family:Unbounded,sans-serif;font-size:1.05rem}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:44px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.fact b{display:block;font-family:Unbounded,sans-serif;font-size:1.3rem;color:var(--acc)}
+.fact span{font-size:.85rem;color:var(--mute)}
+.ticker{background:var(--deep);color:#EAE3D6;overflow:hidden;white-space:nowrap;padding:14px 0;font-size:.92rem}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 38s linear infinite}
+.ticker span{margin-right:36px}.ticker span:before{content:"\25A0";margin-right:12px;color:#7FB4C6;font-size:.6rem}
+@keyframes tick{to{transform:translateX(-100%)}}
+/* 3D-конфигуратор */
+.cfg{background:var(--deep);color:#EFEADF}
+.cfg .cap{color:#8FC3D4}
+.cfg .sh p{color:#B9C9CF}
+.cmodes{display:flex;gap:8px;margin-bottom:18px;max-width:420px}
+.cmodes button{flex:1;border:1.5px solid #3C5A66;background:transparent;border-radius:999px;padding:12px 10px;font-weight:600;color:#EFEADF}
+.cmodes button[aria-pressed=true]{background:#EFEADF;color:var(--deep);border-color:#EFEADF}
+.cg{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}.cg>*{min-width:0}
+.stagebox{position:sticky;top:64px;z-index:6;background:var(--deep);padding:6px 0 4px;margin:0 -4px}
+.stage{position:relative;height:clamp(200px,31vh,280px);border-radius:var(--r);overflow:hidden;background:#2A3C43;border:1px solid #3C5A66}
+.stage canvas{display:block;width:100%;height:100%;touch-action:pan-y;cursor:grab;outline-offset:-4px}
+.stage canvas:active{cursor:grabbing}
+.stage .v2d{position:absolute;inset:0;display:grid;place-items:center;background:#EDE6D8;padding:10px}
+.stage .v2d svg{width:100%;height:100%;max-height:100%}
+.sprice{position:absolute;left:8px;top:8px;background:rgba(18,51,63,.88);color:#fff;border-radius:12px;padding:6px 12px;font-size:.78rem;line-height:1.25;pointer-events:none}
+.sprice b{display:block;font-family:Unbounded,sans-serif;font-size:.92rem;font-weight:500}
+.sinfo{position:absolute;right:8px;top:8px;background:rgba(255,255,255,.88);color:var(--ink);border-radius:12px;padding:6px 12px;font-size:.78rem;line-height:1.25;pointer-events:none;max-width:48%;text-align:right;display:none}
+.shint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);background:rgba(18,51,63,.82);color:#fff;border-radius:999px;padding:5px 14px;font-size:.78rem;pointer-events:none;transition:opacity .6s;white-space:nowrap}
+.shint.off{opacity:0}
+.sxl{position:absolute;left:8px;right:8px;bottom:8px;background:rgba(255,255,255,.94);color:var(--ink);border-radius:14px;padding:10px 14px;font-size:.8rem;display:none;gap:4px 18px;flex-wrap:wrap}
+.sxl.on{display:flex}
+.sxl span b{font-family:Unbounded,sans-serif;font-weight:500}
+.sxl i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+.sload{position:absolute;inset:0;display:grid;place-items:center;color:#B9C9CF;font-size:.9rem;background:#2A3C43}
+.tb{display:flex;gap:6px;margin-top:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.tb::-webkit-scrollbar{display:none}
+.tb button{flex:none;display:inline-flex;align-items:center;gap:7px;min-height:42px;padding:8px 14px;border-radius:999px;border:1.5px solid #3C5A66;background:transparent;color:#EFEADF;font-size:.85rem;font-weight:500;white-space:nowrap}
+.tb button svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tb button[aria-pressed=true]{background:#EFEADF;color:var(--deep);border-color:#EFEADF}
+.tb button:hover{border-color:#8FC3D4}
+.qnote{font-size:.78rem;color:#9FB4BB;margin:6px 2px 0}
+.cmain{background:var(--card);color:var(--ink);border-radius:var(--r);padding:20px}
+.stepbar{display:flex;gap:6px;margin-bottom:18px;overflow-x:auto;scrollbar-width:none}
+.stepbar::-webkit-scrollbar{display:none}
+.stepbar button{flex:1 0 auto;display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:transparent;border-radius:999px;padding:8px 14px 8px 8px;font-size:.85rem;font-weight:500;white-space:nowrap;color:var(--mute);min-height:42px}
+.stepbar b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--bg2);font-size:.78rem;color:var(--ink)}
+.stepbar button.on{border-color:var(--acc);color:var(--ink);background:rgba(31,92,115,.07)}
+.stepbar button.on b,.stepbar button.done b{background:var(--acc);color:var(--acc-ink)}
+.pane{display:none}.pane.on{display:block;animation:up .3s}
+@keyframes up{from{opacity:0;transform:translateY(8px)}}
+.pane h3{font-size:1.05rem;margin-bottom:6px}
+.pane .hint{margin:0 0 16px;color:var(--mute);font-size:.92rem}
+.opts{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.opt{position:relative;text-align:left;border:1.5px solid var(--line);background:var(--card);border-radius:14px;padding:12px;min-height:64px;transition:.15s;display:block;width:100%}
+.opt:hover{border-color:var(--acc)}
+.opt[aria-pressed=true]{border-color:var(--acc);background:rgba(31,92,115,.07);box-shadow:inset 0 0 0 1px var(--acc)}
+.opt b{display:block;font-size:.92rem}
+.opt small{display:block;color:var(--mute);font-size:.78rem;line-height:1.3;margin-top:2px}
+.opt svg{display:block;width:100%;height:34px;margin-bottom:6px}
+.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.swb{border:2px solid transparent;background:transparent;padding:4px;border-radius:14px;text-align:center;font-size:.78rem}
+.swb i{display:block;height:44px;border-radius:12px;border:1px solid rgba(0,0,0,.15);margin-bottom:4px}
+.swb[aria-pressed=true]{border-color:var(--acc)}
+.rng{margin:6px 0 18px}
+.rng .lb{display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:8px}
+.rng .lb b{font-family:Unbounded,sans-serif;font-size:1.1rem}
+input[type=range]{width:100%;accent-color:var(--acc);height:32px}
+.chk{display:flex;align-items:flex-start;gap:12px;padding:12px;border:1.5px solid var(--line);border-radius:14px;margin-bottom:10px;cursor:pointer}
+.chk input{margin-top:4px;width:20px;height:20px;accent-color:var(--acc);flex:none}
+.chk span{flex:1;font-size:.92rem}
+.chk small{display:block;color:var(--mute);font-size:.8rem}
+.chk em{font-style:normal;font-weight:600;white-space:nowrap;font-size:.88rem}
+.chk.st{cursor:default}
+.chk .cnt{flex:none;display:flex;gap:8px;align-items:center}
+.chk .cnt .btn{padding:0;width:40px}
+.chk .cnt b{min-width:20px;text-align:center}
+.nav2{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.plan{background:var(--bg);border-radius:16px;padding:10px;margin-bottom:16px}
+.plan svg{width:100%;height:auto;max-height:230px;display:block}
+.plan .lg{display:flex;gap:16px;flex-wrap:wrap;font-size:.78rem;color:var(--mute);padding:6px 6px 2px}
+.sumbox{background:#EFEADF;color:var(--ink);border-radius:var(--r);padding:20px;align-self:start}
+.sumbox h3{font-size:1rem;margin-bottom:12px}
+.sumbox dl{margin:0 0 14px;display:grid;grid-template-columns:1fr auto;gap:6px 14px;font-size:.9rem}
+.sumbox dt{color:var(--mute)}.sumbox dd{margin:0;text-align:right;font-weight:500}
+.sumbox .tot{border-top:1.5px dashed #B9AE98;padding-top:14px;margin-top:6px}
+.sumbox .tot small{display:block;color:var(--mute)}
+.sumbox .tot b{display:block;font-family:Unbounded,sans-serif;font-size:1.35rem;line-height:1.2;margin:2px 0}
+.sumbox .term{margin:10px 0 14px;font-size:.92rem}
+.sumbox .btn{width:100%;margin-top:8px}
+.sumbox .fine{font-size:.78rem;color:var(--mute);margin:10px 0 0}
+.promos{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.promos .pill{background:#DCEBD8;color:#1E5233}
+/* каталог */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:24px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:10px 18px;font-weight:500;transition:.2s;min-height:44px}
+.tab[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.cat{display:grid;gap:18px;grid-template-columns:1fr}
+.cd{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.cd:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(35,33,30,.5)}
+.cd .im{position:relative;aspect-ratio:4/3;background:var(--bg2);overflow:hidden;border:0;padding:0;width:100%;display:block}
+.cd .im img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.cd:hover .im img{transform:scale(1.05)}
+.bdg{position:absolute;left:12px;top:12px;background:var(--acc);color:var(--acc-ink);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+.bdg.n{background:var(--ink)}.bdg.s{background:var(--warn)}
+.cd .bd{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cd h3{font-size:1.02rem}
+.cd .sp{font-size:.88rem;color:var(--mute)}
+.cd .pr{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:10px;padding-top:6px}
+.cd .pr b{font-family:Unbounded,sans-serif;font-size:1.02rem}
+.cd .pr s{display:block;font-size:.8rem;color:var(--mute)}
+.cd .pr small{color:var(--mute);font-size:.8rem}
+.cd .acts{display:flex;gap:8px;margin-top:6px}
+.cd .acts .btn{flex:1;padding:10px 12px;font-size:.88rem;min-height:42px}
+.note{font-size:.88rem;color:var(--mute);margin-top:18px}
+/* замер */
+.bk{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}.bk>*{min-width:0}
+.bkbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.bkbox h3{font-size:1rem;margin-bottom:12px}
+.bkbox h3.mt{margin-top:12px}
+.kind{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.kind button{border:1.5px solid var(--line);background:var(--card);border-radius:14px;padding:12px;text-align:left;min-height:64px}
+.kind button b{display:block;font-size:.92rem}
+.kind button small{color:var(--mute);font-size:.78rem;line-height:1.3;display:block}
+.kind button[aria-pressed=true]{border-color:var(--acc);background:rgba(31,92,115,.07);box-shadow:inset 0 0 0 1px var(--acc)}
+.fld{display:grid;gap:6px;margin-bottom:14px}
+.fld label,.fld .l{font-size:.85rem;color:var(--mute);font-weight:500}
+.fld input,.fld select,.fld textarea{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card);width:100%;min-height:48px}
+.fld textarea{min-height:84px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--acc);outline:0}
+.f2{display:grid;gap:0 14px;grid-template-columns:1fr}
+.days{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;scrollbar-width:thin}
+.day{flex:0 0 66px;border:1.5px solid var(--line);background:var(--card);border-radius:14px;padding:8px 4px;text-align:center;line-height:1.2;min-height:56px}
+.day small{display:block;color:var(--mute);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em}
+.day b{font-family:Unbounded,sans-serif;font-size:1.1rem}
+.day[aria-pressed=true]{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}.day[aria-pressed=true] small{color:#CFE3EA}
+.day:disabled{opacity:.4;cursor:not-allowed;background:var(--bg2)}
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.slot{border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:12px 8px;font-weight:500;min-height:46px}
+.slot[aria-pressed=true]{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.slot:disabled{text-decoration:line-through;color:var(--mute);background:var(--bg2);cursor:not-allowed}
+.proj{display:flex;gap:10px;align-items:flex-start;background:rgba(31,92,115,.08);border:1px dashed var(--acc);border-radius:14px;padding:12px;margin-bottom:14px;font-size:.9rem}
+.proj input{margin-top:4px;accent-color:var(--acc);width:18px;height:18px;flex:none}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--mute);margin:4px 0 14px}
+.agree input{margin-top:3px;accent-color:var(--acc);width:18px;height:18px;flex:none}
+.agree a,.lnk{color:var(--acc);text-decoration:underline;text-underline-offset:3px;background:none;border:0;padding:0;font:inherit;cursor:pointer}
+.ok{background:#E3F0E6;border:1px solid #B8D8C0;border-radius:var(--r);padding:20px;display:none}
+.ok.show{display:block;animation:up .3s}
+.ok h3{font-size:1.05rem;margin-bottom:8px;color:#1E5233}
+.ok .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.wfull{width:100%}
+/* личный кабинет */
+.lkb{background:var(--bg2)}
+.lk{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.lkin{padding:34px 22px;text-align:center;display:grid;gap:14px;justify-items:center}
+.lkin h3{font-size:1.2rem}
+.lkin p{margin:0;color:var(--mute);max-width:52ch}
+.lkin .ava{width:64px;height:64px;border-radius:50%;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font-family:Unbounded,sans-serif;font-size:1.2rem}
+.lkh{display:grid;gap:14px;padding:20px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,var(--bg))}
+.lkh .who{display:flex;align-items:center;gap:12px}
+.lkh .who i{font-style:normal;width:44px;height:44px;border-radius:50%;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font-weight:600;flex:none}
+.lkh .who small{display:block;color:var(--mute);font-size:.82rem}
+.lkh h3{font-size:1.05rem}
+.prog{display:grid;gap:6px}
+.prog .bar{height:10px;border-radius:999px;background:var(--bg2);overflow:hidden}
+.prog .bar i{display:block;height:100%;width:0;background:var(--acc);border-radius:999px;transition:width 1s}
+.prog small{color:var(--mute);font-size:.82rem}
+.lkt{display:flex;gap:6px;overflow-x:auto;padding:12px 16px 0;scrollbar-width:none;border-bottom:1px solid var(--line)}
+.lkt::-webkit-scrollbar{display:none}
+.lkt button{flex:none;border:0;background:transparent;padding:12px 14px;font-weight:500;color:var(--mute);border-bottom:3px solid transparent;min-height:44px;white-space:nowrap}
+.lkt button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--acc)}
+.lkt button em{font-style:normal;background:var(--warn);color:#fff;border-radius:999px;font-size:.7rem;padding:1px 7px;margin-left:6px}
+.lkp{padding:20px;display:none}.lkp.on{display:block;animation:up .3s}
+.alert{display:flex;gap:12px;align-items:flex-start;background:#FBEBDD;border:1px solid #EBC5A4;border-radius:14px;padding:14px 16px;margin-bottom:18px;font-size:.92rem}
+.alert svg{width:22px;height:22px;flex:none;stroke:var(--warn);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.alert b{display:block}
+.stgs{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.stgs li{display:grid;grid-template-columns:30px 1fr;gap:4px 12px;padding:12px 0;border-bottom:1px solid var(--line);position:relative}
+.stgs li:last-child{border-bottom:0}
+.stgs .mk{width:26px;height:26px;border-radius:50%;background:var(--bg2);display:grid;place-items:center;font-size:.78rem;font-weight:600;color:var(--mute)}
+.stgs .done .mk{background:var(--ok);color:#fff}
+.stgs .now .mk{background:var(--acc);color:#fff;box-shadow:0 0 0 5px rgba(31,92,115,.18)}
+.stgs b{display:block;font-size:.95rem}
+.stgs .dt{font-size:.82rem;color:var(--mute);display:flex;flex-wrap:wrap;gap:2px 14px}
+.stgs .dt s{color:var(--mute)}
+.stgs .dt strong{color:var(--warn);font-weight:600}
+.stgs .lft{grid-column:2;font-size:.82rem;color:var(--acc);font-weight:600}
+.ph6{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ph6 button{border:0;padding:0;background:var(--bg2);border-radius:14px;overflow:hidden;text-align:left;position:relative;aspect-ratio:4/3;display:block;width:100%}
+.ph6 img{width:100%;height:100%;object-fit:cover}
+.ph6 span{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(0deg,rgba(0,0,0,.72),transparent);color:#fff;font-size:.78rem;padding:18px 10px 8px;line-height:1.25}
+.docs{display:grid;gap:10px}
+.doc{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--bg)}
+.doc i{font-style:normal;flex:none;width:42px;height:42px;border-radius:10px;background:var(--acc);color:#fff;display:grid;place-items:center;font-size:.7rem;font-weight:600}
+.doc div{flex:1;min-width:0;font-size:.92rem}
+.doc div small{display:block;color:var(--mute);font-size:.78rem}
+.pays{display:grid;gap:10px}
+.pay1{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--bg)}
+.pay1 b{font-family:Unbounded,sans-serif;font-size:1.02rem}
+.pay1 .pc1{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between;font-size:.88rem;color:var(--mute)}
+.st1{display:inline-block;border-radius:999px;padding:3px 11px;font-size:.78rem;font-weight:600}
+.st1.ok1{background:#DCEBD8;color:#1E5233}.st1.wt{background:#FBEBDD;color:#8C3F10}.st1.nx{background:var(--bg2);color:var(--mute)}
+.chat{display:grid;gap:10px}
+.msgs{display:grid;gap:8px;max-height:300px;overflow:auto;padding:4px 2px}
+.msg{max-width:86%;background:var(--bg2);border-radius:14px 14px 14px 4px;padding:10px 14px;font-size:.92rem}
+.msg small{display:block;color:var(--mute);font-size:.74rem;margin-bottom:2px}
+.msg.me{justify-self:end;background:var(--acc);color:#fff;border-radius:14px 14px 4px 14px}
+.msg.me small{color:#CFE3EA}
+.chatf{display:flex;gap:8px}
+.chatf input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:999px;padding:11px 16px;min-height:46px;background:var(--card)}
+.chatf input:focus{border-color:var(--acc);outline:0}
+.gar2{display:grid;gap:14px}
+.gcnt{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.gcnt b{display:block;font-family:Unbounded,sans-serif;font-size:1.5rem;color:var(--acc)}
+.gcnt span{font-size:.85rem;color:var(--mute)}
+.addc{display:grid;gap:12px;border:1.5px dashed var(--acc);border-radius:14px;padding:16px;background:rgba(31,92,115,.05)}
+.addc p{margin:0;font-size:.92rem;color:var(--mute)}
+.addc .pp{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.addc .pp b{font-family:Unbounded,sans-serif;font-size:1.25rem}
+.addc .pp s{color:var(--mute)}
+.fb{margin-top:12px;font-size:.92rem;background:#E3F0E6;border:1px solid #B8D8C0;border-radius:12px;padding:12px 14px;color:#1E5233}
+/* оплата */
+.pay{background:var(--bg2)}
+.pg{display:grid;gap:18px}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.pc h3{font-size:1.02rem;margin-bottom:10px}
+.pc .big{font-family:Unbounded,sans-serif;font-size:1.7rem;color:var(--acc);margin:6px 0}
+.pc p{margin:0 0 12px;color:var(--mute);font-size:.92rem}
+.pc .btns{display:flex;gap:10px;flex-wrap:wrap}
+.mo{display:flex;gap:8px;margin:8px 0 14px}
+.mo button{flex:1;border:1.5px solid var(--line);background:transparent;border-radius:12px;padding:10px;font-weight:600;min-height:44px}
+.mo button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.pl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.pl li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;font-size:.92rem}
+.pl code{background:#DCEBD8;color:#1E5233;border-radius:8px;padding:3px 9px;font:600 .8rem Onest,sans-serif;letter-spacing:.04em}
+.pl li.off code{background:var(--bg2);color:var(--mute)}.pl li.off{opacity:.65}
+.incl{width:100%;border-collapse:collapse;font-size:.9rem}
+.incl th,.incl td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.incl th{font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;color:var(--mute);font-weight:600}
+.incl td:nth-child(2){color:var(--ok);font-weight:600}.incl td:nth-child(3){color:var(--warn)}
+.tw{overflow-x:auto}
+/* работы */
+.cases{display:grid;gap:18px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid}
+.case .im{aspect-ratio:16/10;background:var(--bg2)}
+.case .im img{width:100%;height:100%;object-fit:cover}
+.case .bd{padding:20px}
+.case h3{font-size:1.05rem;margin-bottom:10px}
+.case dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0 0 12px;font-size:.88rem}
+.case dt{color:var(--mute)}.case dd{margin:0;font-weight:500}
+.case q{display:block;font-size:.92rem;color:var(--mute);quotes:"«" "»"}
+.mkw{background:var(--card)}
+.steps{display:grid;gap:18px;counter-reset:s}
+.stp{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center}
+.stp .im{aspect-ratio:1;border-radius:16px;overflow:hidden;background:var(--bg2)}
+.stp img{width:100%;height:100%;object-fit:cover}
+.stp h3{font-size:.98rem;margin-bottom:4px}
+.stp h3:before{counter-increment:s;content:counter(s) ". ";color:var(--acc)}
+.stp p{margin:0;font-size:.9rem;color:var(--mute)}
+.gar{display:grid;gap:12px;margin-top:30px;grid-template-columns:1fr 1fr}
+.gar div{border:1px solid var(--line);border-radius:16px;padding:16px;background:var(--bg)}
+.gar b{display:block;font-family:Unbounded,sans-serif;color:var(--acc);font-size:1.25rem}
+.gar span{font-size:.85rem;color:var(--mute)}
+.rvs{display:grid;gap:16px}
+.rv{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:12px;margin:0}
+.rv p{margin:0;font-size:1rem}
+.rv .fx{display:flex;flex-wrap:wrap;gap:6px}
+.rv cite{font-style:normal;font-size:.88rem;color:var(--mute);margin-top:auto}
+.rv cite b{color:var(--ink);display:block}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:1.02rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font-size:1.5rem;line-height:1;color:var(--acc);transition:transform .25s;flex:none}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq p{margin:10px 0 0;color:var(--mute);max-width:64ch}
+.ctg{display:grid;gap:18px}
+.ctc{background:var(--ink);color:var(--bg);border-radius:var(--r);padding:26px}
+.ctc .cap{color:#8FC3D4}
+.ctc h2{font-size:clamp(1.4rem,5vw,2.2rem);margin:12px 0 20px}
+.ctc dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:0 0 22px}
+.ctc dt{color:#A9A296}.ctc dd{margin:0}
+.ctc .btns{display:flex;gap:10px;flex-wrap:wrap}
+.ctc .btn.ghost{color:var(--bg);border-color:var(--bg)}.ctc .btn.ghost:hover{background:var(--bg);color:var(--ink)}
+.map{border-radius:var(--r);overflow:hidden;background:var(--bg2);border:1px solid var(--line);min-height:260px}
+.map svg{display:block;width:100%;height:100%;min-height:260px}
+footer.f{padding:30px 0 110px;color:var(--mute);font-size:.88rem;border-top:1px solid var(--line)}
+footer.f .wr{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+.fab{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:45;display:flex;flex-direction:column;gap:10px}
+.fab a{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 8px 22px -6px rgba(0,0,0,.45);text-decoration:none}
+.fab svg{width:24px;height:24px}
+.fab .c1{background:var(--acc)}.fab .c2{background:#25A244}.fab .c3{background:#2A8FD0}
+.md{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(35,33,30,.62)}
+.md.show{display:flex;animation:fd .2s}
+@keyframes fd{from{opacity:0}}
+.mb{background:var(--card);border-radius:var(--r);width:min(860px,100%);max-height:calc(100vh - 28px);overflow:auto;position:relative}
+.mb.nr{width:min(460px,100%);padding:26px}
+.mx{position:absolute;right:10px;top:10px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.9);font-size:1.5rem;line-height:1;z-index:2;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.mb.nr .mx{background:var(--bg2);box-shadow:none}
+.mb .mi{aspect-ratio:16/10;background:var(--bg2)}
+.mb .mi img{width:100%;height:100%;object-fit:cover}
+.mb .mt{padding:22px}
+.mb h3{font-size:1.2rem;margin-bottom:8px}
+.mb dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:12px 0 18px;font-size:.92rem}
+.mb dt{color:var(--mute)}.mb dd{margin:0;font-weight:500}
+.mb .btns{display:flex;gap:10px;flex-wrap:wrap}
+.mb p{margin:0 0 12px;color:var(--mute);font-size:.92rem}
+.mb .pc{margin-bottom:14px;padding:14px}
+.qr{width:150px;height:150px;margin:10px auto;display:block}
+.sp2{width:34px;height:34px;border-radius:50%;border:4px solid var(--line);border-top-color:var(--acc);animation:rot .8s linear infinite;margin:20px auto}
+@keyframes rot{to{transform:rotate(360deg)}}
+.toast{position:fixed;left:50%;bottom:80px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-size:.9rem;z-index:90;opacity:0;pointer-events:none;transition:.3s;max-width:92vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.rev.in{opacity:1;transform:none}
+.demo{display:inline-block;background:var(--ink);color:var(--bg);font-size:.8rem;padding:6px 14px;border-radius:999px;margin:0 0 16px}
+#print{display:none}
+@media print{
+ @page{margin:14mm}
+ body{background:#fff;color:#000;overflow:visible}
+ body>*:not(#print){display:none!important}
+ #print{display:block;font:13px/1.5 Arial,sans-serif;color:#000}
+ #print h1{font:700 22px Arial;margin:0 0 4px}
+ #print h2{font:700 14px Arial;margin:18px 0 6px}
+ #print table{width:100%;border-collapse:collapse;margin-top:6px}
+ #print td,#print th{border-bottom:1px solid #bbb;padding:6px 4px;text-align:left;vertical-align:top}
+ #print td:last-child,#print th:last-child{text-align:right;white-space:nowrap}
+ #print .tot td{font-weight:700;font-size:15px;border-top:2px solid #000}
+ #print .fn{font-size:11px;color:#444;margin-top:16px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rev{opacity:1;transform:none}.ticker div{padding-left:0}}
+@media(min-width:768px){
+.sec{padding:90px 0}
+.hero .wr{grid-template-columns:1.05fr .95fr;align-items:center;gap:48px}
+.facts{grid-template-columns:repeat(4,1fr)}
+.cat{grid-template-columns:1fr 1fr}
+.opts{grid-template-columns:repeat(3,1fr)}
+.f2{grid-template-columns:1fr 1fr}
+.slots{grid-template-columns:repeat(5,1fr)}
+.pg{grid-template-columns:1fr 1fr}
+.pg .wide{grid-column:1/-1}
+.cases{grid-template-columns:1fr 1fr}
+.rvs{grid-template-columns:repeat(3,1fr)}
+.steps{grid-template-columns:1fr 1fr;gap:26px}
+.stp{grid-template-columns:120px 1fr}
+.gar{grid-template-columns:repeat(4,1fr)}
+.ctg{grid-template-columns:1fr 1fr}
+.mb.big{display:grid;grid-template-columns:1.1fr 1fr}
+.mb.big .mi{aspect-ratio:auto;min-height:100%}
+.sw{grid-template-columns:repeat(8,1fr)}
+.stage{height:clamp(340px,46vh,460px)}
+.sinfo{display:block}
+.ph6{grid-template-columns:repeat(3,1fr)}
+.lkh{grid-template-columns:1fr minmax(220px,320px);align-items:center}
+.gar2{grid-template-columns:1fr 1fr}
+.kind button b{font-size:1rem}
+}
+@media(min-width:1200px){
+.hd nav{display:flex;gap:22px;font-size:.92rem}
+.hd nav a{text-decoration:none;color:var(--mute);font-weight:500}.hd nav a:hover{color:var(--ink)}
+.hd .tel{display:block}
+.hd .r .btn{display:inline-flex}
+.burger{display:none}
+.hd .wr{height:72px}
+.cat{grid-template-columns:repeat(3,1fr)}
+.cg{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:22px}
+.stagebox{grid-column:1;grid-row:1/span 3;align-self:start;top:92px;padding:0;margin:0}
+.stage{height:min(600px,calc(100vh - 190px))}
+.cmain{grid-column:2;grid-row:1;padding:26px}
+.sumbox{grid-column:2;grid-row:2}
+.bk{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.pg{grid-template-columns:1fr 1fr 1fr}
+.pg .wide{grid-column:span 2}
+.cases{grid-template-columns:repeat(2,1fr)}
+.case{grid-template-columns:1fr 1fr}
+.case .im{aspect-ratio:auto;min-height:100%}
+.opts.c4{grid-template-columns:repeat(4,1fr)}
+.stepbar{flex-wrap:wrap}
+.mnav{display:none!important}
+}
+@media(min-width:1200px) and (max-width:1300px){.hd nav{gap:16px;font-size:.88rem}}
+.mt1{margin-top:20px}.lkh h3.mt1{margin-top:12px}.opts.mb1{margin:10px 0 18px}
+</style>
+</head>
+<body>
+<a href="../index.html" class="tarify-back" aria-label="Вернуться ко всем тарифам" style="position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:2147483000;display:inline-flex;align-items:center;gap:6px;padding:11px 16px;border-radius:999px;background:rgba(20,20,20,.82);color:#fff;font:600 14px/1 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;text-decoration:none;box-shadow:0 8px 22px -6px rgba(0,0,0,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)">← Все тарифы</a><script data-fp>(function(){try{var k="fp:"+location.pathname.split("/")[1],q=/[?&]from=portfolio(&|$)/.test(location.search);if(q)sessionStorage.setItem(k,"1");if(q||sessionStorage.getItem(k)){var b=document.querySelector(".tarify-back");if(b)b.style.display="none"}}catch(e){}})();</script>
+<header class="hd" id="top">
+ <div class="wr">
+  <a class="logo" href="#top" aria-label="Створка — на главную">
+   <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="8" fill="#1F5C73"/><path d="M9 8h7v16H9zM18 8h5v16h-5z" fill="none" stroke="#F4F0E8" stroke-width="2"/><circle cx="14" cy="16" r="1.3" fill="#F4F0E8"/></svg>
+   Створка
+  </a>
+  <nav aria-label="Основное меню">
+   <a href="#konfigurator">Кухня в 3D</a><a href="#katalog">Каталог</a><a href="#zamer">Замер</a><a href="#kabinet">Кабинет</a><a href="#oplata">Оплата</a><a href="#raboty">Работы</a><a href="#kontakty">Контакты</a>
+  </nav>
+  <div class="r">
+   <a class="tel" href="tel:+77777777777">+7 777 777-77-77</a>
+   <a class="btn acc sm" href="#zamer">Записаться на замер</a>
+   <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" id="burger"><span></span></button>
+  </div>
+ </div>
+</header>
+<div class="mnav" id="mnav">
+ <a href="#konfigurator">Кухня в 3D</a><a href="#katalog">Каталог</a><a href="#zamer">Замер онлайн</a><a href="#kabinet">Личный кабинет</a><a href="#oplata">Оплата и рассрочка</a><a href="#raboty">Работы</a><a href="#masterskaya">Мастерская</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a>
+ <a class="btn acc" href="tel:+77777777777">Позвонить</a>
+</div>
+
+<main>
+<section class="hero" aria-labelledby="h1">
+ <div class="wr">
+  <div>
+   <span class="demo">Все данные на сайте — образец</span><br>
+   <span class="cap">Мебель на заказ · свой цех</span>
+   <h1 id="h1">Соберите кухню в 3D. <em>Сроки и цена — в договоре</em></h1>
+   <p class="lead">Повернёте кухню, поменяете фасады и столешницу, и цена пересчитается на экране. Смету можно сохранить в PDF, а за заказом следить онлайн.</p>
+   <div class="btns">
+    <a class="btn acc" href="#konfigurator">Собрать кухню в 3D</a>
+    <a class="btn ghost" href="#zamer">Забронировать замер</a>
+   </div>
+   <div class="open" id="open"><i></i><span>Часы работы: пн–сб 9:00–19:00</span></div>
+  </div>
+  <div class="hmedia">
+   <div class="big"><img src="https://images.unsplash.com/photo-1701421047855-d7bafd8d6f69?w=900&amp;q=75&amp;auto=format&amp;fit=crop" width="900" height="945" alt="Кухня со светлыми фасадами и тёмным островом с вертикальными рейками"></div>
+   <div class="sm"><img loading="lazy" src="https://images.unsplash.com/photo-1708397016786-8916880649b8?w=400&amp;q=75&amp;auto=format&amp;fit=crop" width="400" height="400" alt="Тёмная гардеробная с подсветкой полок"></div>
+   <div class="tag"><b>от 34 000 ₽/п.м.</b>кухня из ЛДСП, срок 14 дней</div>
+  </div>
+ </div>
+ <div class="wr">
+  <div class="facts">
+   <div class="fact"><b>от 14 дней</b><span>срок кухни, пишем в договор</span></div>
+   <div class="fact"><b>3 года</b><span>гарантия на изделие (образец)</span></div>
+   <div class="fact"><b>0 ₽</b><span>замер и дизайн-проект</span></div>
+   <div class="fact"><b>30 минут</b><span>ответ в мессенджере в рабочее время</span></div>
+  </div>
+ </div>
+</section>
+<div class="ticker" aria-hidden="true"><div><span>Кухня в 3D с ценой на экране</span><span>Замер бесплатный, цена в договоре не меняется</span><span>Звоним сами, если срок сдвигается</span><span>Статус заказа и фото цеха в личном кабинете</span><span>Рассрочка 0% на 6 и 10 месяцев</span><span>Калькулятор ±7%, итог после замера</span></div></div>
+
+<section class="sec cfg" id="konfigurator" aria-labelledby="h-cfg">
+ <div class="wr">
+  <div class="sh"><span class="cap">3D-конфигуратор</span><h2 id="h-cfg">Соберите кухню в 3D за 5 шагов</h2><p>Форма, длина, фасад, столешница, ручки меняются прямо на модели, а смета пересчитывается сразу. Телефон нужен только чтобы сохранить расчёт.</p></div>
+  <div class="cmodes" role="group" aria-label="Что настраиваем">
+   <button type="button" data-mode="kitchen" aria-pressed="true">Кухня</button>
+   <button type="button" data-mode="wardrobe" aria-pressed="false">Шкаф-купе</button>
+  </div>
+  <div class="cg">
+   <div class="stagebox">
+    <div class="stage" id="stage">
+     <canvas id="cv" role="img" aria-label="3D-модель кухни. Потяните, чтобы повернуть, стрелки на клавиатуре тоже вращают" tabindex="0"></canvas>
+     <div class="v2d" id="v2d" hidden>
+      <svg id="plan" viewBox="0 0 360 220" role="img" aria-label="Схема кухни сверху"></svg>
+      <svg id="wplan" viewBox="0 0 360 220" role="img" aria-label="Схема шкафа-купе, вид спереди" hidden></svg>
+     </div>
+     <div class="sload" id="sload">Загружаем 3D…</div>
+     <div class="sprice" aria-hidden="true"><span id="spT">Смета</span><b id="spR">—</b></div>
+     <div class="sinfo" id="sInfo"></div>
+     <div class="shint" id="shint">Потяните, чтобы повернуть</div>
+     <div class="sxl" id="sxl"></div>
+    </div>
+    <div class="tb" id="tb" role="toolbar" aria-label="Управление 3D-моделью">
+     <button type="button" id="bDoors" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M5 3h9v18H5z"/><path d="M14 5l5 2v13l-5 1"/></svg>Двери</button>
+     <button type="button" id="bExp" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 3v5M12 16v5M3 12h5M16 12h5M7 7l2 2M15 15l2 2M17 7l-2 2M9 15l-2 2"/></svg>Разобрать</button>
+     <button type="button" id="bNight" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><span id="bNightT">Вечер</span></button>
+     <button type="button" id="bView"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span id="bViewT">Вид: общий</span></button>
+     <button type="button" id="bRot" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Вращать</button>
+     <button type="button" id="b2d" aria-pressed="false"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg><span id="b2dT">Схема 2D</span></button>
+    </div>
+    <p class="qnote" id="qnote"></p>
+   </div>
+
+   <div class="cmain">
+    <!-- КУХНЯ -->
+    <div id="kMode">
+     <div class="stepbar" id="stepbar" role="group" aria-label="Шаги конфигуратора">
+      <button type="button" data-s="0" class="on"><b>1</b>Форма и размер</button>
+      <button type="button" data-s="1"><b>2</b>Фасад</button>
+      <button type="button" data-s="2"><b>3</b>Столешница</button>
+      <button type="button" data-s="3"><b>4</b>Фурнитура</button>
+      <button type="button" data-s="4"><b>5</b>Опции</button>
+     </div>
+     <div class="pane on" data-p="0">
+      <h3>Форма и длина</h3><p class="hint">Длина — это нижний ряд шкафов по всем стенам, в погонных метрах.</p>
+      <div class="opts c4" id="oForm"></div>
+      <div class="rng"><div class="lb"><span>Длина нижнего ряда</span><b id="vL">3,4 м</b></div><input type="range" id="rL" min="1.6" max="8" step="0.1" value="3.4" aria-label="Длина кухни, метры"></div>
+      <h3>Верхние шкафы</h3><p class="hint">Высота верхнего яруса. Цена фасадной части считается с коэффициентом.</p>
+      <div class="opts c4" id="oUp"></div>
+     </div>
+     <div class="pane" data-p="1">
+      <h3>Фасад: материал и цвет</h3><p class="hint">В ставку входят корпус, фасад и базовая фурнитура. Дверцы на модели откроются сами.</p>
+      <div class="opts" id="oFac"></div>
+      <div class="sw" id="oCol" role="group" aria-label="Цвет фасада"></div>
+     </div>
+     <div class="pane" data-p="2">
+      <h3>Столешница</h3><p class="hint">Цена за погонный метр.</p>
+      <div class="opts" id="oTop"></div>
+     </div>
+     <div class="pane" data-p="3">
+      <h3>Фурнитура</h3><p class="hint">Петли и доводчики.</p>
+      <div class="opts" id="oHw"></div>
+      <h3 class="mt1">Ручки</h3>
+      <div class="opts c4" id="oHd"></div>
+     </div>
+     <div class="pane" data-p="4">
+      <h3>Опции, доставка, комплект</h3><p class="hint">Отметьте то, что нужно. Остальное обсудим на замере.</p>
+      <div id="oEx"></div>
+      <div class="fld"><label for="dlv">Доставка</label><select id="dlv"><option value="0">По городу, 2 500 ₽</option><option value="1">За город, 2 500 ₽ + 60 ₽/км</option></select></div>
+      <div class="fld" id="kmw" hidden><label for="km">Расстояние за городом, км</label><input type="number" id="km" min="1" max="200" value="25" inputmode="numeric"></div>
+      <label class="chk"><input type="checkbox" id="wardAdd"><span>Добавить шкаф-купе в прихожую 1,2 × 2,4 м, ЛДСП + зеркало<small>Применится промокод «Комплект»: −10% на шкаф</small></span><em id="wardPrice">—</em></label>
+      <label class="chk"><input type="checkbox" id="firstOrd" checked><span>Это мой первый заказ<small>Промокод «Первый» −3% на гарнитур</small></span></label>
+     </div>
+     <div class="nav2"><button class="btn ghost sm" type="button" id="prev">Назад</button><button class="btn acc sm" type="button" id="next">Дальше</button></div>
+    </div>
+    <!-- ШКАФ -->
+    <div id="wMode" hidden>
+     <h3>Шкаф-купе: размеры и двери</h3>
+     <div class="rng"><div class="lb"><span>Ширина</span><b id="vW">1,8 м</b></div><input type="range" id="rW" min="1.2" max="4" step="0.1" value="1.8" aria-label="Ширина шкафа, метры"></div>
+     <div class="rng"><div class="lb"><span>Высота</span><b id="vH">2,4 м</b></div><input type="range" id="rH" min="2" max="2.7" step="0.1" value="2.4" aria-label="Высота шкафа, метры"></div>
+     <h3>Количество дверей</h3>
+     <div class="opts mb1" id="wDoors"></div>
+     <h3>Декор дверей</h3>
+     <div class="opts mb1" id="wDecor"></div>
+     <h3>Наполнение</h3>
+     <div id="wFill"></div>
+    </div>
+   </div>
+
+   <aside class="sumbox" aria-live="polite" aria-label="Смета">
+    <h3 id="sumT">Ваша смета</h3>
+    <dl id="sumL"></dl>
+    <div class="promos" id="sumP"></div>
+    <div class="tot"><small>Ориентировочно, ±7%</small><b id="sumR">—</b><small id="sumE"></small></div>
+    <div class="term" id="sumTerm"></div>
+    <button class="btn acc" type="button" id="toBook">Записаться на замер с этим проектом</button>
+    <button class="btn ghost" type="button" id="toPdf">Смета в PDF</button>
+    <button class="btn ghost" type="button" id="toPay">Внести предоплату 30%</button>
+    <a class="btn ghost" id="toWa" href="https://wa.me/77777777777" target="_blank" rel="noopener">Отправить смету в WhatsApp</a>
+    <a class="btn ghost" id="toTg" href="https://t.me/" target="_blank" rel="noopener">Отправить смету в Telegram</a>
+    <p class="fine">Калькулятор даёт вилку ±7%. Итог фиксируется в договоре после бесплатного замера. Ставки — образец. Техника и мебель на модели показаны условно.</p>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="katalog" aria-labelledby="h-kat">
+ <div class="wr">
+  <div class="sh"><span class="cap">Каталог</span><h2 id="h-kat">Готовые решения с ценой и сроком</h2><p>Цена «от» подписана единицей: за погонный метр или за шкаф. Любую кухню из каталога можно открыть в 3D и поменять под свои размеры.</p></div>
+  <div class="tabs" role="group" aria-label="Фильтр каталога" id="tabs">
+   <button class="tab" type="button" data-f="all" aria-pressed="true">Все</button>
+   <button class="tab" type="button" data-f="kitchen" aria-pressed="false">Кухни</button>
+   <button class="tab" type="button" data-f="wardrobe" aria-pressed="false">Шкафы-купе</button>
+   <button class="tab" type="button" data-f="walkin" aria-pressed="false">Гардеробные</button>
+   <button class="tab" type="button" data-f="kids" aria-pressed="false">Детская</button>
+  </div>
+  <div class="cat" id="cat"></div>
+  <p class="note">Цены и сроки в каталоге — образец. Точная сумма фиксируется в договоре после бесплатного замера.</p>
+ </div>
+</section>
+
+<section class="sec t0" id="zamer" aria-labelledby="h-bk">
+ <div class="wr">
+  <div class="sh"><span class="cap">Замер и салон</span><h2 id="h-bk">Выберите день, час и формат встречи</h2><p>Замер бесплатный и занимает около часа. Можно приехать в салон и выбрать материалы вживую. Свободные слоты — образец. После брони получите файл для календаря.</p></div>
+  <div class="bk">
+   <div class="bkbox">
+    <h3>1. Формат встречи</h3>
+    <div class="kind" id="kind" role="group" aria-label="Формат встречи">
+     <button type="button" data-k="home" aria-pressed="true"><b>Замер у вас</b><small>приедем в выбранный район</small></button>
+     <button type="button" data-k="salon" aria-pressed="false"><b>Салон материалов</b><small>образцы фасадов и столешниц</small></button>
+    </div>
+    <div class="fld" id="distW"><label for="dist">Район выезда</label><select id="dist"></select></div>
+    <h3 class="mt">2. День (ближайшие 14)</h3>
+    <div class="days" id="days"></div>
+    <h3 class="mt">3. Время</h3>
+    <div class="slots" id="slots"></div>
+    <p class="note" id="bkSel">Выберите день и время.</p>
+   </div>
+   <form class="bkbox" id="bkForm" novalidate>
+    <h3>4. Контакты</h3>
+    <div id="projBox"></div>
+    <div class="f2">
+     <div class="fld"><label for="bn">Имя</label><input id="bn" required autocomplete="name"></div>
+     <div class="fld"><label for="bp">Телефон</label><input id="bp" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+7"></div>
+    </div>
+    <div class="fld" id="adrW"><label for="ba">Адрес замера</label><input id="ba" autocomplete="street-address" placeholder="Улица, дом, квартира"></div>
+    <div class="f2">
+     <div class="fld"><label for="bt">Что мерить</label><select id="bt"><option>Кухня</option><option>Шкаф-купе</option><option>Гардеробная</option><option>Детская</option><option>Несколько изделий</option></select></div>
+     <div class="fld"><label for="bm">Связь</label><select id="bm"><option>WhatsApp</option><option>Telegram</option><option>Звонок</option></select></div>
+    </div>
+    <div class="fld"><label for="bc">Комментарий</label><textarea id="bc" placeholder="Этаж, лифт, готовность стен"></textarea></div>
+    <label class="agree"><input type="checkbox" id="bg" required><span>Согласен на обработку персональных данных, <button type="button" class="lnk" data-open="privacy">политика конфиденциальности</button></span></label>
+    <button class="btn acc wfull" type="submit">Забронировать встречу</button>
+   </form>
+  </div>
+  <div class="ok" id="bkOk" role="status" tabindex="-1"></div>
+ </div>
+</section>
+
+<section class="sec lkb" id="kabinet" aria-labelledby="h-lk">
+ <div class="wr">
+  <div class="sh"><span class="cap">Личный кабинет</span><h2 id="h-lk">Заказ виден онлайн: этапы, фото цеха, документы</h2><p>У каждого клиента есть кабинет. Ниже образцовый заказ: можно открыть вкладки, написать менеджеру, отправить гарантийную заявку. Вход без пароля, данные — образец.</p></div>
+  <div class="lk" id="lk">
+   <div class="lkin" id="lkIn">
+    <div class="ava" aria-hidden="true">АК</div>
+    <h3>Демо-вход в кабинет</h3>
+    <p>Откроем образцовый заказ «Кухня 3,4 м, эмаль графит». Пароль не нужен, реальные данные не используются.</p>
+    <button class="btn acc" type="button" id="lkGo">Войти как Анна К. (образец)</button>
+   </div>
+   <div id="lkApp" hidden>
+    <div class="lkh">
+     <div>
+      <div class="who"><i>АК</i><div><b>Анна К.</b><small>Заказ СТ-2041 · договор от <span id="lkD0"></span></small></div></div>
+      <h3 class="mt1">Кухня 3,4 м, угловая, эмаль графит, столешница HPL</h3>
+     </div>
+     <div class="prog"><div class="bar"><i id="lkBar"></i></div><small id="lkProg"></small></div>
+    </div>
+    <div class="lkt" role="tablist" aria-label="Разделы кабинета" id="lkTabs">
+     <button type="button" role="tab" aria-selected="true" data-t="stg">Этапы</button>
+     <button type="button" role="tab" aria-selected="false" data-t="ph">Фотоотчёт цеха</button>
+     <button type="button" role="tab" aria-selected="false" data-t="doc">Документы</button>
+     <button type="button" role="tab" aria-selected="false" data-t="pay">Оплаты</button>
+     <button type="button" role="tab" aria-selected="false" data-t="chat">Чат<em id="lkUnread">1</em></button>
+     <button type="button" role="tab" aria-selected="false" data-t="gar">Гарантия</button>
+     <button type="button" role="tab" aria-selected="false" data-t="add">Дополнить заказ</button>
+    </div>
+    <div class="lkp on" data-tp="stg">
+     <div class="alert" role="status"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><div id="lkAlert"></div></div>
+     <ol class="stgs" id="stgs"></ol>
+    </div>
+    <div class="lkp" data-tp="ph"><div class="ph6" id="ph6"></div><p class="note">Фотоотчёт цеха: снимки по каждому этапу с датой. Фото на демо-сайте — образец.</p></div>
+    <div class="lkp" data-tp="doc"><div class="docs" id="docs"></div></div>
+    <div class="lkp" data-tp="pay"><div class="pays" id="pays"></div><p class="note">График платежей по договору. Оплата на демо-сайте — имитация.</p></div>
+    <div class="lkp" data-tp="chat">
+     <div class="chat">
+      <div class="msgs" id="msgs" aria-live="polite"></div>
+      <form class="chatf" id="chatF"><input id="chatI" placeholder="Написать менеджеру" aria-label="Сообщение менеджеру" autocomplete="off"><button class="btn acc sm" type="submit">Отправить</button></form>
+      <p class="note" id="chatNote">Менеджер отвечает за 30 минут в рабочее время (пн–сб 9:00–19:00).</p>
+     </div>
+    </div>
+    <div class="lkp" data-tp="gar">
+     <div class="gar2">
+      <div class="gcnt"><b id="garTill">—</b><span>гарантия на изделие действует до этой даты (3 года с акта приёмки, образец)</span></div>
+      <form id="garF" novalidate>
+       <div class="fld"><label for="garT">Что случилось</label><textarea id="garT" placeholder="Например: дверца у мойки закрывается с зазором"></textarea></div>
+       <div class="fld"><label for="garP">Фото (по желанию)</label><input type="file" id="garP" accept="image/*"></div>
+       <button class="btn acc wfull" type="submit">Отправить гарантийную заявку</button>
+       <div class="fb" id="garOk" role="status" hidden></div>
+      </form>
+     </div>
+    </div>
+    <div class="lkp" data-tp="add">
+     <div class="addc">
+      <h3>Шкаф-купе в прихожую 1,2 × 2,4 м</h3>
+      <p>Добавим к вашему заказу: сделаем в тот же срок и привезём одной доставкой. На комплект действует промокод «Комплект».</p>
+      <div class="pp"><b id="addNew">—</b><s id="addOld">—</s><span class="pill">−10% комплект</span></div>
+      <button class="btn acc" type="button" id="addGo">Отправить запрос менеджеру</button>
+      <div class="fb" id="addOk" role="status" hidden></div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec pay" id="oplata" aria-labelledby="h-pay">
+ <div class="wr">
+  <div class="sh"><span class="cap">Цены и оплата</span><h2 id="h-pay">Предоплата, рассрочка 0% и честный состав цены</h2><p>Предоплата 30% запускает изделие в производство. Остаток по этапам договора. Оплата на демо-сайте — имитация, деньги не списываются.</p></div>
+  <div class="pg">
+   <div class="pc">
+    <h3>Предоплата 30%</h3>
+    <p>От суммы вашей сметы (по середине вилки).</p>
+    <div class="big" id="prePay">—</div>
+    <p id="preNote">Соберите проект в конфигураторе — сумма подставится сама.</p>
+    <div class="btns"><button class="btn acc sm" type="button" data-pay="card">Картой</button><button class="btn ghost sm" type="button" data-pay="sbp">По СБП</button></div>
+   </div>
+   <div class="pc">
+    <h3>Рассрочка 0%</h3>
+    <div class="mo" role="group" aria-label="Срок рассрочки"><button type="button" data-m="6" aria-pressed="true">6 мес.</button><button type="button" data-m="10" aria-pressed="false">10 мес.</button></div>
+    <div class="rng"><div class="lb"><span>Сумма заказа</span><b id="inV">200 000 ₽</b></div><input type="range" id="inR" min="50000" max="800000" step="5000" value="200000" aria-label="Сумма заказа"></div>
+    <p>Платёж в месяц после предоплаты 30%:</p>
+    <div class="big" id="inM">—</div>
+    <p class="note">Условия — образец. Реальные условия даёт банк-партнёр.</p>
+   </div>
+   <div class="pc">
+    <h3>Промокоды работают сами</h3>
+    <p>Вводить ничего не нужно: подходящие скидки попадают в смету.</p>
+    <ul class="pl" id="promoL"></ul>
+   </div>
+   <div class="pc wide">
+    <h3>Что входит в цену</h3>
+    <div class="tw"><table class="incl"><thead><tr><th>Пункт</th><th>У нас</th><th>Часто у других</th></tr></thead><tbody>
+     <tr><td>Замер и дизайн-проект</td><td>0 ₽</td><td>до 2 500 ₽ или за телефон</td></tr>
+     <tr><td>Базовая фурнитура</td><td>в ставке за п.м.</td><td>отдельная строка</td></tr>
+     <tr><td>Доставка по городу</td><td>2 500 ₽</td><td>«по запросу»</td></tr>
+     <tr><td>Монтаж</td><td>8% от гарнитура, от 12 000 ₽</td><td>от 12 000 ₽ сверху</td></tr>
+     <tr><td>Цена в договоре</td><td>не меняется после замера</td><td>пересчёт при монтаже</td></tr>
+    </tbody></table></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="raboty" aria-labelledby="h-rb">
+ <div class="wr">
+  <div class="sh"><span class="cap">Работы</span><h2 id="h-rb">Кейсы с размерами, сроком и ценой</h2><p>Образцовые кейсы: так мы показываем каждую работу, чтобы вы сравнивали со своей кухней.</p></div>
+  <div class="cases">
+   <article class="case"><div class="im"><img loading="lazy" src="https://images.unsplash.com/photo-1617228069096-4638a7ffc906?w=800&amp;q=75&amp;auto=format&amp;fit=crop" width="800" height="500" alt="Бежевая кухня без ручек с островом у большого окна"></div><div class="bd"><h3>Кухня с островом, без ручек</h3><dl><dt>Размер</dt><dd>5,2 п.м. + остров 1,4 м</dd><dt>Материал</dt><dd>МДФ эмаль, кварц</dd><dt>Срок</dt><dd>30 дней, сдана в срок</dd><dt>Цена</dt><dd>612 000 ₽</dd></dl><q>Разметили розетки под технику на замере, ничего не переделывали. (образец)</q></div></article>
+   <article class="case"><div class="im"><img loading="lazy" src="https://images.unsplash.com/photo-1600684388091-627109f3cd60?w=800&amp;q=75&amp;auto=format&amp;fit=crop" width="800" height="500" alt="Угловая кухня с чёрными матовыми фасадами и вытяжкой"></div><div class="bd"><h3>Угловая кухня «Графит»</h3><dl><dt>Размер</dt><dd>3,4 п.м., угловая</dd><dt>Материал</dt><dd>МДФ эмаль, HPL</dd><dt>Срок</dt><dd>30 дней</dd><dt>Цена</dt><dd>292 400 ₽</dd></dl><q>Срок назвали в договоре и уложились. Звонили сами, когда задержали фасады на два дня. (образец)</q></div></article>
+   <article class="case"><div class="im"><img loading="lazy" src="https://images.unsplash.com/photo-1640357154220-9775b0f31dec?w=800&amp;q=75&amp;auto=format&amp;fit=crop" width="800" height="500" alt="Большая гардеробная комната с ящиками и линейной подсветкой"></div><div class="bd"><h3>Гардеробная 6 м²</h3><dl><dt>Размер</dt><dd>14 п.м. по трём стенам</dd><dt>Материал</dt><dd>ЛДСП, подсветка</dd><dt>Срок</dt><dd>21 день</dd><dt>Цена</dt><dd>318 000 ₽</dd></dl><q>Выдвижные ящики ходят тихо, штанги под нашу длину пальто. (образец)</q></div></article>
+   <article class="case"><div class="im"><img loading="lazy" src="https://images.unsplash.com/photo-1643949914877-b20f30792c1e?w=800&amp;q=75&amp;auto=format&amp;fit=crop" width="800" height="500" alt="Встроенные фасады с нишей со скамьёй и реечной панелью"></div><div class="bd"><h3>Прихожая со скамьёй</h3><dl><dt>Размер</dt><dd>2,6 × 2,7 м, ниша</dd><dt>Материал</dt><dd>МДФ, реечная панель</dd><dt>Срок</dt><dd>21 день</dd><dt>Цена</dt><dd>70 700 ₽</dd></dl><q>Всё встало в нишу без зазоров, скамья выдерживает двоих. (образец)</q></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="sec mkw" id="masterskaya" aria-labelledby="h-mk">
+ <div class="wr">
+  <div class="sh"><span class="cap">Мастерская</span><h2 id="h-mk">Как делаем: от замера до монтажа</h2><p>Свой цех, без посредников. На каждом этапе вы знаете, где ваша мебель.</p></div>
+  <div class="steps">
+   <div class="stp"><div class="im"><img loading="lazy" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=300&amp;q=75&amp;auto=format&amp;fit=crop" width="300" height="300" alt="Замерщик с чертежом и карандашом"></div><div><h3>Замер и 3D-проект</h3><p>Бесплатно, около часа. Разметим розетки и трубы, согласуем проект.</p></div></div>
+   <div class="stp"><div class="im"><img loading="lazy" src="https://images.unsplash.com/photo-1659930087003-2d64e33181f7?w=300&amp;q=75&amp;auto=format&amp;fit=crop" width="300" height="300" alt="Разметка детали карандашом в мастерской"></div><div><h3>Договор и предоплата</h3><p>Срок и цена в договоре. Предоплата 30%, остаток по этапам.</p></div></div>
+   <div class="stp"><div class="im"><img loading="lazy" src="https://images.unsplash.com/photo-1561297331-a9c00b9c2c44?w=300&amp;q=75&amp;auto=format&amp;fit=crop" width="300" height="300" alt="Шлифовка светлого деревянного щита"></div><div><h3>Производство</h3><p>Раскрой, кромление, присадка, сборка. Срок 14–40 дней по материалу.</p></div></div>
+   <div class="stp"><div class="im"><img loading="lazy" src="https://images.unsplash.com/photo-1595844730298-b960ff98fee0?w=300&amp;q=75&amp;auto=format&amp;fit=crop" width="300" height="300" alt="Монтажник с поясом инструментов"></div><div><h3>Доставка и монтаж</h3><p>Привозим, собираем за 1–2 дня, подписываем акт.</p></div></div>
+  </div>
+  <div class="gar">
+   <div><b>3 года</b><span>гарантия на изделие (образец)</span></div>
+   <div><b>25 лет</b><span>ресурс механизмов Blum (по данным производителя)</span></div>
+   <div><b>2 дня</b><span>максимум на сдвиг срока без доплаты, иначе сообщим в день сдвига</span></div>
+   <div><b>0 ₽</b><span>бесплатное исправление наших ошибок</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="otzyvy" aria-labelledby="h-rv">
+ <div class="wr">
+  <div class="sh"><span class="cap">Отзывы (образец)</span><h2 id="h-rv">Отзывы с фактами: размер, срок, дата</h2></div>
+  <div class="rvs">
+   <figure class="rv"><div class="fx"><span class="pill">Кухня 3,2 м</span><span class="pill">25 дней</span><span class="pill">монтаж 12.09.2026</span></div><p>Цена в договоре совпала с калькулятором, разница 4%. Монтажники убрали за собой.</p><cite><b>Анна К.</b>Отзыв (образец)</cite></figure>
+   <figure class="rv"><div class="fx"><span class="pill">Шкаф-купе 2,2 м</span><span class="pill">14 дней</span><span class="pill">монтаж 02.10.2026</span></div><p>Замер в субботу утром забронировал на сайте за минуту. Приехали минута в минуту.</p><cite><b>Игорь П.</b>Отзыв (образец)</cite></figure>
+   <figure class="rv"><div class="fx"><span class="pill">Гардеробная</span><span class="pill">21 день</span><span class="pill">монтаж 28.08.2026</span></div><p>Сроки сдвинулись на день из-за кромки, менеджер позвонил в тот же день и объяснил.</p><cite><b>Мария Д.</b>Отзыв (образец)</cite></figure>
+  </div>
+ </div>
+</section>
+
+<section class="sec t0" id="faq" aria-labelledby="h-faq">
+ <div class="wr">
+  <div class="sh"><span class="cap">Вопросы</span><h2 id="h-faq">Частые вопросы</h2></div>
+  <div class="faq">
+   <details><summary>Как считается погонный метр?</summary><p>Считаем длину нижнего ряда шкафов по всем стенам. В ставку входят корпус, фасад и базовая фурнитура. Столешница, опции и монтаж считаются отдельными строками, и вы видите их в смете.</p></details>
+   <details><summary>Насколько 3D-модель похожа на мою кухню?</summary><p>Модель показывает форму, длину, цвет и материал фасада, столешницу и ручки. Техника и расположение модулей условные: точную раскладку мы делаем после замера и показываем в 3D-проекте для договора.</p></details>
+   <details><summary>Замер правда бесплатный?</summary><p>Да, замер и дизайн-проект бесплатные, даже если вы не закажете у нас. Приезжаем в выбранный слот в течение двух часов.</p></details>
+   <details><summary>Что если срок сдвинется?</summary><p>Срок записан в договоре. Если он сдвигается, мы сообщаем в день сдвига, называем причину и новую дату, и вы видите это в личном кабинете. Формулировку ответственности согласуем с вами в договоре.</p></details>
+   <details><summary>Насколько точен калькулятор?</summary><p>Он даёт вилку ±7%. Итоговую цену мы фиксируем после замера, и в договоре она не меняется.</p></details>
+   <details><summary>Как работает рассрочка?</summary><p>Предоплата 30%, остаток равными платежами на 6 или 10 месяцев без переплаты. Условия на демо-сайте — образец.</p></details>
+   <details><summary>Что делать, если 3D не открывается?</summary><p>На старых телефонах 3D включается в упрощённом качестве, без теней. Если и так не получается, сайт покажет схему кухни сверху: цена и все настройки работают так же.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="sec t0" id="kontakty" aria-labelledby="h-ct">
+ <div class="wr">
+  <div class="ctg">
+   <div class="ctc">
+    <span class="cap">Контакты</span>
+    <h2 id="h-ct">Приезжайте или напишите</h2>
+    <dl><dt>Адрес</dt><dd>ул. Производственная, 12 (образец)</dd><dt>Телефон</dt><dd><a href="tel:+77777777777">+7 777 777-77-77</a></dd><dt>Часы</dt><dd>пн–сб 9:00–19:00</dd><dt>Выезд замера</dt><dd>8 районов и пригород до 30 км</dd></dl>
+    <div class="btns">
+     <a class="btn acc" href="https://wa.me/77777777777?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7." target="_blank" rel="noopener">WhatsApp</a>
+     <a class="btn ghost" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+     <a class="btn ghost" href="tel:+77777777777">Позвонить</a>
+    </div>
+   </div>
+   <div class="map" role="img" aria-label="Схема расположения мастерской на карте (образец)">
+    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#EAE3D6"/><path d="M0 220 C80 190 140 240 230 200 S350 160 400 190 V300 H0Z" fill="#CFE1E6"/><g stroke="#fff" stroke-width="10" fill="none"><path d="M0 90H400M0 160H400M110 0V300M260 0V300"/></g><g stroke="#DDD5C6" stroke-width="2" fill="none"><path d="M0 40H400M0 125H400M185 0V300M330 0V300"/></g><g><circle cx="200" cy="125" r="16" fill="#1F5C73"/><circle cx="200" cy="125" r="6" fill="#fff"/></g><text x="200" y="165" text-anchor="middle" font-family="Onest,sans-serif" font-size="13" font-weight="600" fill="#23211E">Створка (образец)</text></svg>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="f"><div class="wr"><span>© 2026 Створка. Все данные на сайте — образец.</span><button type="button" class="lnk" data-open="privacy">Политика конфиденциальности</button></div></footer>
+
+<div class="fab">
+ <a class="c1" href="tel:+77777777777" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>
+ <a class="c2" href="https://wa.me/77777777777" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.3z"/></svg></a>
+ <a class="c3" href="https://t.me/" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.1 2.8 11.5c-1 .4-1 1.1-.2 1.3l4.9 1.5 1.9 5.8c.2.6.4.8.8.8.4 0 .6-.2.9-.4l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.7-.8L22.9 5.3c.3-1.3-.5-1.9-1-1.2zM8.5 13.5l9.6-6c.5-.3.9-.1.5.2l-8 7.2-.3 3.4z"/></svg></a>
+</div>
+
+<div class="md" id="mdItem" role="dialog" aria-modal="true" aria-label="Карточка изделия"><div class="mb big" id="mdItemB"></div></div>
+<div class="md" id="mdPay" role="dialog" aria-modal="true" aria-label="Оплата (демо)"><div class="mb nr" id="mdPayB"></div></div>
+<div class="md" id="mdPhoto" role="dialog" aria-modal="true" aria-label="Фото из цеха"><div class="mb" id="mdPhotoB"></div></div>
+<div class="md" id="mdPriv" role="dialog" aria-modal="true" aria-label="Политика конфиденциальности"><div class="mb nr"><button class="mx" type="button" data-close aria-label="Закрыть">×</button><h3>Политика конфиденциальности (образец)</h3><p>Текст-заглушка для демо-сайта. Мы собираем имя, телефон и адрес замера только чтобы связаться с вами и выполнить заказ. Данные не передаются третьим лицам. Реальный текст политики готовит юрист клиента.</p><button class="btn acc sm" type="button" data-close>Понятно</button></div></div>
+<div class="toast" id="toast" role="status"></div>
+<div id="print" aria-hidden="true"></div>
+<script src="three.min.js"></script>
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+function fmt(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,' ')}
+function rub(n){return fmt(n)+' ₽'}
+function m1(n){return n.toFixed(1).replace('.',',')}
+function r100(n){return Math.round(n/100)*100}
+function r1k(n){return Math.round(n/1000)*1000}
+function lcf(s){return /^.[a-zа-яё]/.test(s)?s.charAt(0).toLowerCase()+s.slice(1):s}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function img(id,w){return 'https://images.unsplash.com/photo-'+id+'?w='+w+'&q=75&auto=format&fit=crop'}
+var PH='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#EAE3D6"/><path d="M110 190h180v-60H110zM130 150h60v30h-60zM210 150h60v30h-60z" fill="none" stroke="#6B655B" stroke-width="4"/><text x="200" y="235" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B655B">Фото-образец</text></svg>');
+document.addEventListener('error',function(e){var t=e.target;if(t&&t.tagName==='IMG'&&!t.dataset.fb){t.dataset.fb='1';t.src=PH}},true);
+var WA='https://wa.me/77777777777?text=';
+var toastT;
+function toast(t){var el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){el.classList.remove('show')},3400)}
+function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+var REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- меню, часы, раскрытие ---------- */
+var burger=$('#burger');
+function menu(on){document.body.classList.toggle('menu-open',on);burger.setAttribute('aria-expanded',on?'true':'false');document.body.classList.toggle('lock',on)}
+burger.addEventListener('click',function(){menu(!document.body.classList.contains('menu-open'))});
+$$('#mnav a').forEach(function(a){a.addEventListener('click',function(){menu(false)})});
+addEventListener('resize',function(){if(innerWidth>=1200)menu(false)});
+function chel(){var o={wd:'',h:0};try{new Intl.DateTimeFormat('en-GB',{weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date()).forEach(function(p){if(p.type==='weekday')o.wd=p.value;if(p.type==='hour')o.h=+p.value%24})}catch(e){var d=new Date();o.wd=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()];o.h=d.getHours()}return o}
+function isOpen(){var c=chel();return c.wd!=='Sun'&&c.h>=9&&c.h<19}
+(function(){var on=isOpen(),b=$('#open');b.classList.toggle('on',on);$('span',b).textContent=on?'Открыто сейчас · пн–сб 9:00–19:00 · ответим за 30 минут':'Сейчас закрыто · пн–сб 9:00–19:00 · ответим утром'})();
+var io=null;
+if('IntersectionObserver' in window&&!REDUCE){io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'})}
+function reveal(root){$$('.sh,.case,.rv,.stp,.pc,.fact,.bkbox,.cd',root).forEach(function(el){if(!io||el.classList.contains('rev'))return;el.classList.add('rev');io.observe(el)})}
+
+/* ---------- модалки ---------- */
+var lastF=null;
+function openM(id){var m=$(id);lastF=document.activeElement;m.classList.add('show');document.body.classList.add('lock');var f=$('button,a,input',m);if(f)f.focus()}
+function closeM(){$$('.md.show').forEach(function(m){m.classList.remove('show')});if(!document.body.classList.contains('menu-open'))document.body.classList.remove('lock');if(lastF&&lastF.focus)lastF.focus()}
+$$('.md').forEach(function(m){m.addEventListener('click',function(e){if(e.target===m||e.target.closest('[data-close]'))closeM()})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeM();menu(false)}});
+document.addEventListener('click',function(e){var o=e.target.closest('[data-open="privacy"]');if(o)openM('#mdPriv')});
+
+/* ---------- каталог ---------- */
+var ITEMS=[
+{t:'kitchen',n:'Кухня «Графит»',s:'угловая, 3,2 м',m:'МДФ эмаль, графит',p:72000,u:'за п.м.',d:30,b:'Хит',ph:'1600489000022-c2086d79f9d4',cfg:{form:'corner',L:3.2,fac:'emal',col:'graphite',top:'hpl'}},
+{t:'kitchen',n:'Кухня «Айленд»',s:'с островом, 4,2 м',m:'акрил глянец, молочный',p:82800,u:'за п.м.',d:30,b:'Новинка',ph:'1556912172-45b7abe8b7e1',cfg:{form:'island',L:4.2,fac:'akril',col:'milk',top:'quartz'}},
+{t:'kitchen',n:'Кухня «Латунь»',s:'прямая, 3,6 м',m:'МДФ эмаль, шалфей',p:68000,u:'за п.м.',d:30,ph:'1565538810643-b5bdb714032a',cfg:{form:'straight',L:3.6,fac:'emal',col:'sage',top:'quartz'}},
+{t:'kitchen',n:'Кухня «Минимал»',s:'прямая, 3,0 м',m:'МДФ плёнка, молочный',p:48000,u:'за п.м.',d:21,b:'Хит',ph:'1484154218962-a197022b5858',cfg:{form:'straight',L:3,fac:'plen',col:'milk',top:'hpl'}},
+{t:'kitchen',n:'Кухня «Дуб и рейки»',s:'с островом, 4,6 м',m:'шпон, дуб',p:112700,u:'за п.м.',d:40,ph:'1622372738946-62e02505feb3',cfg:{form:'island',L:4.6,fac:'shpon',col:'oak',top:'acryl'}},
+{t:'kitchen',n:'Кухня «Уголь» эконом',s:'прямая, 2,8 м',m:'ЛДСП, графит',p:34000,old:38000,u:'за п.м.',d:14,b:'−10%',bc:'s',ph:'1556909172-54557c7e4fb7',cfg:{form:'straight',L:2.8,fac:'ldsp',col:'graphite',top:'ldsp'}},
+{t:'wardrobe',n:'Шкаф-купе «Лайт 180»',s:'1,8 × 2,4 м, 2 двери',m:'ЛДСП + зеркало',p:43500,u:'за шкаф',d:14,b:'Хит',ph:'1721901944646-8b7da57bea7e'},
+{t:'wardrobe',n:'Шкаф распашной «Дуб»',s:'2,0 × 2,4 м',m:'ЛДСП под дуб, зеркальные вставки',p:48400,u:'за шкаф',d:14,ph:'1722349674028-a148f4364e43'},
+{t:'wardrobe',n:'Встроенный шкаф с нишей',s:'2,6 × 2,7 м, скамья',m:'МДФ, реечная панель',p:70700,u:'за шкаф',d:21,b:'Новинка',ph:'1683181181300-44c0c991a2cf'},
+{t:'walkin',n:'Гардеробная «Свет»',s:'встроенная, 4 п.м.',m:'ЛДСП, зеркало, подсветка',p:20000,u:'за п.м.',d:21,ph:'1672137233327-37b0c1049e77'},
+{t:'walkin',n:'Гардеробная угловая',s:'6 п.м.',m:'светлое дерево, ящики',p:21000,u:'за п.м.',d:22,ph:'1649361811423-a55616f7ab11'},
+{t:'walkin',n:'Гардеробная «Белая»',s:'5 п.м.',m:'ЛДСП, выдвижные ящики',p:24000,u:'за п.м.',d:21,b:'Хит',ph:'1721044168675-b577e899413d'},
+{t:'kids',n:'Детская «Школьник»',s:'кровать, стол, шкаф',m:'ЛДСП, кромка ABS',p:30000,u:'за п.м.',d:24,b:'Хит',ph:'1721395288477-b546804ce392'},
+{t:'kids',n:'Детская со стеллажом',s:'стеллаж, сиденье у окна',m:'ЛДСП + МДФ',p:32000,u:'за п.м.',d:26,ph:'1687946803051-51da173a9f55'},
+{t:'kids',n:'Детская «Яркая»',s:'кровать и тумбы',m:'МДФ эмаль',p:36000,u:'за п.м.',d:28,b:'Новинка',ph:'1505692795793-20f543407193'}
+];
+var TN={kitchen:'Кухня',wardrobe:'Шкаф',walkin:'Гардеробная',kids:'Детская'};
+function card(it,i){
+ var b=it.b?'<span class="bdg'+(it.bc?' '+it.bc:(it.b==='Новинка'?' n':''))+'">'+it.b+'</span>':'';
+ var old=it.old?'<s>'+rub(it.old)+'</s>':'';
+ var main=it.cfg?'<button class="btn acc" type="button" data-cfg="'+i+'">Открыть в 3D</button>':'<a class="btn acc" href="'+WA+encodeURIComponent('Здравствуйте! Хочу узнать цену: '+it.n+' ('+it.s+')')+'" target="_blank" rel="noopener">Узнать цену</a>';
+ return '<article class="cd" data-t="'+it.t+'"><button class="im" type="button" data-more="'+i+'" aria-label="Подробнее: '+it.n+'"><img loading="lazy" width="640" height="480" src="'+img(it.ph,640)+'" alt="'+it.n+', '+it.s+'">'+b+'</button><div class="bd"><h3>'+it.n+'</h3><div class="sp">'+TN[it.t]+' · '+it.s+'<br>'+it.m+'</div><div class="pr"><div>'+old+'<b>от '+rub(it.p)+'</b> <small>'+it.u+'</small></div><small>'+it.d+' дн.</small></div><div class="acts">'+main+'<button class="btn ghost" type="button" data-more="'+i+'">Подробнее</button></div></div></article>'}
+var catEl=$('#cat');
+catEl.innerHTML=ITEMS.map(card).join('');
+$('#tabs').addEventListener('click',function(e){var b=e.target.closest('.tab');if(!b)return;var f=b.dataset.f;$$('.tab').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});$$('.cd',catEl).forEach(function(c){c.hidden=!(f==='all'||c.dataset.t===f)})});
+catEl.addEventListener('click',function(e){
+ var m=e.target.closest('[data-more]'),c=e.target.closest('[data-cfg]');
+ if(c){var it=ITEMS[+c.dataset.cfg];applyPreset(it.cfg);toast('Проект «'+it.n+'» открыт в 3D');return}
+ if(m){var it2=ITEMS[+m.dataset.more],B=$('#mdItemB');
+  B.innerHTML='<button class="mx" type="button" data-close aria-label="Закрыть">×</button><div class="mi"><img width="900" height="560" src="'+img(it2.ph,900)+'" alt="'+it2.n+'"></div><div class="mt"><h3>'+it2.n+'</h3><p>'+TN[it2.t]+' · '+it2.s+'</p><dl><dt>Материал</dt><dd>'+it2.m+'</dd><dt>Цена</dt><dd>от '+rub(it2.p)+' '+it2.u+'</dd><dt>Срок</dt><dd>'+it2.d+' дней</dd><dt>В цене</dt><dd>корпус, фасад, базовая фурнитура; замер и проект бесплатно</dd></dl><div class="btns">'+(it2.cfg?'<button class="btn acc" type="button" data-cfg2="'+m.dataset.more+'">Открыть в 3D</button>':'')+'<a class="btn ghost" href="'+WA+encodeURIComponent('Здравствуйте! Хочу узнать цену: '+it2.n+' ('+it2.s+')')+'" target="_blank" rel="noopener">Спросить в WhatsApp</a></div></div>';
+  openM('#mdItem')}
+});
+$('#mdItemB').addEventListener('click',function(e){var c=e.target.closest('[data-cfg2]');if(c){var it=ITEMS[+c.dataset.cfg2];closeM();applyPreset(it.cfg);toast('Проект «'+it.n+'» открыт в 3D')}});
+
+/* ---------- ставки (образец) ---------- */
+var FAC={ldsp:{n:'ЛДСП',r:34000,d:14},plen:{n:'МДФ плёнка ПВХ',r:48000,d:21},emal:{n:'МДФ эмаль матовая',r:68000,d:30},akril:{n:'Акрил глянец',r:72000,d:30},shpon:{n:'Шпон',r:98000,d:40}};
+var FORM={straight:{n:'Прямая',k:1,min:1.6,ic:'<path d="M3 12h42" />'},corner:{n:'Угловая',k:1.06,min:2.4,ic:'<path d="M3 5h42M3 5v24"/>'},u:{n:'П-образная',k:1.10,min:3.6,ic:'<path d="M3 29V5h42v24"/>'},island:{n:'С островом',k:1.15,min:3,ic:'<path d="M3 5h42"/><rect x="14" y="19" width="20" height="9" rx="1"/>'}};
+var TOP={ldsp:{n:'ЛДСП',r:4500,c:'#CDB48C'},hpl:{n:'HPL постформинг',r:7500,c:'#9A9893'},quartz:{n:'Кварцевый агломерат',r:19000,c:'#EFEDE8'},acryl:{n:'Акриловый камень',r:24000,c:'#34373A'}};
+var COL=[{k:'milk',n:'Молочный',c:'#EDE7DA'},{k:'graphite',n:'Графит',c:'#3B3F44'},{k:'petrol',n:'Петроль',c:'#1F5C73'},{k:'sage',n:'Шалфей',c:'#9AA88F'},{k:'oak',n:'Дуб',c:'#C9A67A'},{k:'walnut',n:'Орех',c:'#7A5438'},{k:'black',n:'Чёрный',c:'#1D1D1F'},{k:'terra',n:'Терракота',c:'#B9674A'}];
+var HW={base:{n:'Базовая',s:'петли и доводчики стандарт',p:0},blum:{n:'Blum',s:'петли и доводчики Blum',p:2500}};
+var HD={bracket:{n:'Скобы',s:'накладные',p:0},round:{n:'Круглые',s:'кнопки',p:0},rail:{n:'Рейлинг',s:'длинная планка',p:300},hidden:{n:'Скрытые',s:'профиль без ручек',p:900}};
+var UP={0:{n:'Без верхних',k:.72,s:'коэф. 0,72'},60:{n:'60 см',k:.92,s:'коэф. 0,92'},72:{n:'72 см',k:1,s:'коэф. 1,00'},90:{n:'90 см',k:1.06,s:'коэф. 1,06'}};
+var EX={light:{n:'Подсветка рабочей зоны',p:1800,u:'за п.м.',pm:1},sink:{n:'Встроенная мойка (вырез)',p:3500},cargo:{n:'Карго / сушка',p:6500},bin:{n:'Мусорная система',p:7200}};
+var WD={ldsp:{n:'ЛДСП',r:2400,c:'#D8CDB8'},mirror:{n:'Зеркало',r:3900,c:'#CFE0E6'},glass:{n:'Лакобель (стекло)',r:4700,c:'#5C7380'},photo:{n:'Фотопечать',r:5300,c:'#8FB09A'}};
+var WF={rod:{n:'Штанга',p:900,u:'шт.'},shelf:{n:'Полка',p:1100,u:'шт.'},drawer:{n:'Выдвижной ящик',p:2900,u:'шт.'},pant:{n:'Пантограф',p:6500,u:'шт.'},light:{n:'Подсветка',p:1800,u:'п.м.'}};
+var WRATE=7200;
+
+var S={mode:'kitchen',step:0,form:'corner',L:3.4,fac:'emal',col:'graphite',top:'hpl',hw:'base',hd:'rail',up:72,ex:{light:1,sink:1,cargo:0,bin:0},dlv:0,km:25,ward:0,first:1,touched:0};
+var W={w:1.8,h:2.4,doors:2,dec:'mirror',fill:{rod:1,shelf:3,drawer:0,pant:0,light:0}};
+
+function wcalc(w,h,dec,fill){
+ var a=w*h,base=a*WRATE,door=a*WD[dec].r,f=0;
+ f+=fill.rod*WF.rod.p+fill.shelf*WF.shelf.p+fill.drawer*WF.drawer.p+fill.pant*WF.pant.p+fill.light*w*WF.light.p;
+ var sub=base+door+f,mont=sub*.05;
+ return {a:a,base:base,door:door,fill:f,mont:mont,total:sub+mont,days:dec==='photo'?18:14}
+}
+function monthEnd(){var d=new Date(),e=new Date(d.getFullYear(),d.getMonth()+1,0);return ('0'+e.getDate()).slice(-2)+'.'+('0'+(e.getMonth()+1)).slice(-2)}
+var WARD=wcalc(1.2,2.4,'mirror',{rod:1,shelf:3,drawer:0,pant:0,light:0});
+function kcalc(){
+ var L=S.L,f=FAC[S.fac],fac=L*f.r*FORM[S.form].k*UP[S.up].k,top=L*TOP[S.top].r,hw=L*(HW[S.hw].p+HD[S.hd].p),ex=0;
+ Object.keys(EX).forEach(function(k){if(S.ex[k]){ex+=EX[k].pm?EX[k].p*L:EX[k].p}});
+ var sub=fac+top+hw+ex,mont=Math.max(12000,sub*.08),dl=S.dlv?2500+60*S.km:2500;
+ var promos=[],disc=0;
+ if(S.first){promos.push('ПЕРВЫЙ −3%');disc+=sub*.03}
+ promos.push('МЕСЯЦ −2% до '+monthEnd());disc+=sub*.02;
+ var ward=0,wdisc=0;
+ if(S.ward){ward=WARD.total;wdisc=ward*.1;promos.push('КОМПЛЕКТ −10% на шкаф')}
+ var total=sub+mont+dl+ward-disc-wdisc;
+ return {fac:fac,top:top,hw:hw,ex:ex,sub:sub,mont:mont,dl:dl,ward:ward,disc:disc+wdisc,promos:promos,total:r100(total),lo:r1k(total*.93),hi:r1k(total*1.07),days:f.d}
+}
+
+/* ---------- конфигуратор: интерфейс ---------- */
+var STEPS=5;
+function optBtn(attr,k,sel,inner){return '<button class="opt" type="button" '+attr+'="'+k+'" aria-pressed="'+(sel?'true':'false')+'">'+inner+'</button>'}
+function buildOpts(){
+ $('#oForm').innerHTML=Object.keys(FORM).map(function(k){var f=FORM[k];return optBtn('data-form',k,S.form===k,'<svg viewBox="0 0 48 34" fill="none" stroke="#1F5C73" stroke-width="5" stroke-linecap="round">'+f.ic+'</svg><b>'+f.n+'</b><small>коэф. '+String(f.k).replace('.',',')+'</small>')}).join('');
+ $('#oUp').innerHTML=Object.keys(UP).map(function(k){var u=UP[k];return optBtn('data-up',k,String(S.up)===k,'<b>'+u.n+'</b><small>'+u.s+'</small>')}).join('');
+ $('#oFac').innerHTML=Object.keys(FAC).map(function(k){var f=FAC[k];return optBtn('data-fac',k,S.fac===k,'<b>'+f.n+'</b><small>'+fmt(f.r)+' ₽/п.м. · '+f.d+' дн.</small>')}).join('');
+ $('#oCol').innerHTML=COL.map(function(c){return '<button class="swb" type="button" data-col="'+c.k+'" aria-pressed="'+(S.col===c.k?'true':'false')+'" aria-label="'+c.n+'"><i style="background:'+c.c+'"></i>'+c.n+'</button>'}).join('');
+ $('#oTop').innerHTML=Object.keys(TOP).map(function(k){var t=TOP[k];return optBtn('data-top',k,S.top===k,'<b>'+t.n+'</b><small>'+fmt(t.r)+' ₽/п.м.</small>')}).join('');
+ $('#oHw').innerHTML=Object.keys(HW).map(function(k){var h=HW[k];return optBtn('data-hw',k,S.hw===k,'<b>'+h.n+'</b><small>'+h.s+(h.p?', +'+fmt(h.p)+' ₽/п.м.':'')+'</small>')}).join('');
+ $('#oHd').innerHTML=Object.keys(HD).map(function(k){var h=HD[k];return optBtn('data-hd',k,S.hd===k,'<b>'+h.n+'</b><small>'+h.s+(h.p?', +'+fmt(h.p)+' ₽/п.м.':'')+'</small>')}).join('');
+ $('#oEx').innerHTML=Object.keys(EX).map(function(k){var e=EX[k];return '<label class="chk"><input type="checkbox" data-ex="'+k+'"'+(S.ex[k]?' checked':'')+'><span>'+e.n+'<small>'+(e.u?fmt(e.p)+' ₽ '+e.u:'разовая работа')+'</small></span><em>'+(e.pm?rub(e.p*S.L):rub(e.p))+'</em></label>'}).join('');
+ $('#wardPrice').textContent='≈ '+rub(r100(WARD.total));
+ $('#wDoors').innerHTML=[2,3,4].map(function(n){return optBtn('data-doors',n,W.doors===n,'<b>'+n+' двери</b>')}).join('');
+ $('#wDecor').innerHTML=Object.keys(WD).map(function(k){var d=WD[k];return optBtn('data-dec',k,W.dec===k,'<b>'+d.n+'</b><small>'+fmt(d.r)+' ₽/м²</small>')}).join('');
+ $('#wFill').innerHTML=Object.keys(WF).map(function(k){var f=WF[k];return '<div class="chk st"><span>'+f.n+'<small>'+fmt(f.p)+' ₽ за '+f.u+'</small></span><span class="cnt"><button class="btn ghost sm" type="button" data-fm="'+k+'" aria-label="Меньше: '+f.n+'">−</button><b id="fv-'+k+'">'+W.fill[k]+'</b><button class="btn ghost sm" type="button" data-fp="'+k+'" aria-label="Больше: '+f.n+'">+</button></span></div>'}).join('')}
+
+function planSVG(){
+ var d=.6,L=S.L,r=[],f=S.form;
+ if(f==='straight')r.push([0,0,L,d]);
+ else if(f==='corner'){var a=L*.6;r.push([0,0,a,d],[0,d,d,L-a])}
+ else if(f==='u'){var b=L*.3,w=L*.4+2*d;r.push([0,0,w,d],[0,d,d,b],[w-d,d,d,b])}
+ else{var iw=Math.max(1.2,L*.4);r.push([0,0,L,d],[(L-iw)/2,d+1.1,iw,.9])}
+ var bw=0,bh=0;r.forEach(function(q){bw=Math.max(bw,q[0]+q[2]);bh=Math.max(bh,q[1]+q[3])});
+ var s=Math.min(310/bw,160/bh),ox=(360-bw*s)/2,oy=(220-bh*s)/2+8,fc=COL.filter(function(c){return c.k===S.col})[0].c,tc=TOP[S.top].c,o='';
+ o+='<rect x="'+(ox-8)+'" y="'+(oy-8)+'" width="'+(bw*s+16)+'" height="'+(bh*s+16)+'" rx="6" fill="#fff" stroke="#DDD5C6" stroke-dasharray="5 4"/>';
+ r.forEach(function(q,i){var x=ox+q[0]*s,y=oy+q[1]*s,w=q[2]*s,h=q[3]*s;
+  o+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="2" fill="'+fc+'" stroke="#23211E" stroke-width="1"/><rect x="'+(x+2)+'" y="'+(y+2)+'" width="'+(w-4)+'" height="'+(h-4)+'" rx="1" fill="'+tc+'" stroke="rgba(0,0,0,.25)" stroke-width=".6"/>';
+  if(i===0){if(S.ex.sink)o+='<rect x="'+(x+w*.2)+'" y="'+(y+h*.22)+'" width="'+Math.min(w*.2,.5*s)+'" height="'+(h*.56)+'" rx="2" fill="#C5D3D8" stroke="#6B7B80"/>';
+   var hx=x+w*.68;[0,1].forEach(function(a2){[0,1].forEach(function(b2){o+='<circle cx="'+(hx+a2*.2*s)+'" cy="'+(y+h*.33+b2*h*.34)+'" r="'+(.07*s)+'" fill="none" stroke="#23211E" stroke-width="1"/>'})})}
+  if(S.ex.light&&i===0)o+='<line x1="'+(x+4)+'" y1="'+(y+h+3)+'" x2="'+(x+w-4)+'" y2="'+(y+h+3)+'" stroke="#E0A526" stroke-width="2" stroke-dasharray="3 3"/>';
+ });
+ o+='<text x="'+(ox+bw*s/2)+'" y="'+(oy-14)+'" text-anchor="middle" font-family="Onest,sans-serif" font-size="12" font-weight="600" fill="#23211E">'+m1(L)+' м · схема сверху</text>';
+ $('#plan').innerHTML=o
+}
+function wplanSVG(){
+ var w=W.w,h=W.h,s=Math.min(300/w,170/h),pw=w*s,ph=h*s,ox=(360-pw)/2,oy=(220-ph)/2-4,dc=WD[W.dec].c,o='',n=W.doors,dw=pw/n;
+ o+='<rect x="'+(ox-3)+'" y="'+(oy-3)+'" width="'+(pw+6)+'" height="'+(ph+6)+'" fill="#23211E" rx="3"/>';
+ for(var i=0;i<n;i++){var x=ox+i*dw;o+='<rect x="'+(x+1)+'" y="'+(oy+1)+'" width="'+(dw-2+(i<n-1?3:0))+'" height="'+(ph-2)+'" fill="'+dc+'" stroke="#23211E" stroke-width="1"/>';
+  if(W.dec==='mirror'){o+='<path d="M'+(x+dw*.2)+' '+(oy+ph*.7)+'L'+(x+dw*.5)+' '+(oy+ph*.25)+'M'+(x+dw*.4)+' '+(oy+ph*.75)+'L'+(x+dw*.7)+' '+(oy+ph*.3)+'" stroke="#fff" stroke-width="3" opacity=".7"/>'}
+  if(W.dec==='photo'){o+='<circle cx="'+(x+dw*.5)+'" cy="'+(oy+ph*.35)+'" r="'+(dw*.2)+'" fill="#E4D79B" opacity=".8"/><path d="M'+x+' '+(oy+ph)+'L'+(x+dw*.5)+' '+(oy+ph*.6)+'L'+(x+dw)+' '+(oy+ph)+'Z" fill="#587A64"/>'}
+  o+='<rect x="'+(x+(i%2?dw*.12:dw*.84))+'" y="'+(oy+ph*.45)+'" width="3" height="'+(ph*.1)+'" rx="1.5" fill="#23211E"/>'}
+ o+='<text x="'+(ox+pw/2)+'" y="'+(oy-10)+'" text-anchor="middle" font-family="Onest,sans-serif" font-size="12" font-weight="600" fill="#23211E">'+m1(w)+' м</text>';
+ o+='<text x="'+(ox+pw+14)+'" y="'+(oy+ph/2)+'" font-family="Onest,sans-serif" font-size="12" font-weight="600" fill="#23211E">'+m1(h)+' м</text>';
+ $('#wplan').innerHTML=o
+}
+
+var proj={text:'',sum:0,lo:0,hi:0,days:0,title:'',lines:[],spec:[]};
+function summaryLines(arr){$('#sumL').innerHTML=arr.map(function(a){return '<dt>'+a[0]+'</dt><dd>'+a[1]+'</dd>'}).join('')}
+var prevLook='';
+function render(){
+ var kitchen=S.mode==='kitchen';
+ $('#kMode').hidden=!kitchen;$('#wMode').hidden=kitchen;
+ $$('.cmodes button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.mode===S.mode?'true':'false')});
+ var lo,hi,days,txt,lines,promos=[];
+ if(kitchen){
+  var c=kcalc();
+  $('#vL').textContent=m1(S.L)+' м';$('#rL').value=S.L;
+  $('#rL').min=FORM[S.form].min;
+  $$('#oForm .opt').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.form===S.form?'true':'false')});
+  $$('#oUp .opt').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.up===String(S.up)?'true':'false')});
+  $$('#oFac .opt').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.fac===S.fac?'true':'false')});
+  $$('#oCol .swb').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.col===S.col?'true':'false')});
+  $$('#oTop .opt').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.top===S.top?'true':'false')});
+  $$('#oHw .opt').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.hw===S.hw?'true':'false')});
+  $$('#oHd .opt').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.hd===S.hd?'true':'false')});
+  $$('#oEx input').forEach(function(i){i.checked=!!S.ex[i.dataset.ex]});
+  $$('#oEx em').forEach(function(em,i){var k=Object.keys(EX)[i];em.textContent=EX[k].pm?rub(EX[k].p*S.L):rub(EX[k].p)});
+  $('#wardAdd').checked=!!S.ward;$('#firstOrd').checked=!!S.first;
+  $('#kmw').hidden=!S.dlv;
+  $$('#stepbar button').forEach(function(b){var i=+b.dataset.s;b.classList.toggle('on',i===S.step);b.classList.toggle('done',i<S.step)});
+  $$('#kMode .pane').forEach(function(p){p.classList.toggle('on',+p.dataset.p===S.step)});
+  $('#prev').disabled=S.step===0;$('#next').textContent=S.step===STEPS-1?'К смете':'Дальше';
+  var colN=COL.filter(function(x){return x.k===S.col})[0].n;
+  lines=[['Корпуса и фасады ('+lcf(FAC[S.fac].n)+', '+FORM[S.form].n.toLowerCase()+', верхние: '+lcf(UP[S.up].n)+')',rub(c.fac)],['Столешница ('+lcf(TOP[S.top].n)+')',rub(c.top)],['Фурнитура и ручки',rub(c.hw)],['Опции',rub(c.ex)],['Монтаж (8%, от 12 000 ₽)',rub(c.mont)],['Доставка',rub(c.dl)]];
+  if(S.ward)lines.push(['Шкаф-купе 1,2 × 2,4 м',rub(c.ward)]);
+  lines.push(['Скидки по промокодам','−'+rub(c.disc)]);
+  summaryLines(lines);promos=c.promos;lo=c.lo;hi=c.hi;days=c.days;
+  proj.lines=lines;proj.c=c;
+  $('#sumT').textContent='Смета: кухня '+m1(S.L)+' м';
+  txt='Кухня: '+FORM[S.form].n.toLowerCase()+', '+m1(S.L)+' м, фасад '+FAC[S.fac].n+' ('+colN.toLowerCase()+'), столешница '+TOP[S.top].n+', фурнитура '+HW[S.hw].n+', ручки '+HD[S.hd].n.toLowerCase()+', верхние шкафы: '+lcf(UP[S.up].n)+(S.ward?', + шкаф-купе':'');
+  proj.title='Кухня '+m1(S.L)+' м, '+FORM[S.form].n.toLowerCase()+', '+lcf(FAC[S.fac].n)+', '+colN.toLowerCase();
+  proj.sum=c.total;
+  $('#spT').textContent=FORM[S.form].n+' · '+m1(S.L)+' м';
+ } else {
+  var wc=wcalc(W.w,W.h,W.dec,W.fill);
+  $('#vW').textContent=m1(W.w)+' м';$('#vH').textContent=m1(W.h)+' м';$('#rW').value=W.w;$('#rH').value=W.h;
+  wplanSVG();
+  $$('#wDoors .opt').forEach(function(b){b.setAttribute('aria-pressed',+b.dataset.doors===W.doors?'true':'false')});
+  $$('#wDecor .opt').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.dec===W.dec?'true':'false')});
+  Object.keys(WF).forEach(function(k){$('#fv-'+k).textContent=W.fill[k]});
+  lines=[['Каркас ('+m1(wc.a)+' м² × 7 200 ₽)',rub(wc.base)],['Двери ('+WD[W.dec].n.toLowerCase()+', '+W.doors+' шт.)',rub(wc.door)],['Наполнение',rub(wc.fill)],['Монтаж 5%',rub(wc.mont)]];
+  summaryLines(lines);lo=r1k(wc.total*.93);hi=r1k(wc.total*1.07);days=wc.days;
+  proj.lines=lines;proj.c=null;
+  $('#sumT').textContent='Смета: шкаф-купе '+m1(W.w)+' × '+m1(W.h);
+  txt='Шкаф-купе: '+m1(W.w)+' × '+m1(W.h)+' м, '+W.doors+' двери, декор '+WD[W.dec].n.toLowerCase();
+  proj.title='Шкаф-купе '+m1(W.w)+' × '+m1(W.h)+' м, '+WD[W.dec].n.toLowerCase();
+  proj.sum=r100(wc.total);
+  $('#spT').textContent='Шкаф-купе '+m1(W.w)+' × '+m1(W.h)
+ }
+ $('#sumP').innerHTML=promos.map(function(p){return '<span class="pill">'+p+'</span>'}).join('');
+ $('#sumR').textContent=fmt(lo)+' – '+fmt(hi)+' ₽';
+ $('#sumE').textContent='середина вилки ≈ '+rub(proj.sum);
+ $('#sumTerm').textContent='Срок изготовления: '+days+' дней. Замер бесплатный.';
+ $('#spR').textContent=fmt(lo)+' – '+fmt(hi)+' ₽';
+ proj.lo=lo;proj.hi=hi;proj.days=days;
+ proj.text=txt+'. Смета ≈ '+fmt(lo)+'–'+fmt(hi)+' ₽, срок '+days+' дн.';
+ $('#toWa').href=WA+encodeURIComponent('Здравствуйте! Хочу рассчитать мебель. '+proj.text);
+ $('#toTg').href='https://t.me/';
+ $('#prePay').textContent=rub(proj.sum*.3);
+ $('#preNote').textContent='30% от '+rub(proj.sum)+' ('+proj.title+'). Остаток по этапам договора.';
+ if(!inTouched){$('#inR').value=Math.min(800000,Math.max(50000,Math.round(proj.sum/5000)*5000))}
+ inst();
+ $('#promoL').innerHTML='<li class="'+(S.first&&kitchen?'':'off')+'"><code>ПЕРВЫЙ</code><span>−3% на гарнитур при первом заказе. Включается галочкой в шаге 5.</span></li><li><code>МЕСЯЦ</code><span>−2% на заказ до '+monthEnd()+'.</span></li><li class="'+(S.ward&&kitchen?'':'off')+'"><code>КОМПЛЕКТ</code><span>−10% на шкаф-купе, заказанный вместе с кухней.</span></li>';
+ if(S.touched)showProj();
+ sync3d();
+}
+var inTouched=false,months=6;
+function inst(){var v=+$('#inR').value;$('#inV').textContent=rub(v);$('#inM').textContent=rub(v*.7/months)+' / мес.'}
+$('#inR').addEventListener('input',function(){inTouched=true;inst()});
+$('.mo').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;months=+b.dataset.m;$$('.mo button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});inst()});
+
+function touch(){S.touched=1;render()}
+var cmain=$('.cmain');
+cmain.addEventListener('click',function(e){
+ var t=e.target.closest('button');if(!t)return;var d=t.dataset;
+ if(d.form){S.form=d.form;S.L=Math.max(S.L,FORM[S.form].min);touch()}
+ else if(d.up){S.up=+d.up;touch()}
+ else if(d.fac){S.fac=d.fac;touch()}
+ else if(d.col){S.col=d.col;touch()}
+ else if(d.top){S.top=d.top;touch()}
+ else if(d.hw){S.hw=d.hw;touch()}
+ else if(d.hd){S.hd=d.hd;touch()}
+ else if(d.doors){W.doors=+d.doors;touch()}
+ else if(d.dec){W.dec=d.dec;touch()}
+ else if(d.fm){W.fill[d.fm]=Math.max(0,W.fill[d.fm]-1);touch()}
+ else if(d.fp){W.fill[d.fp]=Math.min(12,W.fill[d.fp]+1);touch()}
+ else if(d.s!==undefined){S.step=+d.s;render()}
+});
+cmain.addEventListener('change',function(e){var t=e.target;
+ if(t.dataset.ex){S.ex[t.dataset.ex]=t.checked?1:0;touch()}
+ else if(t.id==='wardAdd'){S.ward=t.checked?1:0;touch()}
+ else if(t.id==='firstOrd'){S.first=t.checked?1:0;touch()}
+ else if(t.id==='dlv'){S.dlv=+t.value;touch()}
+});
+$('#km').addEventListener('input',function(){S.km=Math.max(1,Math.min(200,+this.value||1));touch()});
+$('#rL').addEventListener('input',function(){S.L=+this.value;touch()});
+$('#rW').addEventListener('input',function(){W.w=+this.value;touch()});
+$('#rH').addEventListener('input',function(){W.h=+this.value;touch()});
+$('#prev').addEventListener('click',function(){if(S.step>0){S.step--;render()}});
+$('#next').addEventListener('click',function(){if(S.step<STEPS-1){S.step++;render()}else{$('.sumbox').scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'start'})}});
+$$('.cmodes button').forEach(function(b){b.addEventListener('click',function(){S.mode=b.dataset.mode;render()})});
+function applyPreset(c){S.mode='kitchen';S.form=c.form;S.L=c.L;S.fac=c.fac;S.col=c.col;if(c.top)S.top=c.top;S.touched=1;S.step=0;render();$('#konfigurator').scrollIntoView({behavior:REDUCE?'auto':'smooth'})}
+
+/* ---------- 3D-сцена кухни (Three.js) ---------- */
+var HAS3D=false;
+try{var _c0=document.createElement('canvas'),_g0=_c0.getContext('webgl')||_c0.getContext('experimental-webgl');HAS3D=!!window.THREE&&!!_g0;if(_g0){var _x0=_g0.getExtension('WEBGL_lose_context');if(_x0)_x0.loseContext()}}catch(e){HAS3D=false}
+var LOW=matchMedia('(pointer:coarse)').matches||innerWidth<768||(navigator.hardwareConcurrency||8)<=4;
+var VIEWS=[{n:'общий',yaw:.45,pitch:.5,zoom:1},{n:'спереди',yaw:0,pitch:.2,zoom:.9},{n:'сверху',yaw:0,pitch:1.2,zoom:1.05},{n:'крупно',yaw:.7,pitch:.36,zoom:.6}];
+var V={ym:.9,vis:true,ok:false,mode2d:false,lost:false,ex:0,exT:0,open:0,openT:0,night:0,nightT:0,auto:false,view:0,yaw:.45,pitch:.5,zoom:1,yawT:.45,pitchT:.5,zoomT:1,drag:false,vis:true,run:false,t:0,seq:-1,seqEnd:0,key:'',look:'',built:false,mats:[],parts:[],doors:[],hit:[],lay:null,root:null,bt:0};
+function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
+function layout(){
+ var f=S.form,L=S.L,lay={form:f,runs:[],fridge:null,win:f!=='u',iw:0,RW:4.4,RD:3.4};
+ if(f==='straight'||f==='island'){
+  lay.RW=Math.max(L+.66+.9,4.4);var x0=-(L+.66)/2;
+  lay.runs.push({k:'back',len:L,x:x0});lay.fridge=x0+L+.33;
+  if(f==='island'){lay.iw=Math.max(1.2,L*.4);lay.runs.push({k:'island',len:lay.iw});lay.RD=4.5}
+ }else if(f==='corner'){
+  var a=L*.6,b=L-a;lay.RW=Math.max(a+.66+1.4,4.4);var xl=-lay.RW/2;
+  lay.runs.push({k:'back',len:a,x:xl},{k:'left',len:b});lay.fridge=xl+a+.33;lay.RD=Math.max(3.4,.6+b+1.3);
+ }else{
+  var w=L*.4+1.2,bb=L*.3;lay.RW=w;
+  lay.runs.push({k:'back',len:w,x:-w/2},{k:'left',len:bb},{k:'right',len:bb});lay.RD=Math.max(3.4,.6+bb+1.4);
+ }
+ return lay;
+}
+function specCount(){
+ var lay=layout(),base=0,up=0;
+ lay.runs.forEach(function(r){base+=Math.max(1,Math.round(r.len/.6));if(r.k!=='island'&&S.up){var ul=r.len+((r.k==='left'||r.k==='right')?.28:0);up+=Math.max(1,Math.round(ul/.6))}});
+ return {base:base,up:up}
+}
+
+var UB,UC,UK,UP2,TXC={};
+function cnv(w,h){var c=document.createElement('canvas');c.width=w;c.height=h;return c}
+function mkTex(c){var t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;t.wrapS=t.wrapT=THREE.RepeatWrapping;try{t.anisotropy=Math.min(4,V.r.capabilities.getMaxAnisotropy())}catch(e){}return t}
+function prng(s){return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+function tGrain(vert){var k='g'+vert;if(TXC[k])return TXC[k];var c=cnv(256,256),x=c.getContext('2d'),R=prng(vert?7:11);x.fillStyle='#ececec';x.fillRect(0,0,256,256);
+ for(var i=0;i<200;i++){var g=140+(R()*90|0);x.strokeStyle='rgba('+g+','+g+','+g+','+(.25+R()*.4)+')';x.lineWidth=.6+R()*1.8;x.beginPath();var p=R()*256,w=(R()-.5)*14;
+  if(vert){x.moveTo(p,0);x.bezierCurveTo(p+w,80,p-w,170,p+w*.4,256)}else{x.moveTo(0,p);x.bezierCurveTo(80,p+w,170,p-w,256,p+w*.4)}x.stroke()}
+ return TXC[k]=mkTex(c)}
+function tSpeck(){if(TXC.sp)return TXC.sp;var c=cnv(256,256),x=c.getContext('2d'),R=prng(5);x.fillStyle='#f6f4ee';x.fillRect(0,0,256,256);
+ for(var i=0;i<900;i++){var g=120+(R()*100|0);x.fillStyle='rgba('+g+','+g+','+(g-8)+','+(.08+R()*.18)+')';x.fillRect(R()*256,R()*256,1+R()*2.2,1+R()*2.2)}
+ for(var j=0;j<5;j++){x.strokeStyle='rgba(150,148,142,.16)';x.lineWidth=1+R()*2;x.beginPath();x.moveTo(R()*256,0);x.bezierCurveTo(R()*256,80,R()*256,170,R()*256,256);x.stroke()}
+ return TXC.sp=mkTex(c)}
+function tFloor(){if(TXC.fl)return TXC.fl;var c=cnv(512,256),x=c.getContext('2d'),R=prng(9),rows=6,rh=256/rows,tones=['#b8946a','#ae8a60','#c1a077','#b38f65'];
+ for(var r=0;r<rows;r++){var px=-R()*200,y=r*rh;
+  while(px<512){var w=170+R()*110,x0=Math.max(0,px),x1=Math.min(512,px+w);
+   if(x1>x0){x.fillStyle=tones[(R()*4)|0];x.fillRect(x0,y,x1-x0,rh);
+    for(var i=0;i<10;i++){x.strokeStyle='rgba(80,52,26,'+(.06+R()*.1)+')';x.lineWidth=.7;var yy=y+R()*rh;x.beginPath();x.moveTo(x0,yy);x.lineTo(x1,yy+(R()-.5)*3);x.stroke()}
+    x.fillStyle='rgba(50,32,16,.28)';x.fillRect(x0,y,1.2,rh)}
+   px+=w}
+  x.fillStyle='rgba(50,32,16,.3)';x.fillRect(0,y,512,1.2)}
+ return TXC.fl=mkTex(c)}
+function tGlow(){if(TXC.gl)return TXC.gl;var c=cnv(16,128),x=c.getContext('2d'),g=x.createLinearGradient(0,0,0,128);g.addColorStop(0,'rgba(255,214,150,1)');g.addColorStop(.35,'rgba(255,200,130,.45)');g.addColorStop(1,'rgba(255,190,110,0)');x.fillStyle=g;x.fillRect(0,0,16,128);var t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;return TXC.gl=t}
+function C(h){return new THREE.Color(h).convertSRGBToLinear()}
+function M(hex,rough,metal,o){var m=new THREE.MeshStandardMaterial({color:C(hex),roughness:rough,metalness:metal||0});if(o)for(var k in o)m[k]=o[k];V.mats.push(m);return m}
+function bx(p,w,h,d,m,x,y,z,noShadow){var o=new THREE.Mesh(UB,m);o.scale.set(w,h,d);o.position.set(x,y,z);if(V.shadows&&!noShadow){o.castShadow=true;o.receiveShadow=true}p.add(o);return o}
+function cyl(p,r,h,m,x,y,z,rx){var o=new THREE.Mesh(UC,m);o.scale.set(r,h,r);o.position.set(x,y,z);if(rx)o.rotation.x=rx;if(V.shadows){o.castShadow=true}p.add(o);return o}
+
+var MT={};
+function makeMats(){
+ V.mats.forEach(function(m){m.dispose()});V.mats=[];
+ var f=S.fac,fc=COL.filter(function(c){return c.k===S.col})[0].c,fo={};
+ if(f==='shpon')fo={map:tGrain(true)};
+ var rough={ldsp:.78,plen:.62,emal:.42,akril:.1,shpon:.55}[f];
+ MT.fac=M(fc,rough,0,fo);
+ var tp=S.top,to={};
+ if(tp==='ldsp')to={map:tGrain(false)};
+ if(tp==='quartz')to={map:tSpeck()};
+ MT.top=M(TOP[tp].c,{ldsp:.7,hpl:.5,quartz:.2,acryl:.28}[tp],0,to);
+ MT.carc=M('#E9E3D6',.85,0);
+ MT.plinth=M('#2B2B2C',.8,0);
+ MT.steel=M('#C9C6BF',.32,.7);
+ MT.dark=M('#26272A',.5,.4);
+ MT.glass=M('#141517',.12,.2);
+ MT.ring=M('#4B4C50',.4,.5);
+ MT.apron=M('#F1EEE7',.3,0);
+ MT.wall=M('#DDD5C4',.95,0);
+ MT.fridge=M('#CFCDC8',.38,.55);
+ MT.wood=M('#D7BC95',.7,0,{map:tGrain(false)});
+ MT.led=new THREE.MeshBasicMaterial({color:C('#FFD9A0')});V.mats.push(MT.led);
+ MT.winG=new THREE.MeshBasicMaterial({color:C('#E8F3FA')});V.mats.push(MT.winG);
+ MT.lamp=M('#F2E9DA',.5,0,{emissive:C('#FFC27A'),emissiveIntensity:0});
+ var fl=tFloor();MT.floor=M('#D9CDB8',.55,0,{map:fl});
+ MT.glow=new THREE.MeshBasicMaterial({map:tGlow(),transparent:true,blending:THREE.AdditiveBlending,depthWrite:false,opacity:.3});V.mats.push(MT.glow);
+}
+function handle(p,w,h,upper,hs,horiz){
+ var kind=S.hd,z=.009;
+ if(kind==='hidden'){bx(p,w*.98,.016,.01,MT.dark,0,upper?-h/2+.008:h/2-.008,z+.003,true);return}
+ if(kind==='rail'){bx(p,w*.96,.024,.028,MT.steel,0,upper?-h/2+.014:h/2-.014,z+.014,true);return}
+ var sx=horiz?0:(hs==='l'?1:-1)*(w/2-.045),sy=horiz?(h/2-.04):(upper?-h/2+.12:h/2-.12);
+ if(kind==='round'){cyl(p,.016,.026,MT.steel,sx,sy,z+.013,Math.PI/2);return}
+ if(horiz){bx(p,.16,.012,.012,MT.steel,0,sy,z+.03,true);bx(p,.01,.01,.03,MT.steel,-.06,sy,z+.015,true);bx(p,.01,.01,.03,MT.steel,.06,sy,z+.015,true)}
+ else{bx(p,.012,.14,.012,MT.steel,sx,sy,z+.03,true);bx(p,.01,.01,.03,MT.steel,sx,sy+.05,z+.015,true);bx(p,.01,.01,.03,MT.steel,sx,sy-.05,z+.015,true)}
+}
+function addDoor(gF,x0,x1,yc,h,hinge,upper,D){
+ var w=x1-x0-.004,hh=h-.004,pv=new THREE.Group();
+ pv.position.set(hinge==='l'?x0+.002:x1-.002,yc,D+.009);gF.add(pv);
+ var dg=new THREE.Group();dg.position.x=hinge==='l'?w/2:-w/2;pv.add(dg);
+ var m=bx(dg,w,hh,.018,MT.fac,0,0,0);
+ handle(dg,w,hh,upper,hinge,false);
+ var d={p:pv,type:'door',s:hinge==='l'?-1:1,ang:upper?1.65:1.75,m:0,mT:0};m.userData.d=d;V.doors.push(d);V.hit.push(m);
+}
+function addDrawer(gF,x0,x1,yc,h,D,hasTray){
+ var w=x1-x0-.004,hh=h-.004,g=new THREE.Group(),cx=(x0+x1)/2;
+ g.position.set(cx,yc,D+.009);gF.add(g);
+ var m=bx(g,w,hh,.018,MT.fac,0,0,0);
+ handle(g,w,hh,false,'l',true);
+ if(hasTray){bx(g,w-.07,.09,D-.13,MT.carc,0,-hh/2+.07,-(D-.13)/2-.01);}
+ var d={p:g,type:'drawer',bz:D+.009,m:0,mT:0};m.userData.d=d;V.doors.push(d);V.hit.push(m);
+}
+function carcass(gC,x0,w,D,y0,H,shelf){
+ var t=.018;
+ bx(gC,t,H,D-.002,MT.carc,x0+t/2,y0+H/2,(D-.002)/2);
+ bx(gC,t,H,D-.002,MT.carc,x0+w-t/2,y0+H/2,(D-.002)/2);
+ bx(gC,w-2*t,t,D-.002,MT.carc,x0+w/2,y0+t/2,(D-.002)/2);
+ bx(gC,w-2*t,H,.01,MT.wall,x0+w/2,y0+H/2,.005,true);
+ if(shelf)bx(gC,w-2*t,t,D-.05,MT.carc,x0+w/2,y0+H*.5,(D-.05)/2+.01);
+}
+function nearestMod(n,mw,pos){return clamp(Math.round(pos/mw-.5),0,n-1)}
+function buildRun(rn,lay){
+ var isI=rn.k==='island',D=isI?.9:.6,len=rn.len,g=new THREE.Group(),
+ gC=new THREE.Group(),gF=new THREE.Group(),gT=new THREE.Group(),gUC=new THREE.Group(),gUF=new THREE.Group();
+ g.add(gC,gF,gT,gUC,gUF);
+ V.parts.push({c:gC,f:gF,t:gT,uc:gUC,uf:gUF,isI:isI});
+ if(rn.k==='back')g.position.set(rn.x,0,0);
+ else if(rn.k==='left'){g.rotation.y=Math.PI/2;g.position.set(-lay.RW/2,0,.6+len)}
+ else if(rn.k==='right'){g.rotation.y=-Math.PI/2;g.position.set(lay.RW/2,0,.6)}
+ else{g.rotation.y=Math.PI;g.position.set(lay.iw/2,0,2.6)}
+ V.root.add(g);
+ var n=Math.max(1,Math.round(len/.6)),mw=len/n,y0=.1,H=.72,sinkI=-1,hobI=-1,blind={};
+ if(rn.k==='back'){
+  if(lay.form==='corner')blind[0]=1;
+  if(lay.form==='u'){blind[0]=1;blind[n-1]=1}
+  sinkI=nearestMod(n,mw,len*.3);hobI=nearestMod(n,mw,len*.72);
+  if(blind[sinkI])sinkI=blind[0]&&sinkI===0?1:n-2;
+  if(hobI===sinkI)hobI=sinkI<n-2?sinkI+1:sinkI-1;
+  if(blind[hobI])hobI=-1;
+  if(n<4)hobI=n>=3?hobI:-1;
+ }
+ bx(gC,len,.1,D-.06,MT.plinth,len/2,.05,(D-.06)/2+.0,true);
+ for(var i=0;i<n;i++){
+  var x0=i*mw,x1=x0+mw,cx=x0+mw/2,drawers=!blind[i]&&i!==sinkI&&i!==hobI&&i%3===0;
+  carcass(gC,x0,mw,D,y0,H,!drawers&&i!==hobI);
+  bx(gC,mw-.04,.05,.06,MT.carc,cx,y0+H-.025,D-.04,true);bx(gC,mw-.04,.05,.06,MT.carc,cx,y0+H-.025,.04,true);
+  if(i===hobI){
+   addDrawer(gF,x0,x1,y0+H-.09,.18,D,true);
+   var oh=H-.18,oy=y0+oh/2,og=new THREE.Group();og.position.set(cx,oy,D+.009);gF.add(og);
+   bx(og,mw-.004,oh-.004,.018,MT.fac,0,0,0);bx(og,mw*.72,oh*.5,.006,MT.glass,0,-oh*.04,.011,true);
+   bx(og,mw*.7,.014,.016,MT.steel,0,oh/2-.05,.03,true);
+  }else if(drawers){
+   var hs=[.2,.26,.26],top=y0+H;
+   hs.forEach(function(h){addDrawer(gF,x0,x1,top-h/2,h,D,true);top-=h});
+  }else if(mw>.62){
+   addDoor(gF,x0,cx,y0+H/2,H,'l',false,D);addDoor(gF,cx,x1,y0+H/2,H,'r',false,D);
+  }else addDoor(gF,x0,x1,y0+H/2,H,(i%2?'r':'l'),false,D);
+ }
+ var fa=true,fb=true;
+ if(rn.k==='back'){fa=!(lay.form==='corner'||lay.form==='u');fb=lay.form!=='u'}else if(rn.k==='left'){fb=false}else if(rn.k==='right'){fa=false}
+ if(fa)bx(gF,.018,H+.04,D,MT.fac,-.009,y0+H/2+.02,D/2);
+ if(fb)bx(gF,.018,H+.04,D,MT.fac,len+.009,y0+H/2+.02,D/2);
+ var over=isI?.3:0;
+ if(isI){bx(gF,len,H,.018,MT.fac,len/2,y0+H/2,-.01);bx(gC,len,.1,.5,MT.plinth,len/2,.05,.16,true)}
+ bx(gT,len,.04,D+.02+over,MT.top,len/2,.84,(D+.02-over)/2);
+ if(!isI){
+  bx(g,len,.52,.012,MT.apron,len/2,1.12,.006,true);
+  if(rn.k==='back'){
+   var cxs=sinkI>=0?sinkI*mw+mw/2:0,chb=hobI>=0?hobI*mw+mw/2:0;
+   if(S.ex.sink&&sinkI>=0){var sw=Math.min(.56,mw-.05);bx(gT,sw,.006,.42,MT.steel,cxs,.863,.32,true);bx(gT,sw-.08,.008,.32,MT.dark,cxs,.8635,.32,true);cyl(gT,.013,.22,MT.steel,cxs,.97,.085);bx(gT,.012,.012,.15,MT.steel,cxs,1.07,.16,true)}
+   if(hobI>=0){bx(gT,.56,.006,.46,MT.glass,chb,.863,.31,true);[[-.14,.2],[.14,.2],[-.14,.42],[.14,.42]].forEach(function(q,qi){cyl(gT,qi<2?.06:.075,.003,MT.ring,chb+q[0],.867,q[1],0)})}
+  }
+ }
+ /* верхние шкафы */
+ var uh=S.up/100;
+ if(!isI){
+  var ul=len+((rn.k==='left'||rn.k==='right')?.28:0),uo=rn.k==='right'?-.28:0,nu=Math.max(1,Math.round(ul/.6)),uw=ul/nu,UD=.32,uy=1.4;
+  if(uh>0){
+   for(var j=0;j<nu;j++){
+    var ux0=uo+j*uw,ux1=ux0+uw,ucx=(ux0+ux1)/2;
+    if(rn.k==='back'&&hobI>=0&&ucx>hobI*mw&&ucx<(hobI+1)*mw){continue}
+    carcass(gUC,ux0,uw,UD,uy,uh,true);
+    if(uw>.62){addDoor(gUF,ux0,ucx,uy+uh/2,uh,'l',true,UD);addDoor(gUF,ucx,ux1,uy+uh/2,uh,'r',true,UD)}
+    else addDoor(gUF,ux0,ux1,uy+uh/2,uh,(j%2?'r':'l'),true,UD);
+   }
+   var ca=rn.k==='back'?fa:rn.k==='left',cb=rn.k==='back'?fb:rn.k==='right';
+   if(ca)bx(gUF,.018,uh,UD,MT.fac,uo-.009,uy+uh/2,UD/2);
+   if(cb)bx(gUF,.018,uh,UD,MT.fac,uo+ul+.009,uy+uh/2,UD/2);
+   if(S.ex.light){
+    bx(g,ul-.04,.012,.03,MT.led,uo+ul/2,uy-.008,.12,true);
+    var gl=new THREE.Mesh(UP2,MT.glow);gl.scale.set(ul,.5,1);gl.position.set(uo+ul/2,uy-.25,.016);gl.renderOrder=3;g.add(gl);
+   }
+  }
+  if(rn.k==='back'&&hobI>=0){
+   var hx=hobI*mw+mw/2;
+   bx(gUC,.62,.1,.46,MT.steel,hx,1.52,.23);
+   bx(gUC,.26,1.2,.2,MT.steel,hx,2.1,.11);
+  }
+ }
+ return g;
+}
+function buildRoom(lay){
+ var RW=lay.RW,RD=lay.RD,r=V.root;
+ var fl=new THREE.Mesh(new THREE.PlaneGeometry(RW,RD),MT.floor);fl.rotation.x=-Math.PI/2;fl.position.set(0,0,RD/2);fl.receiveShadow=!!V.shadows;r.add(fl);
+ MT.floor.map.repeat.set(RW/2.4,RD/1.08);
+ function wall(w,x,z,ry){var m=new THREE.Mesh(new THREE.PlaneGeometry(w,2.7),MT.wall);m.position.set(x,1.35,z);m.rotation.y=ry;m.receiveShadow=!!V.shadows;r.add(m)}
+ wall(RW,0,0,0);wall(RD,-RW/2,RD/2,Math.PI/2);wall(RD,RW/2,RD/2,-Math.PI/2);
+ if(lay.win){
+  var wx=RW/2-.002,wz=Math.min(1.7,RD*.5),pane=new THREE.Mesh(new THREE.PlaneGeometry(1.3,1.25),MT.winG);pane.rotation.y=-Math.PI/2;pane.position.set(wx-.004,1.5,wz);r.add(pane);
+  bx(r,.05,.06,1.4,MT.carc,wx-.02,0.865,wz,true);bx(r,.05,.06,1.4,MT.carc,wx-.02,2.17,wz,true);
+  bx(r,.05,1.31,.06,MT.carc,wx-.02,1.52,wz-.67,true);bx(r,.05,1.31,.06,MT.carc,wx-.02,1.52,wz+.67,true);bx(r,.04,1.25,.04,MT.carc,wx-.02,1.5,wz,true);
+  bx(r,.14,.04,1.5,MT.carc,wx-.07,.84,wz,true);
+ }
+ if(lay.fridge!==null){
+  var fx=lay.fridge;bx(r,.62,1.85,.66,MT.fridge,fx,.925,.33);
+  bx(r,.6,.004,.01,MT.dark,fx,1.28,.665,true);bx(r,.012,.5,.02,MT.steel,fx+.23,1.55,.68,true);bx(r,.012,.8,.02,MT.steel,fx+.23,.8,.68,true);
+ }
+ if(lay.form==='island'){
+  var iw=lay.iw;[-.55,0,.55].forEach(function(sx){
+   var sxx=iw>1.5?sx*(iw/1.5):sx*.8;
+   cyl(r,.17,.05,MT.wood,sxx,.7,3.3);cyl(r,.025,.66,MT.dark,sxx,.35,3.3);cyl(r,.17,.02,MT.dark,sxx,.01,3.3);
+   cyl(r,.004,.9,MT.dark,sxx*.9,2.2,2.2);var lp=new THREE.Mesh(UK,MT.lamp);lp.scale.set(.15,.17,.15);lp.position.set(sxx*.9,1.72,2.2);r.add(lp);
+  });
+ }
+}
+function envMap(r){
+ try{
+  var s=new THREE.Scene(),geo=new THREE.SphereGeometry(30,24,14),pos=geo.attributes.position,col=[];
+  for(var i=0;i<pos.count;i++){var y=pos.getY(i)/30,c;if(y>0)c=new THREE.Color('#fff4e4').lerp(new THREE.Color('#ffffff'),y);else c=new THREE.Color('#9b9183').lerp(new THREE.Color('#5a5249'),-y);c.convertSRGBToLinear();col.push(c.r,c.g,c.b)}
+  geo.setAttribute('color',new THREE.Float32BufferAttribute(col,3));
+  s.add(new THREE.Mesh(geo,new THREE.MeshBasicMaterial({side:THREE.BackSide,vertexColors:true})));
+  var sb=new THREE.MeshBasicMaterial({color:0xffffff});
+  [[-8,6,10],[10,5,6],[0,12,0]].forEach(function(q){var b=new THREE.Mesh(new THREE.BoxGeometry(6,3,.3),sb);b.position.set(q[0],q[1],q[2]);b.lookAt(0,0,0);s.add(b)});
+  var pm=new THREE.PMREMGenerator(r),t=pm.fromScene(s,.03).texture;pm.dispose();return t
+ }catch(e){return null}
+}
+
+function initScene(){
+ var cv=$('#cv'),r=new THREE.WebGLRenderer({canvas:cv,antialias:!LOW,alpha:false,powerPreference:'high-performance'});
+ V.r=r;V.shadows=!LOW;
+ r.setPixelRatio(Math.min(LOW?1.5:2,devicePixelRatio||1));
+ r.outputEncoding=THREE.sRGBEncoding;r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=.95;
+ if(V.shadows){r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap}
+ var sc=new THREE.Scene();V.scene=sc;V.bgDay=C('#CFC7B7');V.bgNight=C('#141C24');sc.background=V.bgDay.clone();
+ var env=envMap(r);if(env)sc.environment=env;
+ V.cam=new THREE.PerspectiveCamera(34,1,.1,80);
+ UB=new THREE.BoxGeometry(1,1,1);UC=new THREE.CylinderGeometry(1,1,1,20);UK=new THREE.CylinderGeometry(.35,1,1,20);UP2=new THREE.PlaneGeometry(1,1);
+ V.hemi=new THREE.HemisphereLight(0xfff4e6,0x8a7d6c,.38);sc.add(V.hemi);
+ V.sun=new THREE.DirectionalLight(0xfff0dc,1.05);V.sun.position.set(5,6,5);V.sun.target.position.set(0,.6,1.5);sc.add(V.sun,V.sun.target);
+ if(V.shadows){V.sun.castShadow=true;V.sun.shadow.mapSize.set(2048,2048);var sh=V.sun.shadow.camera;sh.left=sh.bottom=-6;sh.right=sh.top=6;sh.near=1;sh.far=24;V.sun.shadow.bias=-.0004;V.sun.shadow.normalBias=.02}
+ V.pl=[];[[-1.4,2.3,1.4],[1.4,2.3,1.6]].forEach(function(p){var l=new THREE.PointLight(0xffc27a,0,9,2);l.position.set(p[0],p[1],p[2]);sc.add(l);V.pl.push(l)});
+ V.ray=new THREE.Raycaster();V.pt=new THREE.Vector2();
+ cv.addEventListener('webglcontextlost',function(e){e.preventDefault();V.ok=false;V.lost=true;showView();$('#qnote').textContent='3D остановился (система освободила память). Показана схема, цена и настройки работают.'});
+ cv.addEventListener('webglcontextrestored',function(){V.ok=true;V.lost=false;V.key='';sync3d();kick()});
+ if('ResizeObserver' in window){new ResizeObserver(function(){resize()}).observe($('#stage'))}else addEventListener('resize',resize);
+ if('IntersectionObserver' in window){new IntersectionObserver(function(es){V.vis=es[0].isIntersecting;if(V.vis)kick()}).observe($('#stage'))}
+ bindInput(cv);
+ V.ok=true;V.auto=!REDUCE&&!LOW;
+ $('#sload').hidden=true;
+ $('#qnote').textContent=LOW?'Упрощённое качество: без теней, чтобы 3D не тормозил на телефоне. Нажмите на дверцу, чтобы открыть.':'Потяните модель мышью. Нажмите на дверцу, чтобы открыть. Ctrl + колесо мыши — масштаб.';
+ setView(0,true);
+}
+function resize(force){
+ if(!V.ok)return;var cv=$('#cv'),w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;
+ if(!force&&V.cw===w&&V.ch===h)return;V.cw=w;V.ch=h;
+ V.r.setSize(w,h,false);V.cam.aspect=w/h;V.cam.updateProjectionMatrix();frame();kick();
+}
+function frame(){
+ var lay=V.lay;if(!lay)return;
+ var tf=Math.tan(V.cam.fov*Math.PI/360),asp=V.cam.aspect;
+ V.tx=0;V.ty=.85;V.tz=lay.RD*.34;
+ V.baseDist=(Math.max((lay.RW/2+.1)/(tf*asp),1.55/tf)+lay.RD*.22)*(.92+Math.max(0,1.5-asp)*.9);
+}
+function build(){
+ if(!V.ok)return;
+ if(V.root){V.scene.remove(V.root);V.root.traverse(function(o){var g=o.geometry;if(g&&g!==UB&&g!==UC&&g!==UK&&g!==UP2)g.dispose()})}
+ V.parts=[];V.doors=[];V.hit=[];
+ makeMats();
+ var lay=layout();V.lay=lay;V.ym=lay.form==='u'?.5:.9;V.yawT=clamp(V.yawT,-V.ym,V.ym);V.root=new THREE.Group();V.scene.add(V.root);
+ buildRoom(lay);
+ lay.runs.forEach(function(rn){buildRun(rn,lay)});
+ resize(true);if(!V.baseDist)frame();
+ V.built=true;
+ var spec=specCount();$('#sInfo').innerHTML=FORM[S.form].n+', '+m1(S.L)+' м<br>модулей: '+spec.base+' нижних, '+spec.up+' верхних';
+}
+var buildQ=0;
+function schedBuild(demo){
+ cancelAnimationFrame(buildQ);
+ buildQ=requestAnimationFrame(function(){build();if(demo)playDemo();kick()});
+}
+function playDemo(){
+ if(REDUCE)return;
+ var n=V.doors.length||1,dl=Math.min(.1,2/n);V.seq=0;V.seqDl=dl;V.seqEnd=n*dl+1.5;
+}
+function setView(i,instant){
+ V.view=i%VIEWS.length;var v=VIEWS[V.view];V.yawT=clamp(v.yaw,-V.ym,V.ym);V.pitchT=v.pitch;V.zoomT=v.zoom;
+ if(instant){V.yaw=V.yawT;V.pitch=v.pitch;V.zoom=v.zoom}
+ $('#bViewT').textContent='Вид: '+v.n;kick();
+}
+function kick(){if(V.run||!V.ok||V.mode2d||S.mode!=='kitchen')return;V.run=true;V.last=performance.now();requestAnimationFrame(loop)}
+function loop(now){
+ var dt=Math.min(.05,(now-V.last)/1000);V.last=now;
+ if(!V.ok||!V.built||!V.vis||V.mode2d||S.mode!=='kitchen'||document.hidden){V.run=false;return}
+ var ch=false;
+ try{ch=step(dt);V.r.render(V.scene,V.cam)}catch(err){V.run=false;console.warn('3D: ошибка кадра',err);return}
+ if(ch)requestAnimationFrame(loop);else V.run=false;
+}
+function step(dt){
+ var ch=false;
+ function ez(a,b,k){var d=b-a;if(Math.abs(d)<.0008)return b;ch=true;return a+d*Math.min(1,dt*k)}
+ V.t+=dt;
+ if(V.auto&&!V.drag){V.yawT=clamp(V.autoBase+Math.sin(V.t*.45)*.45,-V.ym,V.ym);ch=true}
+ V.yaw=ez(V.yaw,V.yawT,6);V.pitch=ez(V.pitch,V.pitchT,6);V.zoom=ez(V.zoom,V.zoomT,5);
+ V.ex=ez(V.ex,V.exT,3);V.night=ez(V.night,V.nightT,3);V.open=ez(V.open,V.openT,5);
+ var bump=function(i){if(V.seq<0)return 0;var p=(V.seq-i*V.seqDl)/1.3;return p>0&&p<1?Math.min(1,Math.sin(Math.PI*p)*1.7):0};
+ if(V.seq>=0){V.seq+=dt;ch=true;if(V.seq>V.seqEnd)V.seq=-1}
+ V.doors.forEach(function(d,i){
+  d.m=ez(d.m,d.mT,7);
+  var o=Math.max(V.open,bump(i),d.m);
+  if(d.type==='door')d.p.rotation.y=d.s*d.ang*o;else d.p.position.z=d.bz+.4*o;
+ });
+ var e=V.ex;
+ V.parts.forEach(function(pt){
+  pt.f.position.z=(pt.isI?.3:.55)*e;pt.t.position.y=.5*e;pt.uc.position.y=.55*e;pt.uf.position.set(0,.55*e,.5*e);
+ });
+ var n=V.night;
+ V.hemi.intensity=.38-.3*n;V.sun.intensity=1.05-.95*n;V.r.toneMappingExposure=.95-.1*n;
+ V.pl.forEach(function(l){l.intensity=n*.8});
+ V.scene.background.copy(V.bgDay).lerp(V.bgNight,n);
+ MT.winG.color.copy(C('#E8F3FA')).lerp(C('#1B2A44'),n);
+ MT.lamp.emissiveIntensity=n*1.3;MT.glow.opacity=.3+.65*n;
+ V.mats.forEach(function(m){if(m.envMapIntensity!==undefined)m.envMapIntensity=.55-.4*n});
+ var d=V.baseDist*V.zoom*(1+e*.14),cp=Math.cos(V.pitch);
+ V.cam.position.set(V.tx+Math.sin(V.yaw)*cp*d,V.ty+Math.sin(V.pitch)*d,V.tz+Math.cos(V.yaw)*cp*d);
+ V.cam.lookAt(V.tx,V.ty,V.tz);
+ return ch;
+}
+function bindInput(cv){
+ var moved=0,sx=0,sy=0;
+ cv.addEventListener('pointerdown',function(e){
+  if(e.button>0)return;V.drag=true;moved=0;sx=e.clientX;sy=e.clientY;V.dyaw=V.yawT;V.dpitch=V.pitchT;
+  try{cv.setPointerCapture(e.pointerId)}catch(x){}
+  stopAuto();$('#shint').classList.add('off');
+ });
+ cv.addEventListener('pointermove',function(e){
+  if(!V.drag)return;var dx=e.clientX-sx,dy=e.clientY-sy;moved=Math.max(moved,Math.abs(dx)+Math.abs(dy));
+  V.yawT=clamp(V.dyaw-dx*.006,-V.ym,V.ym);if(e.pointerType==='mouse')V.pitchT=clamp(V.dpitch+dy*.005,.12,1.3);kick();
+ });
+ function up(e){
+  if(!V.drag)return;V.drag=false;
+  if(e.type==='pointerup'&&moved<6){pick(e)}
+ }
+ cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',function(){V.drag=false});
+ cv.addEventListener('keydown',function(e){
+  var k=e.key,ok=true;stopAuto();
+  if(k==='ArrowLeft')V.yawT=clamp(V.yawT-.12,-V.ym,V.ym);else if(k==='ArrowRight')V.yawT=clamp(V.yawT+.12,-V.ym,V.ym);
+  else if(k==='ArrowUp')V.pitchT=clamp(V.pitchT+.1,.12,1.3);else if(k==='ArrowDown')V.pitchT=clamp(V.pitchT-.1,.12,1.3);
+  else if(k==='+'||k==='=')V.zoomT=clamp(V.zoomT*.9,.5,1.4);else if(k==='-')V.zoomT=clamp(V.zoomT*1.1,.5,1.4);else ok=false;
+  if(ok){e.preventDefault();kick()}
+ });
+ cv.addEventListener('wheel',function(e){if(!e.ctrlKey)return;e.preventDefault();V.zoomT=clamp(V.zoomT*(1+e.deltaY*.002),.5,1.4);kick()},{passive:false});
+ cv.addEventListener('dblclick',function(){setView(0)});
+}
+function pick(e){
+ var cv=$('#cv'),rc=cv.getBoundingClientRect();
+ V.pt.set(((e.clientX-rc.left)/rc.width)*2-1,-((e.clientY-rc.top)/rc.height)*2+1);
+ V.ray.setFromCamera(V.pt,V.cam);
+ var h=V.ray.intersectObjects(V.hit,false);
+ if(h.length){var d=h[0].object.userData.d;d.mT=d.mT?0:1;kick()}
+}
+function stopAuto(){if(V.auto){V.auto=false;kick()}$('#bRot').setAttribute('aria-pressed','false')}
+
+/* переключение видов и панель */
+function showView(){
+ var k=S.mode==='kitchen',use3d=HAS3D&&V.ok&&!V.mode2d&&k;
+ $('#cv').hidden=!use3d;$('#v2d').hidden=use3d;
+ $('#plan').toggleAttribute('hidden',!k);$('#wplan').toggleAttribute('hidden',k);
+ $('#tb').hidden=!k||!HAS3D;
+ $('#sInfo').hidden=!use3d;
+ $('#shint').hidden=!use3d;
+ $$('#tb button').forEach(function(b){if(b.id!=='b2d')b.disabled=!use3d});
+ $('#b2d').setAttribute('aria-pressed',V.mode2d?'true':'false');$('#b2dT').textContent=V.mode2d?'Показать 3D':'Схема 2D';
+ if(k&&!use3d){planSVG()}
+ if(!HAS3D){$('#sload').hidden=true;$('#qnote').textContent=k?'3D на этом устройстве недоступен, поэтому показана схема кухни сверху. Все настройки и цена работают так же.':'';}
+ else if(!k){$('#qnote').textContent=''}
+ if(use3d){resize();}
+}
+function sync3d(){
+ if(V.exT)renderXl();
+ if(S.mode==='kitchen'&&!$('#v2d').hidden)planSVG();
+ showView();
+ if(!(HAS3D&&V.ok&&!V.mode2d&&S.mode==='kitchen'))return;
+ var key=[S.form,S.L,S.col,S.fac,S.top,S.hd,S.up,S.ex.light,S.ex.sink].join('|');
+ if(key!==V.key){
+  var look=S.fac+'|'+S.col,demo=V.built&&V.look&&look!==V.look&&!!S.touched;
+  V.key=key;V.look=look;schedBuild(demo);
+ }
+ kick();
+}
+$('#bDoors').addEventListener('click',function(){V.openT=V.openT?0:1;this.setAttribute('aria-pressed',V.openT?'true':'false');V.doors.forEach(function(d){d.mT=0});kick()});
+$('#bExp').addEventListener('click',function(){V.exT=V.exT?0:1;this.setAttribute('aria-pressed',V.exT?'true':'false');renderXl();kick()});
+$('#bNight').addEventListener('click',function(){V.nightT=V.nightT?0:1;this.setAttribute('aria-pressed',V.nightT?'true':'false');$('#bNightT').textContent=V.nightT?'День':'Вечер';kick()});
+$('#bView').addEventListener('click',function(){stopAuto();setView(V.view+1)});
+$('#bRot').addEventListener('click',function(){V.auto=!V.auto;V.autoBase=V.yawT;this.setAttribute('aria-pressed',V.auto?'true':'false');kick()});
+$('#b2d').addEventListener('click',function(){V.mode2d=!V.mode2d;showView();if(!V.mode2d){V.key='';sync3d()}});
+function renderXl(){
+ var x=$('#sxl');x.classList.toggle('on',!!V.exT);if(!V.exT)return;var c=proj.c;if(!c){x.classList.remove('on');return}
+ x.innerHTML='<span><i style="background:#8FB3C0"></i>Корпус и фасады <b>'+rub(c.fac)+'</b></span><span><i style="background:#C9A67A"></i>Столешница <b>'+rub(c.top)+'</b></span><span><i style="background:#C9C6BF"></i>Фурнитура и ручки <b>'+rub(c.hw)+'</b></span><span>Монтаж <b>'+rub(c.mont)+'</b></span>';
+}
+V.autoBase=.3;V.ym=.9;
+
+/* ---------- замер и салон ---------- */
+var DIST=['Центр','Север','Юг','Запад','Восток','Пригород до 30 км'];
+var SALON='Салон: ул. Производственная, 12 (образец)';
+var SL=['10–12','12–14','14–16','16–18','18–20'],WD2=['вс','пн','вт','ср','чт','пт','сб'],MON=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+var bk={day:-1,slot:-1,dist:0,kind:'home'},days=[];
+(function(){var t=new Date();t.setHours(0,0,0,0);for(var i=1;i<=14;i++){days.push(new Date(t.getFullYear(),t.getMonth(),t.getDate()+i))}})();
+function taken(d,s,di){var n=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5),h=((n*73856093)^(s*19349663)^(di*83492791))>>>0;return h%100<34}
+function dkey(){return bk.kind==='salon'?9:bk.dist}
+$('#dist').innerHTML=DIST.map(function(x,i){return '<option value="'+i+'">'+x+'</option>'}).join('');
+function renderDays(){
+ $('#days').innerHTML=days.map(function(d,i){var off=d.getDay()===0;return '<button class="day" type="button" data-d="'+i+'" aria-pressed="'+(bk.day===i?'true':'false')+'"'+(off?' disabled':'')+' aria-label="'+d.getDate()+' '+MON[d.getMonth()]+(off?', выходной':'')+'"><small>'+WD2[d.getDay()]+'</small><b>'+d.getDate()+'</b></button>'}).join('')}
+function renderSlots(){
+ var sl=$('#slots');
+ if(bk.day<0){sl.innerHTML='';return}
+ sl.innerHTML=SL.map(function(s,i){var tk=taken(days[bk.day],i,dkey());return '<button class="slot" type="button" data-s="'+i+'" aria-pressed="'+(bk.slot===i?'true':'false')+'"'+(tk?' disabled aria-label="'+s+', занято"':'')+'>'+s+'</button>'}).join('');
+ if(bk.slot>=0&&taken(days[bk.day],bk.slot,dkey()))bk.slot=-1;
+ sel()}
+function where(){return bk.kind==='salon'?SALON:'район «'+DIST[bk.dist]+'»'}
+function sel(){var el=$('#bkSel');if(bk.day<0||bk.slot<0){el.textContent=bk.day<0?'Выберите день и время.':'Выберите время.';return}var d=days[bk.day];el.innerHTML='<b>'+d.getDate()+' '+MON[d.getMonth()]+', '+SL[bk.slot]+':00</b> · '+where()}
+(function(){for(var i=0;i<days.length;i++){if(days[i].getDay()!==0){bk.day=i;break}}renderDays();renderSlots()})();
+$('#days').addEventListener('click',function(e){var b=e.target.closest('.day');if(!b||b.disabled)return;bk.day=+b.dataset.d;bk.slot=-1;renderDays();renderSlots()});
+$('#slots').addEventListener('click',function(e){var b=e.target.closest('.slot');if(!b||b.disabled)return;bk.slot=+b.dataset.s;renderSlots()});
+$('#dist').addEventListener('change',function(){bk.dist=+this.value;renderSlots()});
+$('#kind').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;bk.kind=b.dataset.k;
+ $$('#kind button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+ var salon=bk.kind==='salon';$('#distW').hidden=salon;$('#adrW').hidden=salon;renderSlots()});
+var projOn=true;
+function showProj(){
+ var pb=$('#projBox');
+ if(!S.touched){pb.innerHTML='';return}
+ var chk=$('#pj');projOn=chk?chk.checked:true;
+ pb.innerHTML='<label class="proj"><input type="checkbox" id="pj"'+(projOn?' checked':'')+'><span><b>Проект из конфигуратора</b><br>'+esc(proj.title)+', ≈ '+rub(proj.sum)+', срок '+proj.days+' дн.</span></label>'}
+function toBook(){S.touched=1;render();$('#bt').value=S.mode==='kitchen'?'Кухня':'Шкаф-купе';$('#zamer').scrollIntoView({behavior:REDUCE?'auto':'smooth'});toast('Проект приложен к заявке на встречу')}
+$('#toBook').addEventListener('click',toBook);
+function pad(n){return ('0'+n).slice(-2)}
+function ics(title,d,sl,loc,desc){
+ var h=+SL[sl].split('–')[0],s=new Date(d.getFullYear(),d.getMonth(),d.getDate(),h,0),e=new Date(d.getFullYear(),d.getMonth(),d.getDate(),h+2,0);
+ function z(x){return x.getUTCFullYear()+pad(x.getUTCMonth()+1)+pad(x.getUTCDate())+'T'+pad(x.getUTCHours())+pad(x.getUTCMinutes())+'00Z'}
+ function es(t){return String(t).replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n')}
+ var t='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Stvorka//Demo//RU\r\nBEGIN:VEVENT\r\nUID:'+Date.now()+'@stvorka.demo\r\nDTSTAMP:'+z(new Date())+'\r\nDTSTART:'+z(s)+'\r\nDTEND:'+z(e)+'\r\nSUMMARY:'+es(title)+'\r\nLOCATION:'+es(loc)+'\r\nDESCRIPTION:'+es(desc)+'\r\nEND:VEVENT\r\nEND:VCALENDAR';
+ return 'data:text/calendar;charset=utf-8,'+encodeURIComponent(t)}
+$('#bkForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ var n=$('#bn'),p=$('#bp'),g=$('#bg'),err=null;
+ if(bk.day<0||bk.slot<0)err=['Выберите день и время встречи',$('#days')];
+ else if(n.value.trim().length<2)err=['Укажите имя',n];
+ else if(p.value.replace(/\D/g,'').length<10)err=['Укажите телефон (10 цифр и больше)',p];
+ else if(!g.checked)err=['Нужно согласие на обработку данных',g];
+ if(err){toast(err[0]);if(err[1].focus)err[1].focus();return}
+ var d=days[bk.day],when=d.getDate()+' '+MON[d.getMonth()]+', '+SL[bk.slot]+':00',pj=$('#pj'),withP=pj&&pj.checked,salon=bk.kind==='salon';
+ var id='СТ-'+(1000+Math.floor(Math.random()*9000));
+ var msg='Здравствуйте! Бронь '+id+': '+(salon?'салон, выбор материалов':'замер')+', '+when+', '+where()+', '+$('#bt').value+'. '+n.value.trim()+', '+p.value.trim()+(withP?'. Проект: '+proj.text:'');
+ ls('stvorka-booking',JSON.stringify({id:id,when:when}));
+ var ok=$('#bkOk'),loc=salon?'ул. Производственная, 12':($('#ba').value.trim()||DIST[bk.dist]);
+ ok.innerHTML='<h3>Бронь принята, '+id+' (образец)</h3><p><b>'+when+'</b>, '+esc(where())+'. Менеджер подтвердит в мессенджере за 30 минут в рабочее время. Это демо: заявка никуда не отправляется.</p><div class="btns"><a class="btn acc sm" target="_blank" rel="noopener" href="'+WA+encodeURIComponent(msg)+'">Подтвердить в WhatsApp</a><a class="btn ghost sm" target="_blank" rel="noopener" href="https://t.me/">Telegram</a><a class="btn ghost sm" download="vstrecha-stvorka.ics" href="'+ics((salon?'Салон «Створка»: выбор материалов':'Замер мебели — Створка'),d,bk.slot,loc,msg)+'">Добавить в календарь (.ics)</a></div>';
+ ok.classList.add('show');ok.scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'center'});ok.focus()
+});
+
+/* ---------- оплата (демо) ---------- */
+function qr(){var o='<svg class="qr" viewBox="0 0 21 21" shape-rendering="crispEdges" role="img" aria-label="QR-код (образец)"><rect width="21" height="21" fill="#fff"/>';var h=7;for(var y=0;y<21;y++)for(var x=0;x<21;x++){var f=(x<7&&y<7)||(x>13&&y<7)||(x<7&&y>13);if(f){var ex=x%14,ey=y%14;if(y>13)ey=y-14;if(x>13)ex=x-14;var on=(ex===0||ex===6||ey===0||ey===6||(ex>=2&&ex<=4&&ey>=2&&ey<=4));if(on)o+='<rect x="'+x+'" y="'+y+'" width="1" height="1"/>'}else{h=(h*1103515245+12345+x*7+y*13)>>>0;if((h>>>16)%3===0)o+='<rect x="'+x+'" y="'+y+'" width="1" height="1"/>'}}return o+'</svg>'}
+function pay(method,sum,title,sub){
+ var B=$('#mdPayB');
+ B.innerHTML='<button class="mx" type="button" data-close aria-label="Закрыть">×</button><h3>'+esc(title)+' — '+(method==='sbp'?'СБП':'банковская карта')+'</h3><p>'+esc(sub)+'</p><div class="pc"><p>К оплате</p><div class="big">'+rub(sum)+'</div></div>'+(method==='sbp'?qr()+'<p>QR-код — образец</p>':'<p>Демо-окно: реквизиты карты здесь не запрашиваются и не обрабатываются.</p>')+'<button class="btn acc wfull" type="button" id="payGo">Имитировать оплату</button>';
+ openM('#mdPay');
+ $('#payGo').addEventListener('click',function(){B.innerHTML='<div class="sp2" role="status" aria-label="Обработка"></div><p>Обрабатываем платёж…</p>';setTimeout(function(){B.innerHTML='<button class="mx" type="button" data-close aria-label="Закрыть">×</button><h3>Оплата принята (имитация)</h3><p>Деньги не списаны, это демонстрация. В рабочем проекте здесь подключается эквайринг банка клиента.</p><button class="btn acc sm" type="button" data-close>Закрыть</button>'},1300)})}
+function payPre(m){pay(m,proj.sum*.3,'Предоплата 30%',proj.title)}
+document.addEventListener('click',function(e){var b=e.target.closest('[data-pay]');if(b)payPre(b.dataset.pay)});
+$('#toPay').addEventListener('click',function(){payPre('card')});
+
+/* ---------- смета в PDF (печать) ---------- */
+function printSmeta(){
+ var k=S.mode==='kitchen',d=new Date().toLocaleDateString('ru-RU'),h='';
+ h+='<h1>Створка — смета на мебель</h1><div>'+d+' · предварительный расчёт по 3D-конфигуратору. Все данные на сайте — образец.</div>';
+ h+='<h2>Изделие</h2><table><tbody><tr><td>Проект</td><td>'+esc(proj.title)+'</td></tr>';
+ if(k){
+  var sp=specCount(),colN=COL.filter(function(x){return x.k===S.col})[0].n;
+  h+='<tr><td>Форма и длина</td><td>'+FORM[S.form].n+', '+m1(S.L)+' п.м.</td></tr>';
+  h+='<tr><td>Нижние модули</td><td>'+sp.base+' шт., высота 72 см</td></tr>';
+  h+='<tr><td>Верхние модули</td><td>'+(S.up?sp.up+' шт., высота '+S.up+' см':'нет')+'</td></tr>';
+  h+='<tr><td>Фасады</td><td>'+FAC[S.fac].n+', '+colN.toLowerCase()+'</td></tr>';
+  h+='<tr><td>Столешница</td><td>'+TOP[S.top].n+', толщина 40 мм</td></tr>';
+  h+='<tr><td>Фурнитура и ручки</td><td>'+HW[S.hw].n+', ручки: '+HD[S.hd].n.toLowerCase()+'</td></tr>';
+  var ex=Object.keys(EX).filter(function(x){return S.ex[x]}).map(function(x){return EX[x].n.toLowerCase()});
+  h+='<tr><td>Опции</td><td>'+(ex.length?ex.join(', '):'нет')+'</td></tr>';
+  h+='<tr><td>Техника</td><td>холодильник и варочная панель на модели условные, в смету не входят</td></tr>';
+ }else{
+  h+='<tr><td>Размер</td><td>'+m1(W.w)+' × '+m1(W.h)+' м, '+W.doors+' двери</td></tr><tr><td>Декор дверей</td><td>'+WD[W.dec].n+'</td></tr>';
+  h+='<tr><td>Наполнение</td><td>штанги '+W.fill.rod+', полки '+W.fill.shelf+', ящики '+W.fill.drawer+', пантограф '+W.fill.pant+', подсветка '+W.fill.light+'</td></tr>';
+ }
+ h+='</tbody></table><h2>Расчёт</h2><table><thead><tr><th>Статья</th><th>Сумма</th></tr></thead><tbody>';
+ proj.lines.forEach(function(l){h+='<tr><td>'+l[0]+'</td><td>'+l[1]+'</td></tr>'});
+ h+='<tr class="tot"><td>Итого (середина вилки)</td><td>'+rub(proj.sum)+'</td></tr></tbody></table>';
+ h+='<p><b>Вилка ±7%:</b> '+fmt(proj.lo)+' – '+fmt(proj.hi)+' ₽. <b>Срок изготовления:</b> '+proj.days+' дней. <b>Предоплата 30%:</b> '+rub(proj.sum*.3)+'.</p>';
+ h+='<p class="fn">Калькулятор даёт ориентир с точностью ±7%. Итоговая цена и срок фиксируются в договоре после бесплатного замера и не меняются. Ставки и условия на демо-сайте — образец. Тел. +7 777 777-77-77, ул. Производственная, 12 (образец).</p>';
+ $('#print').innerHTML=h;
+ setTimeout(function(){window.print()},60);
+}
+$('#toPdf').addEventListener('click',printSmeta);
+
+/* ---------- личный кабинет ---------- */
+var TD=new Date();TD.setHours(0,0,0,0);
+function dAdd(n){return new Date(TD.getFullYear(),TD.getMonth(),TD.getDate()+n)}
+function dS(n){var d=dAdd(n);return d.getDate()+' '+MON[d.getMonth()]}
+var ORDER=292400;
+var STG=[
+ ['Замер',-11,-11,'done'],['3D-проект',-8,-8,'done'],['Договор и предоплата',-6,-6,'done'],['Раскрой',-4,-4,'done'],['Кромление',-3,-3,'done'],
+ ['Присадка',0,2,'now'],['Сборка',3,5,'next'],['Доставка',4,6,'next'],['Монтаж',6,8,'next'],['Приёмка и акт',7,9,'next']];
+function lkInit(){
+ $('#lkD0').textContent=dS(-6);
+ $('#stgs').innerHTML=STG.map(function(s,i){
+  var cls=s[3],dt,left='';
+  if(cls==='done')dt='<span>План: '+dS(s[1])+'</span><span>Факт: '+dS(s[2])+'</span>';
+  else{var late=s[2]-s[1];dt='<span>План: <s>'+dS(s[1])+'</s></span><span>Новая дата: '+(late?'<strong>':'')+dS(s[2])+(late?', +'+late+' дн.</strong>':'')+'</span>';left='осталось '+s[2]+' дн.'}
+  return '<li class="'+cls+'"><span class="mk">'+(cls==='done'?'✓':(i+1))+'</span><div><b>'+s[0]+(cls==='now'?' · сейчас':'')+'</b><span class="dt">'+dt+'</span></div>'+(left?'<span class="lft">'+left+'</span>':'')+'</li>'}).join('');
+ $('#lkAlert').innerHTML='<b>Срок сдвинулся на 2 дня</b>Причина: поставщик задержал кромку ABS. Новая дата монтажа — '+dS(8)+' (было '+dS(6)+'). Мы сообщили вам в день сдвига, по телефону и в мессенджере. Если новая дата не подходит, напишите менеджеру во вкладке «Чат».';
+ var donePart=5.5/10*100;
+ $('#lkProg').textContent='Готовность '+Math.round(donePart)+'%: этап 6 из 10, сдача '+dS(9);
+ setTimeout(function(){$('#lkBar').style.width=donePart+'%'},60);
+ var P=[['1631396326646-c06a935ff3a6','Раскрой: заготовки в цеху',-4],['1544164560-adac3045edb2','Присадка идёт сегодня',0],['1789381565624-cf9c65b7c2ba','Ручки для вашей кухни',-1],['1693892985308-44965a6060d1','Фасады: проверка цвета эмали',-2],['1556020685-ae41abfc9365','Столешница: проверка стыков',-2],['1585128792020-803d29415281','Кромление: контроль торцов',-3]];
+ $('#ph6').innerHTML=P.map(function(p,i){return '<button type="button" data-ph="'+i+'" aria-label="Открыть фото: '+p[1]+'"><img loading="lazy" width="400" height="300" src="'+img(p[0],400)+'" alt="'+p[1]+'"><span>'+p[1]+'<br>'+dS(p[2])+'</span></button>'}).join('');
+ $('#ph6').onclick=function(e){var b=e.target.closest('[data-ph]');if(!b)return;var p=P[+b.dataset.ph];$('#mdPhotoB').innerHTML='<button class="mx" type="button" data-close aria-label="Закрыть">×</button><div class="mi"><img width="900" height="560" src="'+img(p[0],900)+'" alt="'+p[1]+'"></div><div class="mt"><h3>'+p[1]+'</h3><p>'+dS(p[2])+' · заказ СТ-2041 · фото цеха (образец)</p></div>';openM('#mdPhoto')};
+ var DC=[['Договор СТ-2041',dS(-6),1],['Спецификация модулей',dS(-6),1],['3D-проект, 12 листов',dS(-8),1],['Чек предоплаты 30%',dS(-6),1],['Акт приёмки','после монтажа',0],['Гарантийный талон','после акта',0]];
+ $('#docs').innerHTML=DC.map(function(x,i){return '<div class="doc"><i>PDF</i><div>'+x[0]+'<small>'+x[1]+'</small></div>'+(x[2]?'<button class="btn ghost sm" type="button" data-dl="'+i+'" aria-label="Скачать: '+x[0]+'">Скачать</button>':'<span class="st1 nx">ожидается</span>')+'</div>'}).join('');
+ $('#docs').onclick=function(e){if(e.target.closest('[data-dl]'))toast('Образец: в рабочем кабинете здесь скачивается PDF-файл')};
+ var p1=Math.round(ORDER*.3),p3=Math.round(ORDER*.1),p2=ORDER-p1-p3;
+ $('#pays').innerHTML='<div class="pay1"><b>'+rub(p1)+'</b><span>30% · предоплата</span><div class="pc1"><span>'+dS(-6)+'</span><span class="st1 ok1">оплачено</span></div></div>'+
+  '<div class="pay1"><b>'+rub(p2)+'</b><span>60% · перед доставкой</span><div class="pc1"><span>до '+dS(6)+'</span><span class="st1 wt">ждёт оплаты</span><span><button class="btn acc sm" type="button" data-lp="card">Картой</button> <button class="btn ghost sm" type="button" data-lp="sbp">По СБП</button></span></div></div>'+
+  '<div class="pay1"><b>'+rub(p3)+'</b><span>10% · после монтажа и акта</span><div class="pc1"><span>после '+dS(9)+'</span><span class="st1 nx">впереди</span></div></div>';
+ $('#pays').onclick=function(e){var b=e.target.closest('[data-lp]');if(b)pay(b.dataset.lp,p2,'Заказ СТ-2041: 60%','Оплата перед доставкой')};
+ $('#msgs').innerHTML='<div class="msg"><small>Олег, менеджер · 09:12</small>Анна, добрый день! Присадка идёт, кромка придёт на 2 дня позже. Сообщаем заранее: новая дата монтажа — '+dS(8)+'.</div>';
+ var gt=dAdd(9);gt.setFullYear(gt.getFullYear()+3);
+ $('#garTill').textContent=pad(gt.getDate())+'.'+pad(gt.getMonth()+1)+'.'+gt.getFullYear();
+ var w=r100(WARD.total);
+ $('#addNew').textContent=rub(r100(w*.9));$('#addOld').textContent=rub(w);
+}
+var lkDone=false;
+$('#lkGo').addEventListener('click',function(){
+ $('#lkIn').hidden=true;$('#lkApp').hidden=false;
+ if(!lkDone){lkInit();lkDone=true}
+ $('#lkTabs button').focus();
+});
+$('#lkTabs').addEventListener('click',function(e){
+ var b=e.target.closest('button');if(!b)return;
+ $$('#lkTabs button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+ $$('.lkp').forEach(function(p){p.classList.toggle('on',p.dataset.tp===b.dataset.t)});
+ if(b.dataset.t==='chat'){var u=$('#lkUnread');if(u)u.hidden=true;var m=$('#msgs');m.scrollTop=m.scrollHeight}
+});
+$('#chatF').addEventListener('submit',function(e){
+ e.preventDefault();var v=$('#chatI').value.trim();if(!v)return;
+ var m=$('#msgs'),tm=new Date().toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});
+ m.insertAdjacentHTML('beforeend','<div class="msg me"><small>Вы · '+tm+'</small>'+esc(v)+'</div>');$('#chatI').value='';m.scrollTop=m.scrollHeight;
+ setTimeout(function(){
+  var t=isOpen()?'Принял, отвечу по существу в течение 30 минут.':'Сейчас мы не работаем (пн–сб 9:00–19:00). Ответим утром, как только откроемся.';
+  m.insertAdjacentHTML('beforeend','<div class="msg"><small>Олег, менеджер · '+tm+'</small>'+t+' (автоответ, образец)</div>');m.scrollTop=m.scrollHeight},900);
+});
+$('#garF').addEventListener('submit',function(e){
+ e.preventDefault();var t=$('#garT').value.trim(),ok=$('#garOk');
+ if(t.length<5){toast('Опишите, что случилось');$('#garT').focus();return}
+ var f=$('#garP').files&&$('#garP').files[0];
+ ok.hidden=false;ok.textContent='Заявка ГР-'+(1000+Math.floor(Math.random()*9000))+' принята (образец)'+(f?', фото «'+f.name+'» приложено':'')+'. Мастер свяжется в течение рабочего дня. Это демо: данные никуда не отправляются.';
+ $('#garT').value='';$('#garP').value='';
+});
+$('#addGo').addEventListener('click',function(){var ok=$('#addOk');ok.hidden=false;ok.textContent='Запрос отправлен менеджеру (образец). Скидка на комплект −10% уже учтена, срок изготовления шкафа совпадёт с вашей кухней.'});
+
+/* ---------- старт ---------- */
+buildOpts();render();reveal(document);
+var started=false;
+function start3d(){
+ if(started)return;started=true;
+ if(!HAS3D){V.ok=false;showView();return}
+ try{initScene()}catch(err){HAS3D=false;V.ok=false;console.warn('3D недоступен',err)}
+ V.key='';render();
+}
+if(HAS3D&&'IntersectionObserver' in window){
+ var io3=new IntersectionObserver(function(es){if(es[0].isIntersecting){io3.disconnect();start3d()}},{rootMargin:'700px 0px'});
+ io3.observe($('#konfigurator'));
+ setTimeout(function(){if(!started&&$('#konfigurator').getBoundingClientRect().top<innerHeight*1.8)start3d()},1500);
+}else start3d();
+document.addEventListener('change',function(e){if(e.target.id==='pj')projOn=e.target.checked});
+})();
+</script>
+</body>
+</html>
