@@ -6,9 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Створка — кухни, шкафы и гардеробные на заказ</title>
 <meta name="description" content="Мебель на заказ: 15 готовых проектов с ценами, бесплатный замер, срок и цена в договоре, фотоотчёт из цеха. Заявка в WhatsApp.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<link href="fonts/fonts.css" rel="stylesheet">
 <!-- Яндекс Метрика: вставьте сюда код счётчика клиента -->
 <style>
 :root{--bg:#F4F0E8;--bg2:#EAE3D6;--card:#FFFFFF;--ink:#23211E;--mute:#6B655B;--acc:#1F5C73;--acc-ink:#FFFFFF;--line:#DDD5C6;--wa:#177A45;--tg:#1B73A8;--sale:#B3321F;--ok:#177A45;--shade:rgba(35,33,30,.55)}
@@ -189,7 +187,7 @@ footer.foot .wr{display:flex;flex-direction:column;gap:6px}
     </div>
     <div class="open" id="open"><b></b><span>Мастерская открыта</span></div>
   </div>
-  <div class="pic"><img class="ph" src="https://images.unsplash.com/photo-1622372738946-62e02505feb3?w=900&q=72&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1622372738946-62e02505feb3?w=450&q=72&auto=format&fit=crop 450w, https://images.unsplash.com/photo-1622372738946-62e02505feb3?w=900&q=72&auto=format&fit=crop 900w, https://images.unsplash.com/photo-1622372738946-62e02505feb3?w=1440&q=72&auto=format&fit=crop 1440w" sizes="(max-width:767px) 100vw, 50vw" width="900" height="675" alt="Кухня с деревянным островом, рейками и стеклянной витриной" fetchpriority="high" decoding="async" data-k="k" data-c="Дерево"></div>
+  <div class="pic"><img class="ph" src="img/1622372738946-62e02505feb3.jpg" width="900" height="675" alt="Кухня с деревянным островом, рейками и стеклянной витриной" fetchpriority="high" decoding="async" data-k="k" data-c="Дерево"></div>
 </div></section>
 
 <section class="sec alt" id="cifry"><div class="wr">
@@ -215,8 +213,8 @@ footer.foot .wr{display:flex;flex-direction:column;gap:6px}
   <h2>Было пустое место — стала кухня</h2>
   <p class="lead">Двигайте ползунок. Пример демонстрационный; на сайте клиента здесь будут ваши объекты.</p>
   <div class="ba" id="ba">
-    <div class="after"><img class="ph" src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=1000&q=72&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=500&q=72&auto=format&fit=crop 500w, https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=1000&q=72&auto=format&fit=crop 1000w, https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=1600&q=72&auto=format&fit=crop 1600w" sizes="(max-width:767px) 100vw, 50vw" width="1000" height="750" alt="Готовая белая кухня с островом" loading="lazy" decoding="async" data-k="k" data-c="Белый"></div>
-    <div class="before"><img class="ph" src="https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?w=1000&q=72&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?w=500&q=72&auto=format&fit=crop 500w, https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?w=1000&q=72&auto=format&fit=crop 1000w, https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?w=1600&q=72&auto=format&fit=crop 1600w" sizes="(max-width:767px) 100vw, 50vw" width="1000" height="750" alt="Стена с полками до установки кухни" loading="lazy" decoding="async" data-k="k" data-c="Дерево"></div>
+    <div class="after"><img class="ph" src="img/1556912172-45b7abe8b7e1.jpg" width="1000" height="750" alt="Готовая белая кухня с островом" loading="lazy" decoding="async" data-k="k" data-c="Белый"></div>
+    <div class="before"><img class="ph" src="img/1556909190-eccf4a8bf97a.jpg" width="1000" height="750" alt="Стена с полками до установки кухни" loading="lazy" decoding="async" data-k="k" data-c="Дерево"></div>
     <span class="cap l">Было</span><span class="cap r">Стало</span>
     <div class="bar" id="baBar"></div>
     <input type="range" min="0" max="100" value="50" id="baRange" aria-label="Сравнить: было и стало">
@@ -332,7 +330,7 @@ footer.foot .wr{display:flex;flex-direction:column;gap:6px}
 
 var CLR={'Белый':'#F2EFE9','Серый':'#9AA0A3','Графит':'#4A4D50','Бежевый':'#CDB89B','Дерево':'#B58A5E','Синий':'#2F5D7C','Чёрный':'#2B2B2B'};
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
-function u(id,w){return 'https://images.unsplash.com/photo-'+id+'?w='+w+'&q=72&auto=format&fit=crop'}
+function u(id,w){return 'img/'+id+'.jpg'}
 /* Иллюстрация мебели: показывается, если фото не загрузилось */
 function art(k,c){
   c=c||'#8AA0A8';
@@ -355,7 +353,7 @@ function art(k,c){
 }
 function img(id,alt,w,k,c,eager){
   var a=Math.round(w/2),b=Math.min(2400,Math.round(w*1.6));
-  return '<img class="ph" src="'+u(id,w)+'" srcset="'+u(id,a)+' '+a+'w, '+u(id,w)+' '+w+'w, '+u(id,b)+' '+b+'w" sizes="(max-width:767px) 100vw, 33vw" width="'+w+'" height="'+Math.round(w*.75)+'" alt="'+esc(alt)+'" '+(eager?'fetchpriority="high"':'loading="lazy"')+' decoding="async" data-k="'+(k||'')+'" data-c="'+(c||'')+'">';
+  return '<img class="ph" src="'+u(id,w)+'" width="'+w+'" height="'+Math.round(w*.75)+'" alt="'+esc(alt)+'" '+(eager?'fetchpriority="high"':'loading="lazy"')+' decoding="async" data-k="'+(k||'')+'" data-c="'+(c||'')+'">';
 }
 function fail(im){var d=document.createElement('div');d.className='ph';d.setAttribute('role','img');d.setAttribute('aria-label',im.alt||'Иллюстрация');d.innerHTML=art(im.dataset.k,CLR[im.dataset.c]);im.replaceWith(d)}
 document.addEventListener('error',function(e){var t=e.target;if(t&&t.tagName=='IMG'&&t.classList.contains('ph'))fail(t)},true);

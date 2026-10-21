@@ -6,9 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Створка — интернет-магазин мебели на заказ</title>
 <meta name="description" content="Каталог из 50 проектов кухонь, шкафов-купе, гардеробных и детских с ценами. Калькулятор кухни и шкафа, «Моя смета», бесплатный замер.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<link href="fonts/fonts.css" rel="stylesheet">
 <!-- Яндекс Метрика: вставьте сюда код счётчика клиента -->
 <style>
 :root{--bg:#F4F0E8;--bg2:#EAE3D6;--card:#FFFFFF;--ink:#23211E;--mute:#6B655B;--acc:#1F5C73;--acc-ink:#FFFFFF;--line:#DDD5C6;--wa:#177A45;--tg:#1B73A8;--sale:#B3321F;--ok:#177A45;--shade:rgba(35,33,30,.55)}
@@ -239,7 +237,7 @@ dialog.lb .cp{padding:12px 16px;display:flex;justify-content:space-between;align
       <a class="btn line" href="#calc">Посчитать кухню</a>
     </div>
   </div>
-  <div class="pic"><img class="ph" src="https://images.unsplash.com/photo-1617228069096-4638a7ffc906?w=900&q=72&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1617228069096-4638a7ffc906?w=450&q=72&auto=format&fit=crop 450w, https://images.unsplash.com/photo-1617228069096-4638a7ffc906?w=900&q=72&auto=format&fit=crop 900w, https://images.unsplash.com/photo-1617228069096-4638a7ffc906?w=1440&q=72&auto=format&fit=crop 1440w" sizes="(max-width:767px) 100vw, 50vw" width="900" height="675" alt="Бежевая кухня без ручек с островом и большим окном" fetchpriority="high" decoding="async" data-k="k" data-c="Бежевый"></div>
+  <div class="pic"><img class="ph" src="img/1617228069096-4638a7ffc906.jpg" width="900" height="675" alt="Бежевая кухня без ручек с островом и большим окном" fetchpriority="high" decoding="async" data-k="k" data-c="Бежевый"></div>
 </div>
 <div class="wr"><div class="feat">
   <div class="card"><b>Перезвоним за 15 минут</b><span>в рабочее время</span></div>
@@ -429,7 +427,7 @@ dialog.lb .cp{padding:12px 16px;display:flex;justify-content:space-between;align
 
 var CLR={'Белый':'#F2EFE9','Серый':'#9AA0A3','Графит':'#4A4D50','Бежевый':'#CDB89B','Дерево':'#B58A5E','Синий':'#2F5D7C','Чёрный':'#2B2B2B'};
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
-function u(id,w){return 'https://images.unsplash.com/photo-'+id+'?w='+w+'&q=72&auto=format&fit=crop'}
+function u(id,w){return 'img/'+id+'.jpg'}
 /* Иллюстрация мебели: показывается, если фото не загрузилось */
 function art(k,c){
   c=c||'#8AA0A8';
@@ -452,7 +450,7 @@ function art(k,c){
 }
 function img(id,alt,w,k,c,eager){
   var a=Math.round(w/2),b=Math.min(2400,Math.round(w*1.6));
-  return '<img class="ph" src="'+u(id,w)+'" srcset="'+u(id,a)+' '+a+'w, '+u(id,w)+' '+w+'w, '+u(id,b)+' '+b+'w" sizes="(max-width:767px) 100vw, 33vw" width="'+w+'" height="'+Math.round(w*.75)+'" alt="'+esc(alt)+'" '+(eager?'fetchpriority="high"':'loading="lazy"')+' decoding="async" data-k="'+(k||'')+'" data-c="'+(c||'')+'">';
+  return '<img class="ph" src="'+u(id,w)+'" width="'+w+'" height="'+Math.round(w*.75)+'" alt="'+esc(alt)+'" '+(eager?'fetchpriority="high"':'loading="lazy"')+' decoding="async" data-k="'+(k||'')+'" data-c="'+(c||'')+'">';
 }
 function fail(im){var d=document.createElement('div');d.className='ph';d.setAttribute('role','img');d.setAttribute('aria-label',im.alt||'Иллюстрация');d.innerHTML=art(im.dataset.k,CLR[im.dataset.c]);im.replaceWith(d)}
 document.addEventListener('error',function(e){var t=e.target;if(t&&t.tagName=='IMG'&&t.classList.contains('ph'))fail(t)},true);
