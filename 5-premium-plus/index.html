@@ -80,9 +80,9 @@ h1,h2,h3{font-family:Unbounded,Onest,sans-serif;font-weight:500;line-height:1.12
 .fact b{display:block;font-family:Unbounded,sans-serif;font-size:1.3rem;color:var(--acc)}
 .fact span{font-size:.85rem;color:var(--mute)}
 .ticker{background:var(--deep);color:#EAE3D6;overflow:hidden;white-space:nowrap;padding:14px 0;font-size:.92rem}
-.ticker div{display:inline-block;padding-left:100%;animation:tick 38s linear infinite}
+.ticker div{display:inline-flex;animation:tick 38s linear infinite;will-change:transform}
 .ticker span{margin-right:36px}.ticker span:before{content:"\25A0";margin-right:12px;color:#7FB4C6;font-size:.6rem}
-@keyframes tick{to{transform:translateX(-100%)}}
+@keyframes tick{to{transform:translateX(-50%)}}
 /* 3D-конфигуратор */
 .cfg{background:var(--deep);color:#EFEADF}
 .cfg .cap{color:#8FC3D4}
@@ -1830,6 +1830,12 @@ if(HAS3D&&'IntersectionObserver' in window){
 }else start3d();
 document.addEventListener('change',function(e){if(e.target.id==='pj')projOn=e.target.checked});
 })();
+</script>
+<script>
+/* бегущая строка без разрыва: текст повторяется, пока одна половина ленты не шире экрана; лента сдвигается на половину */
+(function(){var t=document.querySelector('.ticker>div');if(!t)return;var base=t.innerHTML,lw=0;
+ function fill(){if(innerWidth===lw)return;lw=innerWidth;t.innerHTML=base;var n=Math.max(1,Math.ceil(innerWidth/t.scrollWidth));t.innerHTML=new Array(n+1).join(base);t.innerHTML+=t.innerHTML;t.style.animationDuration=Math.round(t.scrollWidth/2/70)+'s'}
+ fill();addEventListener('resize',fill);if(document.fonts)document.fonts.ready.then(function(){lw=0;fill()})})();
 </script>
 </body>
 </html>
