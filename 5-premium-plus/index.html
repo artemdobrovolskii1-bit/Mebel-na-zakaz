@@ -513,7 +513,7 @@ footer.f .wr{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
 
 <section class="sec cfg" id="konfigurator" aria-labelledby="h-cfg">
  <div class="wr">
-  <div class="sh"><span class="cap">3D-конфигуратор</span><h2 id="h-cfg">Соберите кухню в 3D за 5 шагов</h2><p>Форма, длина, фасад, столешница, ручки меняются прямо на модели, а смета пересчитывается сразу. Телефон нужен только чтобы сохранить расчёт.</p></div>
+  <div class="sh"><span class="cap">3D-конфигуратор</span><h2 id="h-cfg">Соберите кухню или шкаф-купе в 3D</h2><p>Форма, размеры, фасады, цвет корпуса, профиль и наполнение меняются прямо на модели, а смета пересчитывается сразу. Телефон нужен только чтобы сохранить расчёт.</p></div>
   <div class="cmodes" role="group" aria-label="Что настраиваем">
    <button type="button" data-mode="kitchen" aria-pressed="true">Кухня</button>
    <button type="button" data-mode="wardrobe" aria-pressed="false">Шкаф-купе</button>
@@ -594,6 +594,10 @@ footer.f .wr{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
      <div class="opts mb1" id="wDoors"></div>
      <h3>Декор дверей</h3>
      <div class="opts mb1" id="wDecor"></div>
+     <h3>Цвет корпуса</h3><p class="hint">ЛДСП с кромкой в цвет. Цена от цвета не зависит.</p>
+     <div class="sw mb1" id="wBody" role="group" aria-label="Цвет корпуса"></div>
+     <h3>Профиль дверей</h3>
+     <div class="opts mb1" id="wProf"></div>
      <h3>Наполнение</h3>
      <div id="wFill"></div>
     </div>
@@ -915,9 +919,9 @@ var ITEMS=[
 {t:'kitchen',n:'Кухня «Минимал»',s:'прямая, 3,0 м',m:'МДФ плёнка, молочный',p:48000,u:'за п.м.',d:21,b:'Хит',ph:'1484154218962-a197022b5858',cfg:{form:'straight',L:3,fac:'plen',col:'milk',top:'hpl'}},
 {t:'kitchen',n:'Кухня «Дуб и рейки»',s:'с островом, 4,6 м',m:'шпон, дуб',p:112700,u:'за п.м.',d:40,ph:'1622372738946-62e02505feb3',cfg:{form:'island',L:4.6,fac:'shpon',col:'oak',top:'acryl'}},
 {t:'kitchen',n:'Кухня «Уголь» эконом',s:'прямая, 2,8 м',m:'ЛДСП, графит',p:34000,old:38000,u:'за п.м.',d:14,b:'−10%',bc:'s',ph:'1556909172-54557c7e4fb7',cfg:{form:'straight',L:2.8,fac:'ldsp',col:'graphite',top:'ldsp'}},
-{t:'wardrobe',n:'Шкаф-купе «Лайт 180»',s:'1,8 × 2,4 м, 2 двери',m:'ЛДСП + зеркало',p:43500,u:'за шкаф',d:14,b:'Хит',ph:'1721901944646-8b7da57bea7e'},
+{t:'wardrobe',n:'Шкаф-купе «Лайт 180»',s:'1,8 × 2,4 м, 2 двери',m:'ЛДСП + зеркало',p:43500,u:'за шкаф',d:14,b:'Хит',ph:'1721901944646-8b7da57bea7e',cfg:{ward:1,w:1.8,h:2.4,doors:2,dec:'mirror',body:'white',prof:'silver'}},
 {t:'wardrobe',n:'Шкаф распашной «Дуб»',s:'2,0 × 2,4 м',m:'ЛДСП под дуб, зеркальные вставки',p:48400,u:'за шкаф',d:14,ph:'1722349674028-a148f4364e43'},
-{t:'wardrobe',n:'Встроенный шкаф с нишей',s:'2,6 × 2,7 м, скамья',m:'МДФ, реечная панель',p:70700,u:'за шкаф',d:21,b:'Новинка',ph:'1683181181300-44c0c991a2cf'},
+{t:'wardrobe',n:'Встроенный шкаф с нишей',s:'2,6 × 2,7 м, скамья',m:'МДФ, реечная панель',p:70700,u:'за шкаф',d:21,b:'Новинка',ph:'1683181181300-44c0c991a2cf',cfg:{ward:1,w:2.6,h:2.7,doors:3,dec:'ldsp',body:'sonoma',prof:'black'}},
 {t:'walkin',n:'Гардеробная «Свет»',s:'встроенная, 4 п.м.',m:'ЛДСП, зеркало, подсветка',p:20000,u:'за п.м.',d:21,ph:'1672137233327-37b0c1049e77'},
 {t:'walkin',n:'Гардеробная угловая',s:'6 п.м.',m:'светлое дерево, ящики',p:21000,u:'за п.м.',d:22,ph:'1649361811423-a55616f7ab11'},
 {t:'walkin',n:'Гардеробная «Белая»',s:'5 п.м.',m:'ЛДСП, выдвижные ящики',p:24000,u:'за п.м.',d:21,b:'Хит',ph:'1721044168675-b577e899413d'},
@@ -955,16 +959,19 @@ var EX={light:{n:'Подсветка рабочей зоны',p:1800,u:'за п.
 var WD={ldsp:{n:'ЛДСП',r:2400,c:'#D8CDB8'},mirror:{n:'Зеркало',r:3900,c:'#CFE0E6'},glass:{n:'Лакобель (стекло)',r:4700,c:'#5C7380'},photo:{n:'Фотопечать',r:5300,c:'#8FB09A'}};
 var WF={rod:{n:'Штанга',p:900,u:'шт.'},shelf:{n:'Полка',p:1100,u:'шт.'},drawer:{n:'Выдвижной ящик',p:2900,u:'шт.'},pant:{n:'Пантограф',p:6500,u:'шт.'},light:{n:'Подсветка',p:1800,u:'п.м.'}};
 var WRATE=7200;
+var WB=[{k:'white',n:'Белый',c:'#ECE8E0'},{k:'sonoma',n:'Дуб сонома',c:'#C9AA80',g:1},{k:'grey',n:'Серый',c:'#9A9894'},{k:'graphite',n:'Графит',c:'#3E4247'},{k:'walnut',n:'Орех',c:'#7A5438',g:1},{k:'wenge',n:'Венге',c:'#4B3A2F',g:1}];
+var WP={silver:{n:'Серебро',c:'#C9CBCE',r:.3,m:.85,p:0},black:{n:'Чёрный матовый',c:'#232325',r:.55,m:.4,p:900},gold:{n:'Золото',c:'#C8A35A',r:.32,m:.9,p:1400}};
 
 var S={mode:'kitchen',step:0,form:'corner',L:3.4,fac:'emal',col:'graphite',top:'hpl',hw:'base',hd:'rail',up:72,ex:{light:1,sink:1,cargo:0,bin:0},dlv:0,km:25,ward:0,first:1,touched:0};
-var W={w:1.8,h:2.4,doors:2,dec:'mirror',fill:{rod:1,shelf:3,drawer:0,pant:0,light:0}};
+var W={w:1.8,h:2.4,doors:2,dec:'mirror',body:'white',prof:'silver',fill:{rod:1,shelf:3,drawer:0,pant:0,light:0}};
 
-function wcalc(w,h,dec,fill){
- var a=w*h,base=a*WRATE,door=a*WD[dec].r,f=0;
+function wcalc(w,h,dec,fill,doors,prof){
+ var a=w*h,base=a*WRATE,door=a*WD[dec].r,f=0,pr=(doors||0)*((WP[prof]||{p:0}).p);
  f+=fill.rod*WF.rod.p+fill.shelf*WF.shelf.p+fill.drawer*WF.drawer.p+fill.pant*WF.pant.p+fill.light*w*WF.light.p;
- var sub=base+door+f,mont=sub*.05;
- return {a:a,base:base,door:door,fill:f,mont:mont,total:sub+mont,days:dec==='photo'?18:14}
+ var sub=base+door+f+pr,mont=sub*.05;
+ return {a:a,base:base,door:door,fill:f,prof:pr,mont:mont,total:sub+mont,days:dec==='photo'?18:14}
 }
+function wBody(){return WB.filter(function(b){return b.k===W.body})[0]||WB[0]}
 function monthEnd(){var d=new Date(),e=new Date(d.getFullYear(),d.getMonth()+1,0);return ('0'+e.getDate()).slice(-2)+'.'+('0'+(e.getMonth()+1)).slice(-2)}
 var WARD=wcalc(1.2,2.4,'mirror',{rod:1,shelf:3,drawer:0,pant:0,light:0});
 function kcalc(){
@@ -995,6 +1002,8 @@ function buildOpts(){
  $('#wardPrice').textContent='≈ '+rub(r100(WARD.total));
  $('#wDoors').innerHTML=[2,3,4].map(function(n){return optBtn('data-doors',n,W.doors===n,'<b>'+n+' двери</b>')}).join('');
  $('#wDecor').innerHTML=Object.keys(WD).map(function(k){var d=WD[k];return optBtn('data-dec',k,W.dec===k,'<b>'+d.n+'</b><small>'+fmt(d.r)+' ₽/м²</small>')}).join('');
+ $('#wBody').innerHTML=WB.map(function(b){return '<button class="swb" type="button" data-wb="'+b.k+'" aria-pressed="'+(W.body===b.k?'true':'false')+'" aria-label="'+b.n+'"><i style="background:'+b.c+'"></i>'+b.n+'</button>'}).join('');
+ $('#wProf').innerHTML=Object.keys(WP).map(function(k){var p=WP[k];return optBtn('data-wp',k,W.prof===k,'<b>'+p.n+'</b><small>'+(p.p?'+'+fmt(p.p)+' ₽ за дверь':'входит в цену')+'</small>')}).join('');
  $('#wFill').innerHTML=Object.keys(WF).map(function(k){var f=WF[k];return '<div class="chk st"><span>'+f.n+'<small>'+fmt(f.p)+' ₽ за '+f.u+'</small></span><span class="cnt"><button class="btn ghost sm" type="button" data-fm="'+k+'" aria-label="Меньше: '+f.n+'">−</button><b id="fv-'+k+'">'+W.fill[k]+'</b><button class="btn ghost sm" type="button" data-fp="'+k+'" aria-label="Больше: '+f.n+'">+</button></span></div>'}).join('')}
 
 function planSVG(){
@@ -1065,17 +1074,19 @@ function render(){
   proj.sum=c.total;
   $('#spT').textContent=FORM[S.form].n+' · '+m1(S.L)+' м';
  } else {
-  var wc=wcalc(W.w,W.h,W.dec,W.fill);
+  var wc=wcalc(W.w,W.h,W.dec,W.fill,W.doors,W.prof),bN=wBody().n,pN=WP[W.prof].n;
   $('#vW').textContent=m1(W.w)+' м';$('#vH').textContent=m1(W.h)+' м';$('#rW').value=W.w;$('#rH').value=W.h;
   wplanSVG();
   $$('#wDoors .opt').forEach(function(b){b.setAttribute('aria-pressed',+b.dataset.doors===W.doors?'true':'false')});
   $$('#wDecor .opt').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.dec===W.dec?'true':'false')});
+  $$('#wBody .swb').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.wb===W.body?'true':'false')});
+  $$('#wProf .opt').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.wp===W.prof?'true':'false')});
   Object.keys(WF).forEach(function(k){$('#fv-'+k).textContent=W.fill[k]});
-  lines=[['Каркас ('+m1(wc.a)+' м² × 7 200 ₽)',rub(wc.base)],['Двери ('+WD[W.dec].n.toLowerCase()+', '+W.doors+' шт.)',rub(wc.door)],['Наполнение',rub(wc.fill)],['Монтаж 5%',rub(wc.mont)]];
+  lines=[['Каркас ('+m1(wc.a)+' м² × 7 200 ₽, '+bN.toLowerCase()+')',rub(wc.base)],['Двери ('+WD[W.dec].n.toLowerCase()+', '+W.doors+' шт.)',rub(wc.door)],['Профиль ('+pN.toLowerCase()+')',rub(wc.prof)],['Наполнение',rub(wc.fill)],['Монтаж 5%',rub(wc.mont)]];
   summaryLines(lines);lo=r1k(wc.total*.93);hi=r1k(wc.total*1.07);days=wc.days;
-  proj.lines=lines;proj.c=null;
+  proj.lines=lines;proj.c=null;proj.wc=wc;
   $('#sumT').textContent='Смета: шкаф-купе '+m1(W.w)+' × '+m1(W.h);
-  txt='Шкаф-купе: '+m1(W.w)+' × '+m1(W.h)+' м, '+W.doors+' двери, декор '+WD[W.dec].n.toLowerCase();
+  txt='Шкаф-купе: '+m1(W.w)+' × '+m1(W.h)+' м, '+W.doors+' двери, декор '+WD[W.dec].n.toLowerCase()+', корпус '+bN.toLowerCase()+', профиль '+pN.toLowerCase();
   proj.title='Шкаф-купе '+m1(W.w)+' × '+m1(W.h)+' м, '+WD[W.dec].n.toLowerCase();
   proj.sum=r100(wc.total);
   $('#spT').textContent='Шкаф-купе '+m1(W.w)+' × '+m1(W.h)
@@ -1115,6 +1126,8 @@ cmain.addEventListener('click',function(e){
  else if(d.hd){S.hd=d.hd;touch()}
  else if(d.doors){W.doors=+d.doors;touch()}
  else if(d.dec){W.dec=d.dec;touch()}
+ else if(d.wb){W.body=d.wb;touch()}
+ else if(d.wp){W.prof=d.wp;touch()}
  else if(d.fm){W.fill[d.fm]=Math.max(0,W.fill[d.fm]-1);touch()}
  else if(d.fp){W.fill[d.fp]=Math.min(12,W.fill[d.fp]+1);touch()}
  else if(d.s!==undefined){S.step=+d.s;render()}
@@ -1132,7 +1145,9 @@ $('#rH').addEventListener('input',function(){W.h=+this.value;touch()});
 $('#prev').addEventListener('click',function(){if(S.step>0){S.step--;render()}});
 $('#next').addEventListener('click',function(){if(S.step<STEPS-1){S.step++;render()}else{$('.sumbox').scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'start'})}});
 $$('.cmodes button').forEach(function(b){b.addEventListener('click',function(){S.mode=b.dataset.mode;render()})});
-function applyPreset(c){S.mode='kitchen';S.form=c.form;S.L=c.L;S.fac=c.fac;S.col=c.col;if(c.top)S.top=c.top;S.touched=1;S.step=0;render();$('#konfigurator').scrollIntoView({behavior:REDUCE?'auto':'smooth'})}
+function applyPreset(c){
+ if(c.ward){S.mode='wardrobe';W.w=c.w;W.h=c.h;W.doors=c.doors;W.dec=c.dec;W.body=c.body;W.prof=c.prof;S.touched=1;render();$('#konfigurator').scrollIntoView({behavior:REDUCE?'auto':'smooth'});return}
+ S.mode='kitchen';S.form=c.form;S.L=c.L;S.fac=c.fac;S.col=c.col;if(c.top)S.top=c.top;S.touched=1;S.step=0;render();$('#konfigurator').scrollIntoView({behavior:REDUCE?'auto':'smooth'})}
 
 /* ---------- 3D-сцена кухни (Three.js) ---------- */
 var HAS3D=false;
@@ -1354,6 +1369,87 @@ function buildRoom(lay){
   });
  }
 }
+/* ---------- 3D: шкаф-купе ---------- */
+function tPhoto(){if(TXC.ph)return TXC.ph;var c=cnv(512,512),x=c.getContext('2d'),g=x.createLinearGradient(0,0,0,512);
+ g.addColorStop(0,'#F3C98B');g.addColorStop(.55,'#E9A37A');g.addColorStop(1,'#8DA9A0');x.fillStyle=g;x.fillRect(0,0,512,512);
+ x.fillStyle='rgba(255,236,190,.9)';x.beginPath();x.arc(330,230,46,0,7);x.fill();
+ [['#7E9A8C',300,0],['#5E7B6D',360,1.3],['#3F5A4E',420,2.1]].forEach(function(l){x.fillStyle=l[0];x.beginPath();x.moveTo(0,512);for(var i=0;i<=16;i++)x.lineTo(i*32,l[1]-Math.abs(Math.sin(i*.7+l[2]))*90);x.lineTo(512,512);x.fill()});
+ var t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;return TXC.ph=t}
+function wardDoorMat(i,n){
+ var bc=wBody();
+ if(W.dec==='mirror'){var m=M('#F4F8FA',.03,1);m.userData.ei=1.6;return m}
+ if(W.dec==='glass'){var g=M(WD.glass.c,.1,.15);g.userData.ei=.9;return g}
+ if(W.dec==='photo'){var t=tPhoto().clone();t.needsUpdate=true;t.repeat.set(1/n,1);t.offset.set(i/n,0);V.wtex.push(t);return M('#ffffff',.4,0,{map:t})}
+ return M(bc.c,.6,0,bc.g?{map:tGrain(true)}:null)
+}
+// одежда на штанге: тонкие «плечики» поперёк штанги
+function clothes(p,x,y,iw,len,dz,R){
+ var CL=['#C9B8A6','#8E9AA6','#D9CFC1','#6F7F73','#B5836B','#E8E2D6','#4E5560'],c=Math.max(2,Math.min(7,Math.floor(iw/.085)));
+ for(var j=0;j<c;j++){var gx=x-iw/2+.06+(iw-.12)*(c>1?j/(c-1):.5),gl=len*(.75+R()*.25);
+  bx(p,.035,gl,.4,M(CL[(R()*CL.length)|0],.95,0),gx,y-.04-gl/2,dz/2);
+  bx(p,.008,.05,.008,MT.prof,gx,y-.01,dz/2,true)}
+}
+function buildWard(){
+ var w=W.w,h=W.h,n=W.doors,D=.6,t=.018,r=V.root,bc=wBody(),pf=WP[W.prof],F=W.fill,i,k;
+ (V.wtex||[]).forEach(function(x){x.dispose()});V.wtex=[];
+ MT.body=M(bc.c,.72,0,bc.g?{map:tGrain(true)}:null);
+ MT.inner=M('#EFEBE3',.8,0);
+ MT.prof=M(pf.c,pf.r,pf.m);
+ // комната: шкаф стоит в углу, справа место, куда отъезжают двери при «Разобрать»
+ var sh=w+.3,x0=-w/2-3,x1=w*1.5+2,RW=x1-x0,cx=(x0+x1)/2,RD=3.2;
+ var fl=new THREE.Mesh(new THREE.PlaneGeometry(RW,RD),MT.floor);fl.rotation.x=-Math.PI/2;fl.position.set(cx,0,RD/2);fl.receiveShadow=!!V.shadows;r.add(fl);
+ MT.floor.map.repeat.set(RW/2.4,RD/1.08);
+ var bw=new THREE.Mesh(new THREE.PlaneGeometry(RW,2.9),MT.wall);bw.position.set(cx,1.45,0);bw.receiveShadow=!!V.shadows;r.add(bw);
+ var lw=new THREE.Mesh(new THREE.PlaneGeometry(.75,2.9),MT.wall);lw.rotation.y=Math.PI/2;lw.position.set(-w/2-.003,1.45,.375);lw.receiveShadow=!!V.shadows;r.add(lw);
+ bx(r,RW,.07,.015,MT.carc,cx,.035,.008,true);
+ var gC=new THREE.Group(),gIn=new THREE.Group(),gD=new THREE.Group(),gT=new THREE.Group();r.add(gC,gIn,gD,gT);
+ V.parts.push({w:1,c:gC,f:gD,t:gT,inn:gIn});V.wsh=sh;
+ // каркас и направляющие
+ bx(gC,t,h,D,MT.body,-w/2+t/2,h/2,D/2);bx(gC,t,h,D,MT.body,w/2-t/2,h/2,D/2);
+ bx(gC,w-2*t,.08,D-.05,MT.body,0,.04,(D-.05)/2);
+ bx(gC,w-2*t,t,D,MT.body,0,.08+t/2,D/2);
+ bx(gT,w,t,D,MT.body,0,h-t/2,D/2);
+ bx(gC,w-2*t,h-.1,.006,MT.inner,0,.08+(h-.1)/2,.003,true);
+ bx(gC,w-2*t,.03,.1,MT.prof,0,h-t-.015,D-.05,true);
+ bx(gC,w-2*t,.012,.1,MT.prof,0,.08+t+.006,D-.05,true);
+ // секции: по одной на дверь; наполнение раскладывается по кругу
+ var iw=w-2*t,sw=iw/n,y0=.08+t,yT=h-t-.03,dz=D-.12,secs=[],R=prng(n*7+F.rod*3+F.shelf*5+F.drawer);
+ for(i=0;i<n;i++)secs.push({rod:0,pant:0,sh:0,dr:0});
+ for(k=0;k<F.pant;k++)secs[k%n].pant++;
+ for(k=0;k<F.rod;k++)secs[k%n].rod++;
+ for(k=0;k<F.drawer;k++)secs[n-1-k%n].dr++;
+ for(k=0;k<F.shelf;k++)secs[n-1-k%n].sh++;
+ for(i=1;i<n;i++)bx(gIn,t,yT-y0,dz,MT.body,-iw/2+sw*i,y0+(yT-y0)/2,dz/2);
+ secs.forEach(function(s,i){
+  var x=-iw/2+sw*i+sw/2,iw2=sw-t-.004,yb=y0,top=yT,nd=Math.min(s.dr,5),bars=[],j;
+  for(j=0;j<nd;j++){var yy=yb+.11+j*.21;bx(gIn,iw2-.01,.19,.018,MT.body,x,yy,dz-.01);bx(gIn,Math.min(.16,iw2*.4),.012,.014,MT.prof,x,yy+.06,dz+.006,true)}
+  if(nd){yb+=nd*.21+.01;bx(gIn,iw2,t,dz,MT.body,x,yb+t/2,dz/2);yb+=t}
+  if(s.pant){var py=top-.14;bars.push(py);bx(gIn,iw2-.04,.025,.025,MT.prof,x,py,dz*.5,true);bx(gIn,.02,.2,.02,MT.prof,x-iw2/2+.03,py+.1,dz*.5,true);bx(gIn,.02,.2,.02,MT.prof,x+iw2/2-.03,py+.1,dz*.5,true)}
+  else if(s.rod&&s.sh){top-=.34;bx(gIn,iw2,t,dz,MT.body,x,top+.02,dz/2);s.sh--}
+  var ny=s.pant?bars[0]-1.05:top-.06;
+  for(j=0;j<s.rod&&ny-.9>yb+.05;j++){bars.push(ny);bx(gIn,iw2-.02,.022,.022,MT.prof,x,ny,dz*.5,true);ny-=1.05}
+  var low=top;
+  bars.forEach(function(by){var len=Math.min(.95,by-yb-.1);clothes(gIn,x,by,iw2,len,dz,R);low=Math.min(low,by-len-.08)});
+  var zt=bars.length?low:top;
+  for(j=0;j<s.sh;j++){var sy=yb+(zt-yb)*(j+1)/(s.sh+1);bx(gIn,iw2,t,dz,MT.body,x,sy,dz/2);
+   if(R()>.35){var hh=.05+R()*.08;bx(gIn,Math.min(.3,iw2*.6),hh,.3,M(['#D9CFC1','#8E9AA6','#B5836B','#E8E2D6'][(R()*4)|0],.95,0),x+(R()-.5)*iw2*.25,sy+t/2+hh/2,dz*.5,true)}}
+  if(F.light)bx(gIn,iw2-.02,.008,.012,MT.led,x,yT-.005,dz-.03,true);
+ });
+ // двери: чётные — на задней направляющей, нечётные — на передней
+ var dh=h-t-.03-(y0+.012)-.006,yc=y0+.012+dh/2+.003,dw=sw+.012;
+ for(i=0;i<n;i++){
+  var front=i%2===1,xc=-iw/2+sw*(i+.5),g=new THREE.Group();g.position.set(xc,yc,front?D-.022:D-.07);gD.add(g);
+  var pm=bx(g,dw-.03,dh-.03,.01,wardDoorMat(i,n),0,0,0);
+  bx(g,.022,dh,.03,MT.prof,-dw/2+.011,0,0);bx(g,.022,dh,.03,MT.prof,dw/2-.011,0,0);
+  bx(g,dw,.02,.024,MT.prof,0,dh/2-.01,0,true);bx(g,dw,.02,.024,MT.prof,0,-dh/2+.01,0,true);
+  var d={p:g,type:'slide',bx:xc,dx:(front||i===n-1?-sw:sw)*.97,go:front,m:0,mT:0};pm.userData.d=d;V.doors.push(d);V.hit.push(pm);
+ }
+}
+function hint3d(){
+ if(S.mode==='wardrobe')return (LOW?'Упрощённое качество, чтобы 3D не тормозил. ':'')+'Нажмите на дверь — она откатится. «Разобрать» откроет всё наполнение.';
+ return LOW?'Упрощённое качество: без теней, чтобы 3D не тормозил на телефоне. Нажмите на дверцу, чтобы открыть.':'Потяните модель мышью. Нажмите на дверцу, чтобы открыть. Ctrl + колесо мыши — масштаб.';
+}
+
 function envMap(r){
  try{
   var s=new THREE.Scene(),geo=new THREE.SphereGeometry(30,24,14),pos=geo.attributes.position,col=[];
@@ -1388,7 +1484,7 @@ function initScene(){
  bindInput(cv);
  V.ok=true;V.auto=!REDUCE&&!LOW;
  $('#sload').hidden=true;
- $('#qnote').textContent=LOW?'Упрощённое качество: без теней, чтобы 3D не тормозил на телефоне. Нажмите на дверцу, чтобы открыть.':'Потяните модель мышью. Нажмите на дверцу, чтобы открыть. Ctrl + колесо мыши — масштаб.';
+ $('#qnote').textContent=hint3d();
  setView(0,true);
 }
 function resize(force){
@@ -1399,6 +1495,7 @@ function resize(force){
 function frame(){
  var lay=V.lay;if(!lay)return;
  var tf=Math.tan(V.cam.fov*Math.PI/360),asp=V.cam.aspect;
+ if(lay.ward){V.tx=0;V.ty=W.h*.47;V.tz=.3;V.baseDist=(Math.max((W.w/2+.6)/(tf*asp),(W.h/2+.3)/tf)+.8)*(1+Math.max(0,1.7-asp)*.3);return}
  V.tx=0;V.ty=.85;V.tz=lay.RD*.34;
  V.baseDist=(Math.max((lay.RW/2+.1)/(tf*asp),1.55/tf)+lay.RD*.22)*(.92+Math.max(0,1.5-asp)*.9);
 }
@@ -1407,6 +1504,12 @@ function build(){
  if(V.root){V.scene.remove(V.root);V.root.traverse(function(o){var g=o.geometry;if(g&&g!==UB&&g!==UC&&g!==UK&&g!==UP2)g.dispose()})}
  V.parts=[];V.doors=[];V.hit=[];
  makeMats();
+ if(S.mode==='wardrobe'){
+  V.lay={ward:1};V.ym=.9;V.yawT=clamp(V.yawT,-V.ym,V.ym);V.root=new THREE.Group();V.scene.add(V.root);
+  buildWard();resize(true);frame();V.built=true;
+  $('#sInfo').innerHTML='Шкаф-купе '+m1(W.w)+' × '+m1(W.h)+' м<br>дверей: '+W.doors+', профиль: '+WP[W.prof].n.toLowerCase();
+  return;
+ }
  var lay=layout();V.lay=lay;V.ym=lay.form==='u'?.5:.9;V.yawT=clamp(V.yawT,-V.ym,V.ym);V.root=new THREE.Group();V.scene.add(V.root);
  buildRoom(lay);
  lay.runs.forEach(function(rn){buildRun(rn,lay)});
@@ -1428,10 +1531,10 @@ function setView(i,instant){
  if(instant){V.yaw=V.yawT;V.pitch=v.pitch;V.zoom=v.zoom}
  $('#bViewT').textContent='Вид: '+v.n;kick();
 }
-function kick(){if(V.run||!V.ok||V.mode2d||S.mode!=='kitchen')return;V.run=true;V.last=performance.now();requestAnimationFrame(loop)}
+function kick(){if(V.run||!V.ok||V.mode2d)return;V.run=true;V.last=performance.now();requestAnimationFrame(loop)}
 function loop(now){
  var dt=Math.min(.05,(now-V.last)/1000);V.last=now;
- if(!V.ok||!V.built||!V.vis||V.mode2d||S.mode!=='kitchen'||document.hidden){V.run=false;return}
+ if(!V.ok||!V.built||!V.vis||V.mode2d||document.hidden){V.run=false;return}
  var ch=false;
  try{ch=step(dt);V.r.render(V.scene,V.cam)}catch(err){V.run=false;console.warn('3D: ошибка кадра',err);return}
  if(ch)requestAnimationFrame(loop);else V.run=false;
@@ -1447,11 +1550,12 @@ function step(dt){
  if(V.seq>=0){V.seq+=dt;ch=true;if(V.seq>V.seqEnd)V.seq=-1}
  V.doors.forEach(function(d,i){
   d.m=ez(d.m,d.mT,7);
-  var o=Math.max(V.open,bump(i),d.m);
-  if(d.type==='door')d.p.rotation.y=d.s*d.ang*o;else d.p.position.z=d.bz+.4*o;
+  var o=Math.max(d.type==='slide'&&!d.go?0:V.open,bump(i),d.m);
+  if(d.type==='door')d.p.rotation.y=d.s*d.ang*o;else if(d.type==='slide')d.p.position.x=d.bx+d.dx*o;else d.p.position.z=d.bz+.4*o;
  });
  var e=V.ex;
  V.parts.forEach(function(pt){
+  if(pt.w){pt.f.position.set(V.wsh*e,0,.25*e);pt.t.position.y=.35*e;pt.inn.position.z=.28*e;return}
   pt.f.position.z=(pt.isI?.3:.55)*e;pt.t.position.y=.5*e;pt.uc.position.y=.55*e;pt.uf.position.set(0,.55*e,.5*e);
  });
  var n=V.night;
@@ -1460,8 +1564,9 @@ function step(dt){
  V.scene.background.copy(V.bgDay).lerp(V.bgNight,n);
  MT.winG.color.copy(C('#E8F3FA')).lerp(C('#1B2A44'),n);
  MT.lamp.emissiveIntensity=n*1.3;MT.glow.opacity=.3+.65*n;
- V.mats.forEach(function(m){if(m.envMapIntensity!==undefined)m.envMapIntensity=.55-.4*n});
- var d=V.baseDist*V.zoom*(1+e*.14),cp=Math.cos(V.pitch);
+ V.mats.forEach(function(m){if(m.envMapIntensity!==undefined)m.envMapIntensity=(m.userData.ei||.55)-.4*n});
+ var wd=V.lay&&V.lay.ward;if(wd)V.tx=V.wsh*.5*e;
+ var d=V.baseDist*V.zoom*(1+e*(wd?.55:.14)),cp=Math.cos(V.pitch);
  V.cam.position.set(V.tx+Math.sin(V.yaw)*cp*d,V.ty+Math.sin(V.pitch)*d,V.tz+Math.cos(V.yaw)*cp*d);
  V.cam.lookAt(V.tx,V.ty,V.tz);
  return ch;
@@ -1503,27 +1608,29 @@ function stopAuto(){if(V.auto){V.auto=false;kick()}$('#bRot').setAttribute('aria
 
 /* переключение видов и панель */
 function showView(){
- var k=S.mode==='kitchen',use3d=HAS3D&&V.ok&&!V.mode2d&&k;
+ var k=S.mode==='kitchen',use3d=HAS3D&&V.ok&&!V.mode2d;
  $('#cv').hidden=!use3d;$('#v2d').hidden=use3d;
+ $('#cv').setAttribute('aria-label',k?'3D-модель кухни. Потяните, чтобы повернуть, стрелки на клавиатуре тоже вращают':'3D-модель шкафа-купе. Потяните, чтобы повернуть; нажмите на дверь, чтобы откатить её');
  $('#plan').toggleAttribute('hidden',!k);$('#wplan').toggleAttribute('hidden',k);
- $('#tb').hidden=!k||!HAS3D;
+ $('#tb').hidden=!HAS3D;
  $('#sInfo').hidden=!use3d;
  $('#shint').hidden=!use3d;
  $$('#tb button').forEach(function(b){if(b.id!=='b2d')b.disabled=!use3d});
  $('#b2d').setAttribute('aria-pressed',V.mode2d?'true':'false');$('#b2dT').textContent=V.mode2d?'Показать 3D':'Схема 2D';
  if(k&&!use3d){planSVG()}
- if(!HAS3D){$('#sload').hidden=true;$('#qnote').textContent=k?'3D на этом устройстве недоступен, поэтому показана схема кухни сверху. Все настройки и цена работают так же.':'';}
- else if(!k){$('#qnote').textContent=''}
+ if(!HAS3D){$('#sload').hidden=true;$('#qnote').textContent='3D на этом устройстве недоступен, поэтому показана схема '+(k?'кухни сверху':'шкафа спереди')+'. Все настройки и цена работают так же.';}
+ else if(V.ok&&!V.lost){$('#qnote').textContent=hint3d()}
  if(use3d){resize();}
 }
 function sync3d(){
  if(V.exT)renderXl();
  if(S.mode==='kitchen'&&!$('#v2d').hidden)planSVG();
  showView();
- if(!(HAS3D&&V.ok&&!V.mode2d&&S.mode==='kitchen'))return;
- var key=[S.form,S.L,S.col,S.fac,S.top,S.hd,S.up,S.ex.light,S.ex.sink].join('|');
+ if(!(HAS3D&&V.ok&&!V.mode2d))return;
+ var wm=S.mode==='wardrobe',F=W.fill;
+ var key=wm?['w',W.w,W.h,W.doors,W.dec,W.body,W.prof,F.rod,F.shelf,F.drawer,F.pant,F.light].join('|'):[S.form,S.L,S.col,S.fac,S.top,S.hd,S.up,S.ex.light,S.ex.sink].join('|');
  if(key!==V.key){
-  var look=S.fac+'|'+S.col,demo=V.built&&V.look&&look!==V.look&&!!S.touched;
+  var look=wm?'w|'+W.dec+'|'+W.body+'|'+W.prof:S.fac+'|'+S.col,demo=V.built&&V.look&&look!==V.look&&!!S.touched;
   V.key=key;V.look=look;schedBuild(demo);
  }
  kick();
@@ -1535,7 +1642,10 @@ $('#bView').addEventListener('click',function(){stopAuto();setView(V.view+1)});
 $('#bRot').addEventListener('click',function(){V.auto=!V.auto;V.autoBase=V.yawT;this.setAttribute('aria-pressed',V.auto?'true':'false');kick()});
 $('#b2d').addEventListener('click',function(){V.mode2d=!V.mode2d;showView();if(!V.mode2d){V.key='';sync3d()}});
 function renderXl(){
- var x=$('#sxl');x.classList.toggle('on',!!V.exT);if(!V.exT)return;var c=proj.c;if(!c){x.classList.remove('on');return}
+ var x=$('#sxl');x.classList.toggle('on',!!V.exT);if(!V.exT)return;var c=proj.c;
+ if(S.mode==='wardrobe'&&proj.wc){var wc=proj.wc;
+  x.innerHTML='<span><i style="background:'+wBody().c+'"></i>Каркас <b>'+rub(wc.base)+'</b></span><span><i style="background:'+WD[W.dec].c+'"></i>Двери <b>'+rub(wc.door)+'</b></span><span><i style="background:'+WP[W.prof].c+'"></i>Профиль <b>'+rub(wc.prof)+'</b></span><span>Наполнение <b>'+rub(wc.fill)+'</b></span><span>Монтаж <b>'+rub(wc.mont)+'</b></span>';return}
+ if(!c){x.classList.remove('on');return}
  x.innerHTML='<span><i style="background:#8FB3C0"></i>Корпус и фасады <b>'+rub(c.fac)+'</b></span><span><i style="background:#C9A67A"></i>Столешница <b>'+rub(c.top)+'</b></span><span><i style="background:#C9C6BF"></i>Фурнитура и ручки <b>'+rub(c.hw)+'</b></span><span>Монтаж <b>'+rub(c.mont)+'</b></span>';
 }
 V.autoBase=.3;V.ym=.9;
